@@ -45,7 +45,12 @@ defmodule SoonexI18n.Layouts.Root.Demo do
               class="select select--sm w-full min-w-0"
               dir={SoonexI18n.Locale.dir(@locale)}
               items={SoonexI18n.Locale.language_select_items(SoonexI18n.Locale.current_path(@page))}
-              value={SoonexI18n.Locale.language_select_value(SoonexI18n.Locale.current_path(@page), @locale)}
+              value={
+                SoonexI18n.Locale.language_select_value(
+                  SoonexI18n.Locale.current_path(@page),
+                  @locale
+                )
+              }
               redirect
               on_value_change_client="corex:set-locale"
               translation={%Corex.Select.Translation{placeholder: gettext("Language")}}
@@ -102,12 +107,12 @@ defmodule SoonexI18n.Layouts.Root.Demo do
         </:content>
       </.floating_panel>
       <.navigate
-        to="https://corex.gigalixirapp.com/"
+        to="https://corex.gigalixirapp.com/templates"
         class="button button--accent button--sm"
         external
       >
         {gettext("Made with Corex")}
-        <.heroicon name="hero-arrow-up-right" />
+        <.heroicon name="hero-arrow-down-tray" />
       </.navigate>
     </div>
     """

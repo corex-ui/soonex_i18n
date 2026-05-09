@@ -10,7 +10,7 @@ defmodule SoonexI18n.HomePage.Hero do
 
   def hero(assigns) do
     locale = Gettext.get_locale(SoonexI18n.Gettext)
-    headline = gettext("Write HEEx. Compile static HTML. Host it anywhere.")
+    headline = gettext("Write Elixir, ship a static build.")
 
     assigns =
       assigns
@@ -48,17 +48,15 @@ defmodule SoonexI18n.HomePage.Hero do
           <% end %>
         </h1>
 
-        <div class="flex max-w-2xl flex-col gap-space-sm">
-          <p class="m-0 text-balance">
-            {gettext(
-              "Tableau turns your HEEx templates into deployable static assets—no Node-based site generator in the loop. You keep Phoenix-friendly markup while visitors download fast HTML from a CDN or object storage."
-            )}
-          </p>
-          <p class="m-0 text-balance text-ink-muted">
-            {gettext(
-              "Corex supplies accessible components on palette-driven tokens with Tailwind v4 through Designex. Add Markdown posts, locales, light and dark themes, and use the Corex MCP so slots and modifiers stay discoverable from your editor."
-            )}
-          </p>
+        <div class="flex max-w-xl flex-col gap-space-sm text-balance">
+          <h2 class="m-0 max-w-xl font-sans !text-base !font-normal leading-snug text-ink-muted md:!text-lg">
+            <span class="text-ink-brand">Tableau</span>{" "}
+            {gettext("compiles HEEx to static files.")}
+          </h2>
+          <h3 class="m-0 max-w-xl font-sans !text-base !font-normal leading-snug text-ink-muted md:!text-lg">
+            <span class="text-ink-brand">Corex</span>{" "}
+            {gettext("covers components, tokens, Markdown, locales, themes, and MCP for your editor.")}
+          </h3>
         </div>
 
         <.timer

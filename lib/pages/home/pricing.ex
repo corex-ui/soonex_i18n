@@ -61,11 +61,11 @@ defmodule SoonexI18n.HomePage.Pricing do
                    period: gettext("forever"),
                    blurb:
                      gettext(
-                       "The template itself: fork, run mix setup, ship Tableau or Phoenix—no charge, no upsell."
+                       "The template itself: fork, run setup, then ship with Tableau or Phoenix. No charge, no upsell."
                      ),
                    perks: [
                      gettext("Corex components + token-driven styling"),
-                     gettext("mix assets.build and mix tableau.build"),
+                     gettext("Assets plus static export"),
                      gettext("Palette to Tailwind v4 pipeline"),
                      gettext("_posts Markdown and RSS starter")
                    ],

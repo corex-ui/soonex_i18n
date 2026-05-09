@@ -62,9 +62,11 @@ mix assets.build
 
 ## Corex JavaScript paths
 
-`assets/js/site.js` imports Corex hooks using paths relative to `assets/js/` (`../../../../corex/priv/static/…`). That matches `{:corex, path: "../../corex"}` in `mix.exs` when this project lives at `templates/soonex` beside `../../corex`.
+`assets/js/site.js` imports Corex with the **`corex`** package specifiers (`corex/hooks`, `corex/select`, …). Esbuild resolves them because **`NODE_PATH`** in [`config/config.exs`](config/config.exs) includes **`deps`**, where Mix puts the **`corex`** dependency from **`mix.exs`**.
 
-If you switch to Corex from Hex, run `mix designex corex`, then point imports at `../../deps/corex/priv/static/…`.
+Run **`mix designex corex`** so design tokens and component CSS match the same Corex version.
+
+To hack on a local Corex checkout instead, use **`{:corex, path: "../../corex"}`** (adjust the path) in **`mix.exs`**; the same **`corex/…`** imports keep working as long as **`deps/corex`** points at that checkout after **`mix deps.get`**.
 
 Client preferences use [`assets/js/theme.js`](assets/js/theme.js), [`assets/js/mode.js`](assets/js/mode.js), and [`assets/js/locale.js`](assets/js/locale.js). Landing motion uses [`assets/js/landing.js`](assets/js/landing.js) plus [`landing-scroll-chrome.js`](assets/js/landing-scroll-chrome.js), [`landing-hero.js`](assets/js/landing-hero.js), [`landing-reveal.js`](assets/js/landing-reveal.js), and [`landing-parallax.js`](assets/js/landing-parallax.js). The document uses `data-theme`, `data-mode`, and `data-locale` on `<html>` with `localStorage` keys `data-theme`, `data-mode`, and `data-locale`.
 

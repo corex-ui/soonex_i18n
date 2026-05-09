@@ -78,7 +78,7 @@ msgstr "Points forts"
 #: lib/layouts/root/footer.ex:27
 #: lib/layouts/root/landing_chrome.ex:48
 #: lib/pages/home/faq.ex:99
-#: lib/pages/home/hero.ex:79
+#: lib/pages/home/hero.ex:77
 #, elixir-autogen, elixir-format
 msgid "Join the waitlist"
 msgstr "Rejoindre la liste d'attente"
@@ -147,7 +147,7 @@ msgid "Company"
 msgstr "Entreprise"
 
 #: lib/layouts/root/landing_chrome.ex:42
-#: lib/pages/home/hero.ex:71
+#: lib/pages/home/hero.ex:69
 #, elixir-autogen, elixir-format
 msgid "Days"
 msgstr "Jours"
@@ -163,7 +163,7 @@ msgid "GitHub"
 msgstr "GitHub"
 
 #: lib/layouts/root/landing_chrome.ex:43
-#: lib/pages/home/hero.ex:72
+#: lib/pages/home/hero.ex:70
 #, elixir-autogen, elixir-format
 msgid "Hours"
 msgstr "Heures"
@@ -194,7 +194,7 @@ msgid "License"
 msgstr "Licence"
 
 #: lib/layouts/root/landing_chrome.ex:44
-#: lib/pages/home/hero.ex:73
+#: lib/pages/home/hero.ex:71
 #, elixir-autogen, elixir-format
 msgid "Min"
 msgstr "Min"
@@ -235,7 +235,7 @@ msgid "Scale"
 msgstr "Montée en charge"
 
 #: lib/layouts/root/landing_chrome.ex:45
-#: lib/pages/home/hero.ex:74
+#: lib/pages/home/hero.ex:72
 #, elixir-autogen, elixir-format
 msgid "Sec"
 msgstr "Sec"
@@ -307,27 +307,17 @@ msgstr "/mo"
 msgid "/yr"
 msgstr "/yr"
 
-#: lib/pages/home/faq.ex:38
-#, elixir-autogen, elixir-format
-msgid "A Tableau-driven coming-soon site that demonstrates Corex on static HTML: countdown, highlights, metrics, pricing, FAQ, waitlist, Markdown journal post, and footer—built with mix tableau.build and deployable as plain files."
-msgstr "Un site « coming soon » piloté par Tableau qui illustre Corex en HTML statique : compte à rebours, points forts, métriques, tarifs, FAQ, liste d'attente, article de journal Markdown et pied de page — généré avec mix tableau.build et déployable en fichiers simples."
-
 #: lib/pages/home/faq.ex:74
 #, elixir-autogen, elixir-format
 msgid "A fuller Phoenix SoonexI18n application template is planned on top of the same Corex primitives—auth, data, and realtime—without throwing away this landing. Stay on the waitlist for migration notes."
 msgstr "Un modèle d'application Phoenix SoonexI18n plus complet est prévu sur les mêmes primitives Corex — auth, données et temps réel — sans abandonner cette landing. Restez sur la liste d'attente pour les notes de migration."
 
-#: lib/pages/home/scale.ex:36
+#: lib/pages/home/scale.ex:38
 #, elixir-autogen, elixir-format
 msgid "API & Events"
 msgstr "API et événements"
 
-#: lib/pages/home/highlights.ex:54
-#, elixir-autogen, elixir-format
-msgid "Author in HEEx and Markdown under Tableau. Output is plain HTML, CSS, and ESM—host on GitHub Pages, S3, or any CDN without a Node runtime on the edge."
-msgstr "Rédigez en HEEx et Markdown sous Tableau. La sortie est du HTML, CSS et ESM — hébergez sur GitHub Pages, S3 ou tout CDN sans runtime Node en périphérie."
-
-#: lib/pages/home/scale.ex:54
+#: lib/pages/home/scale.ex:58
 #, elixir-autogen, elixir-format
 msgid "Built in"
 msgstr "Construit en"
@@ -372,11 +362,6 @@ msgstr "Supprimez cette colonne si vous n'avez qu'un prix"
 msgid "Demonstrates Corex Switch wiring for monthly versus yearly display—swap labels and math for your billing rules."
 msgstr "Illustre le câblage du Switch Corex pour l'affichage mensuel ou annuel — adaptez libellés et calculs à vos règles de facturation."
 
-#: lib/pages/home/highlights.ex:59
-#, elixir-autogen, elixir-format
-msgid "Design pipeline in Mix"
-msgstr "Chaîne de design dans Mix"
-
 #: lib/pages/home/highlights.ex:36
 #, elixir-autogen, elixir-format
 msgid "Design tokens"
@@ -417,11 +402,6 @@ msgstr "Exemple payant"
 msgid "Example primary CTA"
 msgstr "Exemple de CTA principal"
 
-#: lib/pages/home/scale.ex:38
-#, elixir-autogen, elixir-format
-msgid "From the Server and the Client"
-msgstr "Depuis le serveur et le client"
-
 #: lib/pages/home/highlights.ex:40
 #, elixir-autogen, elixir-format
 msgid "Gettext + Localize"
@@ -431,11 +411,6 @@ msgstr "Gettext + Localize"
 #, elixir-autogen, elixir-format
 msgid "Hook forms or CRM links from the button"
 msgstr "Branchez formulaires ou liens CRM depuis le bouton"
-
-#: lib/pages/home/faq.ex:20
-#, elixir-autogen, elixir-format
-msgid "How static Tableau, the Mix asset pipeline, Corex MCP, and Markdown posts fit together—and how this repo relates to a future Phoenix SoonexI18n application template."
-msgstr "Comment Tableau statique, le pipeline d'assets Mix, Corex MCP et les articles Markdown s'articulent — et comment ce dépôt se rapporte à un futur modèle d'application Phoenix SoonexI18n."
 
 #: lib/pages/home/pricing.ex:112
 #, elixir-autogen, elixir-format
@@ -451,11 +426,6 @@ msgstr "En développement, Corex peut exposer des outils MCP basés sur le regis
 #, elixir-autogen, elixir-format
 msgid "Join waitlist"
 msgstr "Rejoindre la liste d'attente"
-
-#: lib/pages/home/scale.ex:56
-#, elixir-autogen, elixir-format
-msgid "Keyboard, focus and ARIA from Zag.js machines."
-msgstr "Clavier, focus et ARIA via les machines Zag.js."
 
 #: lib/pages/home/waitlist.ex:27
 #, elixir-autogen, elixir-format
@@ -477,30 +447,15 @@ msgstr "Articles Markdown"
 msgid "One launch email, optional build notes, no spam. Full Phoenix template lands after this static core. Get notified for both."
 msgstr "Un e-mail au lancement, notes de build facultatives, pas de spam. Le modèle Phoenix complet arrive après ce noyau statique. Soyez informé des deux."
 
-#: lib/pages/home/highlights.ex:20
-#, elixir-autogen, elixir-format
-msgid "One toolchain: mix soonex_i18n.palette and mix designex corex produce tokens for Tailwind v4; mix assets.build bundles JS; mix tableau.build ships HTML. Same HEEx you would run under Phoenix LiveView—here compiled ahead of time."
-msgstr "Une chaîne d'outils : mix soonex_i18n.palette et mix designex corex produisent des jetons pour Tailwind v4 ; mix assets.build regroupe le JS ; mix tableau.build livre le HTML. La même HEEx que sous Phoenix LiveView — ici compilée à l'avance."
-
 #: lib/pages/home/waitlist.ex:28
 #, elixir-autogen, elixir-format
 msgid "One-click unsubscribe; we never sell or rent your email."
 msgstr "Désabonnement en un clic ; nous ne vendons ni ne louons votre e-mail."
 
-#: lib/pages/home/scale.ex:45
+#: lib/pages/home/scale.ex:49
 #, elixir-autogen, elixir-format
 msgid "Open Source"
 msgstr "Open Source"
-
-#: lib/pages/home/scale.ex:47
-#, elixir-autogen, elixir-format
-msgid "Open Source and free to use. MIT License"
-msgstr "Open source et libre d'utilisation. Licence MIT"
-
-#: lib/pages/home/highlights.ex:61
-#, elixir-autogen, elixir-format
-msgid "Palette JSON feeds Designex and Corex component CSS. Tailwind v4 reads the same tokens so utilities and components stay aligned—no hand-synced spreadsheets."
-msgstr "Le JSON de palette alimente Designex et le CSS des composants Corex. Tailwind v4 lit les mêmes jetons pour aligner utilitaires et composants — pas de tableurs synchronisés à la main."
 
 #: lib/pages/home/pricing.ex:69
 #, elixir-autogen, elixir-format
@@ -527,7 +482,7 @@ msgstr "Des questions sur le modèle ou Corex ?"
 msgid "Read the docs"
 msgstr "Lire la documentation"
 
-#: lib/pages/home/hero.ex:82
+#: lib/pages/home/hero.ex:80
 #, elixir-autogen, elixir-format
 msgid "Read the documentation"
 msgstr "Lire la documentation"
@@ -592,11 +547,6 @@ msgstr "Tableau statique"
 msgid "Tailwind v4"
 msgstr "Tailwind v4"
 
-#: lib/pages/home/pricing.ex:63
-#, elixir-autogen, elixir-format
-msgid "The template itself: fork, run mix setup, ship Tableau or Phoenix—no charge, no upsell."
-msgstr "Le modèle lui-même : forkez, lancez mix setup, déployez Tableau ou Phoenix — sans frais ni survente."
-
 #: lib/pages/home/faq.ex:63
 #, elixir-autogen, elixir-format
 msgid "Themes, modes, and locales?"
@@ -642,16 +592,6 @@ msgstr "Que suit ce modèle statique ?"
 msgid "What is SoonexI18n?"
 msgstr "Qu'est-ce que SoonexI18n ?"
 
-#: lib/pages/home/faq.ex:45
-#, elixir-autogen, elixir-format
-msgid "Which Mix tasks matter?"
-msgstr "Quelles tâches Mix comptent ?"
-
-#: lib/pages/home/scale.ex:29
-#, elixir-autogen, elixir-format
-msgid "Works in Controller and Live View"
-msgstr "Fonctionne dans Controller et Live View"
-
 #: lib/pages/home/waitlist.ex:58
 #, elixir-autogen, elixir-format
 msgid "Your email"
@@ -683,26 +623,6 @@ msgstr "à partir de 2,5 k$"
 msgid "from $2k"
 msgstr "à partir de 2 k$"
 
-#: lib/pages/home/highlights.ex:35
-#, elixir-autogen, elixir-format
-msgid "mix assets.build"
-msgstr "mix assets.build"
-
-#: lib/pages/home/pricing.ex:68
-#, elixir-autogen, elixir-format
-msgid "mix assets.build and mix tableau.build"
-msgstr "mix assets.build et mix tableau.build"
-
-#: lib/pages/home/faq.ex:47
-#, elixir-autogen, elixir-format
-msgid "mix assets.build runs soonex_i18n.palette, designex corex, Tailwind, and esbuild. mix tableau.build emits _site. In development, mix tableau.server watches HEEx and Markdown. Content lives under _posts with MDEx rendering."
-msgstr "mix assets.build exécute soonex_i18n.palette, designex corex, Tailwind et esbuild. mix tableau.build produit _site. En développement, mix tableau.server surveille HEEx et Markdown. Le contenu vit sous _posts avec rendu MDEx."
-
-#: lib/pages/home/highlights.ex:34
-#, elixir-autogen, elixir-format
-msgid "mix tableau.server"
-msgstr "mix tableau.server"
-
 #: lib/pages/home/waitlist.ex:42
 #, elixir-autogen, elixir-format
 msgid "Thanks for joining"
@@ -713,17 +633,97 @@ msgstr ""
 msgid "This demo does not send or collect email. Point this form at your API or endpoint when you ship."
 msgstr ""
 
-#: lib/pages/home/hero.ex:58
+#: lib/pages/home/hero.ex:54
 #, elixir-autogen, elixir-format
-msgid "Corex supplies accessible components on palette-driven tokens with Tailwind v4 through Designex. Add Markdown posts, locales, light and dark themes, and use the Corex MCP so slots and modifiers stay discoverable from your editor."
+msgid "compiles HEEx to static files."
 msgstr ""
 
-#: lib/pages/home/hero.ex:53
+#: lib/pages/home/hero.ex:58
 #, elixir-autogen, elixir-format
-msgid "Tableau turns your HEEx templates into deployable static assets—no Node-based site generator in the loop. You keep Phoenix-friendly markup while visitors download fast HTML from a CDN or object storage."
+msgid "covers components, tokens, Markdown, locales, themes, and MCP for your editor."
 msgstr ""
+
+#: lib/pages/home/faq.ex:38
+#, elixir-autogen, elixir-format, fuzzy
+msgid "A Tableau-driven coming-soon site that demonstrates Corex on static HTML: countdown, highlights, metrics, pricing, FAQ, waitlist, Markdown journal post, and footer. Tableau emits files you can host on GitHub Pages, S3, or any CDN."
+msgstr "Un site « coming soon » piloté par Tableau qui illustre Corex en HTML statique : compte à rebours, points forts, métriques, tarifs, FAQ, liste d'attente, article de journal Markdown et pied de page — généré avec mix tableau.build et déployable en fichiers simples."
+
+#: lib/pages/home/pricing.ex:68
+#, elixir-autogen, elixir-format
+msgid "Assets plus static export"
+msgstr ""
+
+#: lib/pages/home/highlights.ex:54
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Author in HEEx and Markdown under Tableau. Output is plain HTML, CSS, and ESM. Host on GitHub Pages, S3, or any CDN without a Node runtime on the edge."
+msgstr "Rédigez en HEEx et Markdown sous Tableau. La sortie est du HTML, CSS et ESM — hébergez sur GitHub Pages, S3 ou tout CDN sans runtime Node en périphérie."
+
+#: lib/pages/home/highlights.ex:59
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Design pipeline in one app"
+msgstr "Chaîne de design dans Mix"
+
+#: lib/pages/home/faq.ex:45
+#, elixir-autogen, elixir-format
+msgid "How do builds and previews work?"
+msgstr ""
+
+#: lib/pages/home/faq.ex:20
+#, elixir-autogen, elixir-format, fuzzy
+msgid "How static Tableau, Corex MCP, Markdown posts, and the asset side of this repo fit together, and how it relates to a future Phoenix SoonexI18n application template."
+msgstr "Comment Tableau statique, le pipeline d'assets Mix, Corex MCP et les articles Markdown s'articulent — et comment ce dépôt se rapporte à un futur modèle d'application Phoenix SoonexI18n."
+
+#: lib/pages/home/highlights.ex:61
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Palette JSON feeds Designex and Corex component CSS. Tailwind v4 reads the same tokens so utilities and components stay aligned without hand-synced spreadsheets."
+msgstr "Le JSON de palette alimente Designex et le CSS des composants Corex. Tailwind v4 lit les mêmes jetons pour aligner utilitaires et composants — pas de tableurs synchronisés à la main."
+
+#: lib/pages/home/highlights.ex:35
+#, elixir-autogen, elixir-format
+msgid "Palette and assets"
+msgstr ""
+
+#: lib/pages/home/highlights.ex:20
+#, elixir-autogen, elixir-format
+msgid "Palette, Corex, and Tailwind v4 read the same tokens. Scripts bundle from one app. Tableau ships static HTML built from HEEx you would use with LiveView, compiled ahead of deploy."
+msgstr ""
+
+#: lib/pages/home/highlights.ex:34
+#, elixir-autogen, elixir-format
+msgid "Tableau dev server"
+msgstr ""
+
+#: lib/pages/home/faq.ex:47
+#, elixir-autogen, elixir-format
+msgid "The asset alias refreshes palette JSON, Designex, Tailwind, and esbuild. Tableau writes _site for production. The dev server watches HEEx and Markdown while you work. Journal posts live under _posts and render through MDEx."
+msgstr ""
+
+#: lib/pages/home/pricing.ex:63
+#, elixir-autogen, elixir-format, fuzzy
+msgid "The template itself: fork, run setup, then ship with Tableau or Phoenix. No charge, no upsell."
+msgstr "Le modèle lui-même : forkez, lancez mix setup, déployez Tableau ou Phoenix — sans frais ni survente."
 
 #: lib/pages/home/hero.ex:13
 #, elixir-autogen, elixir-format
-msgid "Write HEEx. Compile static HTML. Host it anywhere."
-msgstr ""
+msgid "Write Elixir, ship a static build."
+msgstr "Écrivez en Elixir, livrez une build statique."
+
+#: lib/pages/home/scale.ex:60
+#, elixir-autogen, elixir-format
+msgid "Keyboard flows, focus management, and ARIA patterns powered by Zag.js state machines."
+msgstr "Parcours clavier, gestion du focus et motifs ARIA via des machines d'état Zag.js."
+
+#: lib/pages/home/scale.ex:51
+#, elixir-autogen, elixir-format
+msgid "MIT licensed—fork, ship, and extend without a license fee."
+msgstr "Sous licence MIT — bifurquez, déployez et étendez sans redevance."
+
+#: lib/pages/home/scale.ex:40
+#, elixir-autogen, elixir-format
+msgid "Phoenix bindings such as phx-click in HEEx—client-side wiring from your templates—alongside JavaScript and TypeScript Corex hooks."
+msgstr "Phoenix bindings comme phx-click dans HEEx — côté client, déclarés dans les templates — avec les hooks Corex en JavaScript et TypeScript."
+
+#: lib/pages/home/scale.ex:29
+#, elixir-autogen, elixir-format
+msgid "Same Corex pieces in Phoenix controllers and HEEx—or static HEEx builds with Tableau."
+msgstr "Les mêmes briques Corex dans les contrôleurs Phoenix et HEEx — ou des builds HEEx statiques avec Tableau."

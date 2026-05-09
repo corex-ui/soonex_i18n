@@ -6,7 +6,7 @@ import { LiveSocket } from "phoenix_live_view"
 import Lenis from "lenis"
 import { initLanding } from "./landing.js"
 import { initPricing } from "./pricing.js"
-import { hooks } from "../../../../corex/priv/static/hooks.mjs"
+import { hooks } from "corex/hooks"
 
 const csrfToken = document
   .querySelector("meta[name='csrf-token']")
@@ -17,21 +17,18 @@ const liveSocket = new LiveSocket("/live", Socket, {
   params: { _csrf_token: csrfToken },
   hooks: {
     ...hooks({
-      Select: () => import("../../../../corex/priv/static/select.mjs"),
-      ToggleGroup: () =>
-        import("../../../../corex/priv/static/toggle-group.mjs"),
-      Tabs: () => import("../../../../corex/priv/static/tabs.mjs"),
-      Timer: () => import("../../../../corex/priv/static/timer.mjs"),
-      Marquee: () => import("../../../../corex/priv/static/marquee.mjs"),
-      Accordion: () => import("../../../../corex/priv/static/accordion.mjs"),
-      Checkbox: () => import("../../../../corex/priv/static/checkbox.mjs"),
-      Avatar: () => import("../../../../corex/priv/static/avatar.mjs"),
-      FloatingPanel: () =>
-        import("../../../../corex/priv/static/floating-panel.mjs"),
-      Switch: () => import("../../../../corex/priv/static/switch.mjs"),
-      Toast: () => import("../../../../corex/priv/static/toast.mjs"),
-      Clipboard: () =>
-        import("../../../../corex/priv/static/clipboard.mjs"),
+      Select: () => import("corex/select"),
+      ToggleGroup: () => import("corex/toggle-group"),
+      Tabs: () => import("corex/tabs"),
+      Timer: () => import("corex/timer"),
+      Marquee: () => import("corex/marquee"),
+      Accordion: () => import("corex/accordion"),
+      Checkbox: () => import("corex/checkbox"),
+      Avatar: () => import("corex/avatar"),
+      FloatingPanel: () => import("corex/floating-panel"),
+      Switch: () => import("corex/switch"),
+      Toast: () => import("corex/toast"),
+      Clipboard: () => import("corex/clipboard"),
     }),
   },
 })
