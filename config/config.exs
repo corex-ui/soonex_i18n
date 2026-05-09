@@ -33,9 +33,11 @@ config :tailwind,
     )
   ]
 
-config :tableau, :assets,
-  tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]},
-  esbuild: {Esbuild, :install_and_run, [:default, ~w(--watch)]}
+if Mix.env() == :dev do
+  config :tableau, :assets,
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]},
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--watch)]}
+end
 
 config :tableau, :config,
   url: "http://localhost:4999",

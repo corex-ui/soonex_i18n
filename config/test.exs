@@ -6,8 +6,6 @@ config :soonex_i18n, :mcp_enabled, false
 
 config :tableau, :server, true
 
-config :tableau, :assets, []
-
 config :wallaby,
   otp_app: :soonex_i18n,
   driver: Wallaby.Chrome,
