@@ -9,6 +9,8 @@ defmodule Mix.Tasks.Tableau.Build do
 
   @shortdoc "Builds the site"
 
+  @async_opts [timeout: :infinity]
+
   @impl Mix.Task
   def run(argv) do
     Application.ensure_all_started(:telemetry)
@@ -22,9 +24,7 @@ defmodule Mix.Tasks.Tableau.Build do
 
     mods =
       :code.all_available()
-      |> Task.async_stream(fn {mod, _, _} -> Module.concat([to_string(mod)]) end,
-        timeout: :infinity
-      )
+      |> Task.async_stream(fn {mod, _, _} -> Module.concat([to_string(mod)]) end, @async_opts)
       |> Stream.map(fn {:ok, mod} -> mod end)
       |> Enum.to_list()
 
@@ -59,7 +59,7 @@ defmodule Mix.Tasks.Tableau.Build do
               reraise TableauDevServer.BuildException, [page: page, exception: exception], __STACKTRACE__
           end
         end,
-        timeout: :infinity
+        @async_opts
       )
       |> Stream.map(fn
         {:ok, result} -> result
