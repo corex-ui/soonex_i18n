@@ -309,8 +309,8 @@ msgstr "/yr"
 
 #: lib/pages/home/faq.ex:74
 #, elixir-autogen, elixir-format
-msgid "A fuller Phoenix SoonexI18n application template is planned on top of the same Corex primitives—auth, data, and realtime—without throwing away this landing. Stay on the waitlist for migration notes."
-msgstr "Un modèle d'application Phoenix SoonexI18n plus complet est prévu sur les mêmes primitives Corex — auth, données et temps réel — sans abandonner cette landing. Restez sur la liste d'attente pour les notes de migration."
+msgid "A fuller Phoenix SoonexI18n application template is planned on top of the same Corex primitives, auth, data, and realtime, without throwing away this landing. Stay on the waitlist for migration notes."
+msgstr "Un modèle d'application Phoenix SoonexI18n plus complet est prévu sur les mêmes primitives Corex, auth, données et temps réel, sans abandonner cette landing. Restez sur la liste d'attente pour les notes de migration."
 
 #: lib/pages/home/scale.ex:38
 #, elixir-autogen, elixir-format
@@ -359,8 +359,8 @@ msgstr "Supprimez cette colonne si vous n'avez qu'un prix"
 
 #: lib/pages/home/pricing.ex:33
 #, elixir-autogen, elixir-format
-msgid "Demonstrates Corex Switch wiring for monthly versus yearly display—swap labels and math for your billing rules."
-msgstr "Illustre le câblage du Switch Corex pour l'affichage mensuel ou annuel — adaptez libellés et calculs à vos règles de facturation."
+msgid "Demonstrates Corex Switch wiring for monthly versus yearly display, swap labels and math for your billing rules."
+msgstr "Illustre le câblage du Switch Corex pour l'affichage mensuel ou annuel, adaptez libellés et calculs à vos règles de facturation."
 
 #: lib/pages/home/highlights.ex:36
 #, elixir-autogen, elixir-format
@@ -419,8 +419,8 @@ msgstr "Illustre des lignes de prix personnalisées sur le commutateur"
 
 #: lib/pages/home/faq.ex:56
 #, elixir-autogen, elixir-format
-msgid "In development, Corex can expose MCP tools backed by the component registry—list_components, get_component—so assistants pull slots and modifiers instead of inventing markup. It complements Localize and Gettext for structured authoring."
-msgstr "En développement, Corex peut exposer des outils MCP basés sur le registre — list_components, get_component — pour que les assistants récupèrent emplacements et modificateurs au lieu d'inventer le balisage. Cela complète Localize et Gettext pour une rédaction structurée."
+msgid "In development, Corex can expose MCP tools backed by the component registry, list_components, get_component, so assistants pull slots and modifiers instead of inventing markup. It complements Localize and Gettext for structured authoring."
+msgstr "En développement, Corex peut exposer des outils MCP basés sur le registre, list_components, get_component, pour que les assistants récupèrent emplacements et modificateurs au lieu d'inventer le balisage. Cela complète Localize et Gettext pour une rédaction structurée."
 
 #: lib/pages/home/waitlist.ex:66
 #, elixir-autogen, elixir-format
@@ -464,13 +464,13 @@ msgstr "Chaîne palette vers Tailwind v4"
 
 #: lib/pages/home/pricing.ex:108
 #, elixir-autogen, elixir-format
-msgid "Placeholder for sales-led or enterprise deals—edit numbers and bullets for your motion."
-msgstr "Emplacement pour offres commerciales ou entreprise — adaptez chiffres et puces à votre démarche."
+msgid "Placeholder for sales-led or enterprise deals, edit numbers and bullets for your motion."
+msgstr "Emplacement pour offres commerciales ou entreprise, adaptez chiffres et puces à votre démarche."
 
 #: lib/pages/home/pricing.ex:85
 #, elixir-autogen, elixir-format
-msgid "Placeholder tier—rename, reprice, and point the button at your checkout or waitlist."
-msgstr "Palier exemple — renommez, fixez le prix et dirigez le bouton vers votre paiement ou liste d'attente."
+msgid "Placeholder tier, rename, reprice, and point the button at your checkout or waitlist."
+msgstr "Palier exemple, renommez, fixez le prix et dirigez le bouton vers votre paiement ou liste d'attente."
 
 #: lib/pages/home/pricing.ex:203
 #, elixir-autogen, elixir-format
@@ -514,8 +514,8 @@ msgstr "SoonexI18n"
 
 #: lib/pages/home/pricing.ex:26
 #, elixir-autogen, elixir-format
-msgid "SoonexI18n is MIT-licensed and will remain free to use and fork. Corex is free. Most products still need a pricing section—below is sample copy, tiers, and a billing toggle you replace with your own plans and checkout."
-msgstr "SoonexI18n est sous licence MIT et restera libre d'utilisation et à forker. Corex est gratuit. La plupart des produits ont besoin d'une section tarifs — ci-dessous un exemple de texte, de paliers et d'un interrupteur de facturation à remplacer par vos offres et paiement."
+msgid "SoonexI18n is MIT-licensed and will remain free to use and fork. Corex is free. Most products still need a pricing section, below is sample copy, tiers, and a billing toggle you replace with your own plans and checkout."
+msgstr "SoonexI18n est sous licence MIT et restera libre d'utilisation et à forker. Corex est gratuit. La plupart des produits ont besoin d'une section tarifs, ci-dessous un exemple de texte, de paliers et d'un interrupteur de facturation à remplacer par vos offres et paiement."
 
 #: lib/pages/home/pricing.ex:23
 #, elixir-autogen, elixir-format
@@ -646,7 +646,7 @@ msgstr ""
 #: lib/pages/home/faq.ex:38
 #, elixir-autogen, elixir-format, fuzzy
 msgid "A Tableau-driven coming-soon site that demonstrates Corex on static HTML: countdown, highlights, metrics, pricing, FAQ, waitlist, Markdown journal post, and footer. Tableau emits files you can host on GitHub Pages, S3, or any CDN."
-msgstr "Un site « coming soon » piloté par Tableau qui illustre Corex en HTML statique : compte à rebours, points forts, métriques, tarifs, FAQ, liste d'attente, article de journal Markdown et pied de page — généré avec mix tableau.build et déployable en fichiers simples."
+msgstr "Un site « coming soon » piloté par Tableau qui illustre Corex en HTML statique : compte à rebours, points forts, métriques, tarifs, FAQ, liste d'attente, article de journal Markdown et pied de page, généré avec mix tableau.build et déployable en fichiers simples."
 
 #: lib/pages/home/pricing.ex:68
 #, elixir-autogen, elixir-format
@@ -656,7 +656,7 @@ msgstr ""
 #: lib/pages/home/highlights.ex:54
 #, elixir-autogen, elixir-format, fuzzy
 msgid "Author in HEEx and Markdown under Tableau. Output is plain HTML, CSS, and ESM. Host on GitHub Pages, S3, or any CDN without a Node runtime on the edge."
-msgstr "Rédigez en HEEx et Markdown sous Tableau. La sortie est du HTML, CSS et ESM — hébergez sur GitHub Pages, S3 ou tout CDN sans runtime Node en périphérie."
+msgstr "Rédigez en HEEx et Markdown sous Tableau. La sortie est du HTML, CSS et ESM, hébergez sur GitHub Pages, S3 ou tout CDN sans runtime Node en périphérie."
 
 #: lib/pages/home/highlights.ex:59
 #, elixir-autogen, elixir-format, fuzzy
@@ -671,12 +671,12 @@ msgstr ""
 #: lib/pages/home/faq.ex:20
 #, elixir-autogen, elixir-format, fuzzy
 msgid "How static Tableau, Corex MCP, Markdown posts, and the asset side of this repo fit together, and how it relates to a future Phoenix SoonexI18n application template."
-msgstr "Comment Tableau statique, le pipeline d'assets Mix, Corex MCP et les articles Markdown s'articulent — et comment ce dépôt se rapporte à un futur modèle d'application Phoenix SoonexI18n."
+msgstr "Comment Tableau statique, le pipeline d'assets Mix, Corex MCP et les articles Markdown s'articulent, et comment ce dépôt se rapporte à un futur modèle d'application Phoenix SoonexI18n."
 
 #: lib/pages/home/highlights.ex:61
 #, elixir-autogen, elixir-format, fuzzy
 msgid "Palette JSON feeds Designex and Corex component CSS. Tailwind v4 reads the same tokens so utilities and components stay aligned without hand-synced spreadsheets."
-msgstr "Le JSON de palette alimente Designex et le CSS des composants Corex. Tailwind v4 lit les mêmes jetons pour aligner utilitaires et composants — pas de tableurs synchronisés à la main."
+msgstr "Le JSON de palette alimente Designex et le CSS des composants Corex. Tailwind v4 lit les mêmes jetons pour aligner utilitaires et composants, pas de tableurs synchronisés à la main."
 
 #: lib/pages/home/highlights.ex:35
 #, elixir-autogen, elixir-format
@@ -701,7 +701,7 @@ msgstr ""
 #: lib/pages/home/pricing.ex:63
 #, elixir-autogen, elixir-format, fuzzy
 msgid "The template itself: fork, run setup, then ship with Tableau or Phoenix. No charge, no upsell."
-msgstr "Le modèle lui-même : forkez, lancez mix setup, déployez Tableau ou Phoenix — sans frais ni survente."
+msgstr "Le modèle lui-même : forkez, lancez mix setup, déployez Tableau ou Phoenix, sans frais ni survente."
 
 #: lib/pages/home/hero.ex:13
 #, elixir-autogen, elixir-format
@@ -715,15 +715,15 @@ msgstr "Parcours clavier, gestion du focus et motifs ARIA via des machines d'ét
 
 #: lib/pages/home/scale.ex:51
 #, elixir-autogen, elixir-format
-msgid "MIT licensed—fork, ship, and extend without a license fee."
-msgstr "Sous licence MIT — bifurquez, déployez et étendez sans redevance."
+msgid "MIT licensed, fork, ship, and extend without a license fee."
+msgstr "Sous licence MIT, bifurquez, déployez et étendez sans redevance."
 
 #: lib/pages/home/scale.ex:40
 #, elixir-autogen, elixir-format
-msgid "Phoenix bindings such as phx-click in HEEx—client-side wiring from your templates—alongside JavaScript and TypeScript Corex hooks."
-msgstr "Phoenix bindings comme phx-click dans HEEx — côté client, déclarés dans les templates — avec les hooks Corex en JavaScript et TypeScript."
+msgid "Phoenix bindings such as phx-click in HEEx, client-side wiring from your templates, alongside JavaScript and TypeScript Corex hooks."
+msgstr "Phoenix bindings comme phx-click dans HEEx, côté client, déclarés dans les templates, avec les hooks Corex en JavaScript et TypeScript."
 
 #: lib/pages/home/scale.ex:29
 #, elixir-autogen, elixir-format
-msgid "Same Corex pieces in Phoenix controllers and HEEx—or static HEEx builds with Tableau."
-msgstr "Les mêmes briques Corex dans les contrôleurs Phoenix et HEEx — ou des builds HEEx statiques avec Tableau."
+msgid "Same Corex pieces in Phoenix controllers and HEEx, or static HEEx builds with Tableau."
+msgstr "Les mêmes briques Corex dans les contrôleurs Phoenix et HEEx, ou des builds HEEx statiques avec Tableau."

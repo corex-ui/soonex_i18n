@@ -54,7 +54,7 @@ defmodule SoonexI18n.HomePage.Faq do
                   trigger: gettext("What about Corex MCP?"),
                   content:
                     gettext(
-                      "In development, Corex can expose MCP tools backed by the component registry—list_components, get_component—so assistants pull slots and modifiers instead of inventing markup. It complements Localize and Gettext for structured authoring."
+                      "In development, Corex can expose MCP tools backed by the component registry, list_components, get_component, so assistants pull slots and modifiers instead of inventing markup. It complements Localize and Gettext for structured authoring."
                     ),
                   meta: %{icon: "hero-bolt"}
                 },
@@ -72,7 +72,7 @@ defmodule SoonexI18n.HomePage.Faq do
                   trigger: gettext("What comes after this static template?"),
                   content:
                     gettext(
-                      "A fuller Phoenix SoonexI18n application template is planned on top of the same Corex primitives—auth, data, and realtime—without throwing away this landing. Stay on the waitlist for migration notes."
+                      "A fuller Phoenix SoonexI18n application template is planned on top of the same Corex primitives, auth, data, and realtime, without throwing away this landing. Stay on the waitlist for migration notes."
                     ),
                   meta: %{icon: "hero-rocket-launch"}
                 }

@@ -308,7 +308,7 @@ msgstr ""
 
 #: lib/pages/home/faq.ex:74
 #, elixir-autogen, elixir-format
-msgid "A fuller Phoenix SoonexI18n application template is planned on top of the same Corex primitives—auth, data, and realtime—without throwing away this landing. Stay on the waitlist for migration notes."
+msgid "A fuller Phoenix SoonexI18n application template is planned on top of the same Corex primitives, auth, data, and realtime, without throwing away this landing. Stay on the waitlist for migration notes."
 msgstr ""
 
 #: lib/pages/home/scale.ex:38
@@ -358,7 +358,7 @@ msgstr ""
 
 #: lib/pages/home/pricing.ex:33
 #, elixir-autogen, elixir-format
-msgid "Demonstrates Corex Switch wiring for monthly versus yearly display—swap labels and math for your billing rules."
+msgid "Demonstrates Corex Switch wiring for monthly versus yearly display, swap labels and math for your billing rules."
 msgstr ""
 
 #: lib/pages/home/highlights.ex:36
@@ -418,7 +418,7 @@ msgstr ""
 
 #: lib/pages/home/faq.ex:56
 #, elixir-autogen, elixir-format
-msgid "In development, Corex can expose MCP tools backed by the component registry—list_components, get_component—so assistants pull slots and modifiers instead of inventing markup. It complements Localize and Gettext for structured authoring."
+msgid "In development, Corex can expose MCP tools backed by the component registry, list_components, get_component, so assistants pull slots and modifiers instead of inventing markup. It complements Localize and Gettext for structured authoring."
 msgstr ""
 
 #: lib/pages/home/waitlist.ex:66
@@ -463,12 +463,12 @@ msgstr ""
 
 #: lib/pages/home/pricing.ex:108
 #, elixir-autogen, elixir-format
-msgid "Placeholder for sales-led or enterprise deals—edit numbers and bullets for your motion."
+msgid "Placeholder for sales-led or enterprise deals, edit numbers and bullets for your motion."
 msgstr ""
 
 #: lib/pages/home/pricing.ex:85
 #, elixir-autogen, elixir-format
-msgid "Placeholder tier—rename, reprice, and point the button at your checkout or waitlist."
+msgid "Placeholder tier, rename, reprice, and point the button at your checkout or waitlist."
 msgstr ""
 
 #: lib/pages/home/pricing.ex:203
@@ -513,7 +513,7 @@ msgstr ""
 
 #: lib/pages/home/pricing.ex:26
 #, elixir-autogen, elixir-format
-msgid "SoonexI18n is MIT-licensed and will remain free to use and fork. Corex is free. Most products still need a pricing section—below is sample copy, tiers, and a billing toggle you replace with your own plans and checkout."
+msgid "SoonexI18n is MIT-licensed and will remain free to use and fork. Corex is free. Most products still need a pricing section, below is sample copy, tiers, and a billing toggle you replace with your own plans and checkout."
 msgstr ""
 
 #: lib/pages/home/pricing.ex:23
@@ -714,15 +714,15 @@ msgstr ""
 
 #: lib/pages/home/scale.ex:51
 #, elixir-autogen, elixir-format
-msgid "MIT licensed—fork, ship, and extend without a license fee."
+msgid "MIT licensed, fork, ship, and extend without a license fee."
 msgstr ""
 
 #: lib/pages/home/scale.ex:40
 #, elixir-autogen, elixir-format
-msgid "Phoenix bindings such as phx-click in HEEx—client-side wiring from your templates—alongside JavaScript and TypeScript Corex hooks."
+msgid "Phoenix bindings such as phx-click in HEEx, client-side wiring from your templates, alongside JavaScript and TypeScript Corex hooks."
 msgstr ""
 
 #: lib/pages/home/scale.ex:29
 #, elixir-autogen, elixir-format
-msgid "Same Corex pieces in Phoenix controllers and HEEx—or static HEEx builds with Tableau."
+msgid "Same Corex pieces in Phoenix controllers and HEEx, or static HEEx builds with Tableau."
 msgstr ""

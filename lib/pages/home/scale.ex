@@ -27,7 +27,7 @@ defmodule SoonexI18n.HomePage.Scale do
             <span class="home__numbers__label">{gettext("Components")}</span>
             <p class="home__numbers__hint">
               {gettext(
-                "Same Corex pieces in Phoenix controllers and HEEx—or static HEEx builds with Tableau."
+                "Same Corex pieces in Phoenix controllers and HEEx, or static HEEx builds with Tableau."
               )}
             </p>
           </div>
@@ -38,7 +38,7 @@ defmodule SoonexI18n.HomePage.Scale do
             <span class="home__numbers__label">{gettext("API & Events")}</span>
             <p class="home__numbers__hint">
               {gettext(
-                "Phoenix bindings such as phx-click in HEEx—client-side wiring from your templates—alongside JavaScript and TypeScript Corex hooks."
+                "Phoenix bindings such as phx-click in HEEx, client-side wiring from your templates, alongside JavaScript and TypeScript Corex hooks."
               )}
             </p>
           </div>
@@ -48,7 +48,7 @@ defmodule SoonexI18n.HomePage.Scale do
             </span>
             <span class="home__numbers__label">{gettext("Open Source")}</span>
             <p class="home__numbers__hint">
-              {gettext("MIT licensed—fork, ship, and extend without a license fee.")}
+              {gettext("MIT licensed, fork, ship, and extend without a license fee.")}
             </p>
           </div>
           <div class="home__numbers__cell">

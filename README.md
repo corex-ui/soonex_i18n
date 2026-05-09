@@ -1,4 +1,4 @@
-# Soonex — Tableau + Corex coming soon
+# Soonex, Tableau + Corex coming soon
 
 Single-page static site with Corex components, themes, and the same contrast-driven color pipeline as the SaaS template.
 
@@ -11,13 +11,13 @@ Single-page static site with Corex components, themes, and the same contrast-dri
 
 Edit strings and lists directly in the source instead of `Application` config:
 
-- **Brand** — `site_name` and `copyright_holder` literals in [`lib/layouts/root_layout.ex`](lib/layouts/root_layout.ex); page titles for generated home modules in [`lib/pages/home_page.ex`](lib/pages/home_page.ex).
-- **Themes** — allowed theme ids and default in [`lib/soonex/theme.ex`](lib/soonex/theme.ex) (`data-theme` on `<html>` must match CSS imports in `assets/css/site.css`).
-- **Locales** — from Gettext and [`config :localize`](config/config.exs); [`lib/soonex/gettext.ex`](lib/soonex/gettext.ex) (`allowed_locales`) and [`lib/soonex/locale.ex`](lib/soonex/locale.ex) drive URLs and the language switcher.
+- **Brand**, `site_name` and `copyright_holder` literals in [`lib/layouts/root_layout.ex`](lib/layouts/root_layout.ex); page titles for generated home modules in [`lib/pages/home_page.ex`](lib/pages/home_page.ex).
+- **Themes**, allowed theme ids and default in [`lib/soonex/theme.ex`](lib/soonex/theme.ex) (`data-theme` on `<html>` must match CSS imports in `assets/css/site.css`).
+- **Locales**, from Gettext and [`config :localize`](config/config.exs); [`lib/soonex/gettext.ex`](lib/soonex/gettext.ex) (`allowed_locales`) and [`lib/soonex/locale.ex`](lib/soonex/locale.ex) drive URLs and the language switcher.
 
 ## Rename after clone
 
-From the repo root run **`mix project.rename your_otp_app`** (snake_case only). The task is [`lib/mix/tasks/project.rename.ex`](lib/mix/tasks/project.rename.ex): it rewrites modules and `:soonex` keys, renames `lib/soonex/` and `lib/soonex_web/` (and matching `test/` trees when present), Mix aliases, and selected npm metadata. **Commit or branch first**—there is no undo—then **`mix format`** and **`mix compile`**. **`_posts/*.md`:** only the YAML `layout:` line is rewritten so the module prefix matches the new app (e.g. `SoonexI18n.PostLayout` → `Acme.PostLayout`); post body and this **README** are otherwise left alone so org URLs and prose stay intact. See [`_posts/2026-05-08-docs.md`](_posts/2026-05-08-docs.md) for the full narrative.
+From the repo root run **`mix project.rename your_otp_app`** (snake_case only). The task is [`lib/mix/tasks/project.rename.ex`](lib/mix/tasks/project.rename.ex): it rewrites modules and `:soonex` keys, renames `lib/soonex/` and `lib/soonex_web/` (and matching `test/` trees when present), Mix aliases, and selected npm metadata. **Commit or branch first**, there is no undo, then **`mix format`** and **`mix compile`**. **`_posts/*.md`:** only the YAML `layout:` line is rewritten so the module prefix matches the new app (e.g. `SoonexI18n.PostLayout` → `Acme.PostLayout`); post body and this **README** are otherwise left alone so org URLs and prose stay intact. See [`_posts/2026-05-08-docs.md`](_posts/2026-05-08-docs.md) for the full narrative.
 
 ## Document title and meta description
 
