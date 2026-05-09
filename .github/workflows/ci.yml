@@ -32,7 +32,11 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
-      - uses: browser-actions/setup-chrome@5f2f9dae94e061474cbfa44c9901c5faee86f8e9
+      - uses: browser-actions/setup-chrome@v2.1.2
+        with:
+          chrome-version: stable
+          install-dependencies: false
+          install-chromedriver: false
 
       - name: Set up Elixir
         uses: erlef/setup-beam@3580539ceec3dc05b0ed51e9e10b08eb7a7c2bb4
