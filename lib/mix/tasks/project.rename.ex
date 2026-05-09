@@ -119,16 +119,22 @@ defmodule Mix.Tasks.Project.Rename do
     posts_dir = Path.join(root, "_posts")
 
     if File.dir?(posts_dir) do
-      case File.ls(posts_dir) do
-        {:ok, names} ->
-          for name <- names, String.ends_with?(name, ".md") do
-            path = Path.join(posts_dir, name)
-            transform_post_layout_file!(path, from_camel, to_camel)
-          end
+      transform_post_markdown_layouts!(posts_dir, from_camel, to_camel)
+    end
+  end
 
-        {:error, _} ->
-          :ok
-      end
+  defp transform_post_markdown_layouts!(posts_dir, from_camel, to_camel) do
+    case File.ls(posts_dir) do
+      {:ok, names} ->
+        names
+        |> Enum.filter(&String.ends_with?(&1, ".md"))
+        |> Enum.each(fn name ->
+          path = Path.join(posts_dir, name)
+          transform_post_layout_file!(path, from_camel, to_camel)
+        end)
+
+      {:error, _} ->
+        :ok
     end
   end
 
