@@ -44,7 +44,7 @@ defmodule SoonexI18n.Markdown.BlockRenderer do
     ensure_makeup_apps()
 
     Phoenix.LiveViewTest.__render_component__(
-      SoonexI18nI18nWeb.Endpoint,
+      SoonexI18nWeb.Endpoint,
       &fence/1,
       %{code: code, language: language, clipboard_id: clipboard_id},
       []
@@ -55,7 +55,7 @@ defmodule SoonexI18n.Markdown.BlockRenderer do
     ensure_makeup_apps()
 
     Phoenix.LiveViewTest.__render_component__(
-      SoonexI18nI18nWeb.Endpoint,
+      SoonexI18nWeb.Endpoint,
       &inline/1,
       %{code: code, language: language},
       []

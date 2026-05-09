@@ -82,7 +82,7 @@ config :phoenix,
   gettext_backend: SoonexI18n.Gettext,
   json_library: Jason
 
-config :soonex_i18n, SoonexI18nI18nWeb.Endpoint,
+config :soonex_i18n, SoonexI18nWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   pubsub_server: SoonexI18n.PubSub,
