@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Soonex">
+  <rect width="1200" height="630" fill="#f7f7f7"/>
+  <rect x="48" y="48" width="1104" height="534" rx="36" fill="#ebebeb" stroke="#dadada" stroke-width="1"/>
+  <circle cx="160" cy="170" r="18" fill="#484848"/>
+  <text x="200" y="180" fill="#4c4c4c" font-family="system-ui, sans-serif" font-size="22" font-weight="600">Soonex</text>
+  <text x="96" y="340" fill="#4c4c4c" font-family="system-ui, sans-serif" font-size="72" font-weight="800">Static HEEx, shipped by Mix</text>
+  <text x="96" y="418" fill="#6b6b6b" font-family="system-ui, sans-serif" font-size="28">Tableau · Corex · tokens · Tailwind v4 · Markdown</text>
+  <text x="96" y="540" fill="#6b6b6b" font-family="system-ui, sans-serif" font-size="22">soonex.example · join the waitlist</text>
+</svg>

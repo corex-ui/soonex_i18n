@@ -1,0 +1,12 @@
+{
+  "name": "soonex_i18n-template",
+  "private": true,
+  "dependencies": {
+    "lenis": "^1.3.23",
+    "motion": "^12.38.0"
+  },
+  "devDependencies": {
+    "@tokens-studio/sd-transforms": "^2.0.3",
+    "style-dictionary": "^5.4.0"
+  }
+}

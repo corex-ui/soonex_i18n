@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@plugin "../vendor/heroicons";
+@import "../node_modules/lenis/dist/lenis.css";
+
+@import "../corex/main.css";
+@import "../corex/theme/neo.css";
+@import "../corex/theme/uno.css";
+@import "../corex/theme/duo.css";
+@import "../corex/theme/leo.css";
+
+@import "../corex/components/typo.css";
+@import "../corex/components/layout.css";
+@import "../corex/components/icon.css";
+@import "../corex/components/button.css";
+@import "../corex/components/link.css";
+@import "../corex/components/badge.css";
+@import "../corex/components/code.css";
+@import "../corex/components/clipboard.css";
+@import "../corex/components/tooltip.css";
+@import "../corex/components/select.css";
+@import "../corex/components/tabs.css";
+@import "../corex/components/toggle-group.css";
+@import "../corex/components/switch.css";
+@import "../corex/components/native-input.css";
+@import "../corex/components/checkbox.css";
+@import "../corex/components/data-list.css";
+@import "../corex/components/timer.css";
+@import "../corex/components/marquee.css";
+@import "./home-numbers.css";
+@import "../corex/components/accordion.css";
+@import "../corex/components/avatar.css";
+@import "../corex/components/floating-panel.css";
+@import "../corex/components/toast.css";
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
