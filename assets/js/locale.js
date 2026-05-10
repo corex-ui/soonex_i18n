@@ -5,6 +5,29 @@ import { parseList, whenControlReady, firstDetailValue } from "./controls-shared
 
   const validLocales = () => parseList("data-locales")
 
+  const rtlLocales = () => new Set(parseList("data-rtl-locales"))
+
+  const directionForLocale = (loc) =>
+    loc && rtlLocales().has(loc) ? "rtl" : "ltr"
+
+  const resolvedLocale = () => {
+    const pathLoc = localeFromPathname()
+    if (pathLoc) return pathLoc
+    const docLoc = html().getAttribute("data-locale")
+    if (docLoc && validLocales().includes(docLoc)) return docLoc
+    const stored = localStorage.getItem("data-locale")
+    if (stored && validLocales().includes(stored)) return stored
+    return ""
+  }
+
+  const syncDocumentLocale = () => {
+    const loc = resolvedLocale()
+    if (!loc || !validLocales().includes(loc)) return
+    html().setAttribute("lang", loc)
+    html().setAttribute("data-locale", loc)
+    html().setAttribute("dir", directionForLocale(loc))
+  }
+
   const setLocale = (loc) => {
     const allowed = validLocales()
     if (!loc || !allowed.includes(loc)) return
@@ -43,11 +66,17 @@ import { parseList, whenControlReady, firstDetailValue } from "./controls-shared
   const pathLocale = localeFromPathname()
   if (pathLocale) setLocale(pathLocale)
 
-  whenControlReady("corex-language-switch", syncLangFromDocument)
+  syncDocumentLocale()
+
+  whenControlReady("corex-language-switch", () => {
+    syncDocumentLocale()
+    syncLangFromDocument()
+  })
 
   window.addEventListener("storage", (e) => {
     if (e.key === "data-locale" && e.newValue) {
       setLocale(e.newValue)
+      syncDocumentLocale()
     }
   })
 
@@ -56,6 +85,16 @@ import { parseList, whenControlReady, firstDetailValue } from "./controls-shared
     const s = raw != null ? String(raw) : ""
     const seg = s.replace(/^\/+|\/+$/g, "").split("/")[0] || ""
     const allowed = validLocales()
-    if (allowed.includes(seg)) setLocale(seg)
+    if (allowed.includes(seg)) {
+      setLocale(seg)
+      html().setAttribute("lang", seg)
+      html().setAttribute("data-locale", seg)
+      html().setAttribute("dir", directionForLocale(seg))
+    }
+  })
+
+  window.addEventListener("pageshow", () => {
+    syncDocumentLocale()
+    syncLangFromDocument()
   })
 })()

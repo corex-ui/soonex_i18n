@@ -57,6 +57,11 @@ defmodule SoonexI18n.RootLayout do
       SoonexI18nWeb.Endpoint.path("/")
       |> String.trim_trailing("/")
 
+    rtl_locales =
+      Locale.locales()
+      |> Enum.filter(&(Locale.dir(&1) == "rtl"))
+      |> Enum.join(",")
+
     assigns =
       assigns
       |> Map.put(:site_name, site_name)
@@ -73,6 +78,7 @@ defmodule SoonexI18n.RootLayout do
       |> Map.put(:page_path, page_path)
       |> Map.put(:og_image_url, og_image_url)
       |> Map.put(:public_path_prefix, public_path_prefix)
+      |> Map.put(:rtl_locales, rtl_locales)
       |> Map.put(:flash, Map.get(assigns, :flash, %{}))
 
     ~H"""
@@ -86,6 +92,7 @@ defmodule SoonexI18n.RootLayout do
       data-locale={@locale}
       data-themes={Enum.join(SoonexI18n.Theme.themes(), ",")}
       data-locales={Enum.join(Locale.locales(), ",")}
+      data-rtl-locales={@rtl_locales}
       data-default-theme={SoonexI18n.Theme.default_theme()}
       data-locale-selected-path={Locale.selected_path(@page, @locale)}
       data-public-path-prefix={@public_path_prefix}
