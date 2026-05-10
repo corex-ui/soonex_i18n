@@ -103,8 +103,18 @@ defmodule SoonexI18n.RootLayout do
         <link rel="icon" type="image/png" sizes="32x32" href={~p"/images/favicon-32x32.png"} />
         <link rel="icon" type="image/png" sizes="16x16" href={~p"/images/favicon-16x16.png"} />
         <link rel="apple-touch-icon" sizes="180x180" href={~p"/images/apple-touch-icon.png"} />
-        <link rel="icon" type="image/png" sizes="192x192" href={~p"/images/android-chrome-192x192.png"} />
-        <link rel="icon" type="image/png" sizes="512x512" href={~p"/images/android-chrome-512x512.png"} />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href={~p"/images/android-chrome-192x192.png"}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="512x512"
+          href={~p"/images/android-chrome-512x512.png"}
+        />
         <link rel="manifest" href={~p"/site.webmanifest"} />
 
         <title>{@doc_title}</title>

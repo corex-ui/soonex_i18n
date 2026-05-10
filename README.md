@@ -45,7 +45,7 @@ mix designex corex
 cd assets && npm install && cd ..
 ```
 
-`mix setup` runs `deps.get` plus `mix localize.download_locales en ar fr` so the locale ETF cache matches `supported_locales` before the first build.
+`mix setup` runs `deps.get` plus `mix localize.download_locales` (which downloads `config :localize` `:supported_locales`) so the locale ETF cache is populated before the first build.
 
 Development server (defaults to `http://localhost:4999`; default-language home is at **`/`**, with localized copies at **`/en/`** and **`/ar/`** when those locales exist):
 

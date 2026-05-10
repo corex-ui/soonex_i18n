@@ -70,7 +70,7 @@ defmodule SoonexI18n.MixProject do
   defp aliases do
     [
       compile: ["compile"],
-      setup: ["deps.get", "localize.download_locales en ar fr"],
+      setup: ["deps.get", "localize.download_locales"],
       "pre.test": [
         "soonex_i18n.palette",
         "designex corex",

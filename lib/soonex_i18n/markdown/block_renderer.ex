@@ -1,6 +1,8 @@
 defmodule SoonexI18n.Markdown.BlockRenderer do
   @moduledoc false
 
+  use Phoenix.Component
+  use Corex
   use Gettext, backend: SoonexI18n.Gettext
 
   alias Phoenix.HTML
@@ -8,18 +10,39 @@ defmodule SoonexI18n.Markdown.BlockRenderer do
   def render_fence_html(code, language, clipboard_id) do
     ensure_makeup_apps()
     highlighted = highlight_to_string(code, language)
-    label = gettext("Copy code") |> html_body()
-    tid = "#{clipboard_id}-src"
-    tid_attr = tid |> HTML.html_escape() |> HTML.safe_to_string()
-    textarea_body = code |> HTML.html_escape() |> HTML.safe_to_string()
 
-    ~s"""
+    assigns =
+      %{__changed__: %{}}
+      |> assign(:clipboard_id, clipboard_id)
+      |> assign(:raw_code, code)
+      |> assign(:highlighted, HTML.raw(highlighted))
+      |> assign(:aria_label, gettext("Copy code"))
+
+    fence_block(assigns)
+    |> HTML.html_escape()
+    |> HTML.safe_to_string()
+  end
+
+  defp fence_block(assigns) do
+    ~H"""
     <div class="relative">
       <pre class="code max-w-none" data-scope="code" data-part="root" tabindex="0">
-        <code data-scope="code" data-part="content">#{highlighted}</code>
+        <code data-scope="code" data-part="content">{@highlighted}</code>
       </pre>
-      <textarea id="#{tid_attr}" readonly tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">#{textarea_body}</textarea>
-      <button type="button" class="clipboard clipboard--sm absolute top-2 right-2 z-10" aria-label="#{html_attr(label)}" onclick="(function(){var t=document.getElementById('#{tid_attr}');if(t){t.select();void navigator.clipboard.writeText(t.value);}})()">#{label}</button>
+      <.clipboard
+        id={@clipboard_id}
+        value={@raw_code}
+        class={["clipboard", "clipboard--sm", "absolute", "top-2", "right-2", "z-10"]}
+        input={false}
+        trigger_aria_label={@aria_label}
+      >
+        <:copy>
+          <.heroicon name="hero-clipboard" />
+        </:copy>
+        <:copied>
+          <.heroicon name="hero-check" />
+        </:copied>
+      </.clipboard>
     </div>
     """
   end
@@ -46,10 +69,6 @@ defmodule SoonexI18n.Markdown.BlockRenderer do
         code |> HTML.html_escape() |> HTML.safe_to_string()
     end
   end
-
-  defp html_body(s), do: s |> HTML.html_escape() |> HTML.safe_to_string()
-
-  defp html_attr(s), do: s |> HTML.html_escape() |> HTML.safe_to_string()
 
   defp ensure_makeup_apps do
     Enum.each(

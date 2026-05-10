@@ -37,13 +37,13 @@ function applyTierPricing(section, yearly) {
 }
 
 export function initPricing() {
-  const section = document.querySelector("[data-soonex-pricing]")
-  const switchRoot = document.getElementById("soonex-pricing-yearly")
+  const section = document.querySelector("[data-soonex_i18n-pricing]")
+  const switchRoot = document.getElementById("soonex_i18n-pricing-yearly")
   if (!(section instanceof HTMLElement) || !(switchRoot instanceof HTMLElement)) return
 
   applyTierPricing(section, false)
 
-  switchRoot.addEventListener("soonex-pricing-billing", (event) => {
+  switchRoot.addEventListener("soonex_i18n-pricing-billing", (event) => {
     const checked =
       event.detail && typeof event.detail.checked === "boolean"
         ? event.detail.checked

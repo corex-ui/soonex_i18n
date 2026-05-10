@@ -57,6 +57,9 @@ defmodule Mix.Tasks.Project.Rename do
     rename_dir(paths.test_web_from, paths.test_web_to)
     rename_mix_task_files(root, from_otp_str, to_otp_str)
 
+    Mix.shell().info("Downloading Localize locale data for configured supported_locales...")
+    Mix.Task.run("localize.download_locales")
+
     Mix.shell().info("Done. Run mix format && mix compile.")
   end
 

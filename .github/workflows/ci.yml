@@ -58,6 +58,9 @@ jobs:
       - name: Install Mix dependencies
         run: mix deps.get
 
+      - name: Download Localize locale data
+        run: mix localize.download_locales
+
       - name: Set up Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:

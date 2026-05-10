@@ -20,7 +20,8 @@ port =
     if scheme == "https", do: 443, else: 80
   end
 
-config :soonex_i18n, SoonexI18nWeb.Endpoint, url: [scheme: scheme, host: host, port: port, path: path]
+config :soonex_i18n, SoonexI18nWeb.Endpoint,
+  url: [scheme: scheme, host: host, port: port, path: path]
 
 config :tableau, :config, url: site_url
 config :tableau, Tableau.PostExtension, future: false, dir: ["_posts"]
