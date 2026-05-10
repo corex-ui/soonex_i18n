@@ -38,7 +38,7 @@ defmodule SoonexI18n.MixProject do
        app: false,
        compile: false,
        depth: 1},
-      {:corex, "~> 0.1.0-beta.3"},
+      {:corex, "~> 0.1.0-beta.4"},
       {:gettext, "~> 1.0"},
       {:localize_web, "~> 0.5.1"},
       {:color, "~> 0.11"},
