@@ -16,7 +16,7 @@ defmodule Mix.Tasks.Tableau.Build do
     Application.ensure_all_started(:telemetry)
     {:ok, config} = Tableau.Config.get()
     token = %{site: %{config: config}, graph: Graph.new()}
-    Mix.Task.run("app.start", ["--preload-modules"])
+    Mix.Task.run("app.start", [])
 
     {opts, _argv} = OptionParser.parse!(argv, strict: [out: :string])
 
