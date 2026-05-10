@@ -22,11 +22,7 @@ defmodule Mix.Tasks.Tableau.Build do
 
     out = opts[:out] || config.out_dir
 
-    mods =
-      :code.all_available()
-      |> Task.async_stream(fn {mod, _, _} -> Module.concat([to_string(mod)]) end, @async_opts)
-      |> Stream.map(fn {:ok, mod} -> mod end)
-      |> Enum.to_list()
+    mods = discover_site_modules()
 
     {:ok, config} = Tableau.Config.get()
     token = Map.put(token, :extensions, %{})
@@ -87,6 +83,19 @@ defmodule Mix.Tasks.Tableau.Build do
     token = mods |> extensions_for(:post_write) |> run_extensions(:post_write, token)
 
     token
+  end
+
+  @site_apps [:soonex_i18n, :tableau, :localize_web, :corex]
+
+  defp discover_site_modules do
+    @site_apps
+    |> Enum.flat_map(fn app ->
+      case :application.get_key(app, :modules) do
+        {:ok, mods} -> mods
+        _ -> []
+      end
+    end)
+    |> Enum.uniq()
   end
 
   @file_extensions [".html"]
