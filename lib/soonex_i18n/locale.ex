@@ -37,10 +37,17 @@ defmodule SoonexI18n.Locale do
   def dir(locale) do
     loc = lang(locale)
 
-    case Localize.Locale.get(loc, [:layout, :character_order], fallback: true) do
-      {:ok, :rtl} -> "rtl"
-      {:ok, :ltr} -> "ltr"
-      _ -> if loc == "ar", do: "rtl", else: "ltr"
+    with {:ok, tag} <- Localize.LanguageTag.new(loc),
+         {:ok, expanded} <- Localize.LanguageTag.add_likely_subtags(tag),
+         id <- Localize.LanguageTag.to_string(expanded),
+         {:ok, order} <-
+           Localize.Locale.get(id, [:layout, :character_order], fallback: true) do
+      case order do
+        :rtl -> "rtl"
+        _ -> "ltr"
+      end
+    else
+      _ -> "ltr"
     end
   end
 
