@@ -73,40 +73,4 @@ jobs:
         env:
           WALLABY_CHROME_BINARY: ${{ steps.setup-chrome.outputs.chrome-path }}
           WALLABY_CHROMEDRIVER_PATH: ${{ steps.setup-chrome.outputs.chromedriver-path }}
-        run: |
-          set -e
-          echo "::group::compile"
-          date -u +%FT%TZ
-          mix compile
-          date -u +%FT%TZ
-          echo "::endgroup::"
-          echo "::group::palette"
-          date -u +%FT%TZ
-          mix soonex_i18n.palette
-          date -u +%FT%TZ
-          echo "::endgroup::"
-          echo "::group::designex"
-          date -u +%FT%TZ
-          mix designex corex
-          date -u +%FT%TZ
-          echo "::endgroup::"
-          echo "::group::esbuild"
-          date -u +%FT%TZ
-          mix esbuild default
-          date -u +%FT%TZ
-          echo "::endgroup::"
-          echo "::group::tailwind"
-          date -u +%FT%TZ
-          mix tailwind default
-          date -u +%FT%TZ
-          echo "::endgroup::"
-          echo "::group::soonex_i18n.tableau_build"
-          date -u +%FT%TZ
-          timeout --signal=SIGINT 900 mix soonex_i18n.tableau_build
-          date -u +%FT%TZ
-          echo "::endgroup::"
-          echo "::group::test"
-          date -u +%FT%TZ
-          mix test --timeout 600000
-          date -u +%FT%TZ
-          echo "::endgroup::"
+        run: mix test --timeout 600000

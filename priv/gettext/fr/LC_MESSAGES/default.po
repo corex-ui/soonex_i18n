@@ -646,7 +646,7 @@ msgstr ""
 #: lib/pages/home/faq.ex:38
 #, elixir-autogen, elixir-format, fuzzy
 msgid "A Tableau-driven coming-soon site that demonstrates Corex on static HTML: countdown, highlights, metrics, pricing, FAQ, waitlist, Markdown journal post, and footer. Tableau emits files you can host on GitHub Pages, S3, or any CDN."
-msgstr "Un site « coming soon » piloté par Tableau qui illustre Corex en HTML statique : compte à rebours, points forts, métriques, tarifs, FAQ, liste d'attente, article de journal Markdown et pied de page, généré avec mix soonex_i18n.tableau_build et déployable en fichiers simples."
+msgstr "Un site « coming soon » piloté par Tableau qui illustre Corex en HTML statique : compte à rebours, points forts, métriques, tarifs, FAQ, liste d'attente, article de journal Markdown et pied de page, généré avec mix tableau.build et déployable en fichiers simples."
 
 #: lib/pages/home/pricing.ex:68
 #, elixir-autogen, elixir-format
