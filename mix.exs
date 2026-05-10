@@ -52,7 +52,7 @@ defmodule SoonexI18n.MixProject do
       {:makeup_js, "~> 0.1"},
       {:rustler_precompiled, "~> 0.9", override: true},
       {:makeup_syntect, "~> 0.1.4"},
-      {:wallaby, "~> 0.30", only: :test},
+      {:wallaby, "~> 0.30", only: :test, runtime: false},
       {:a11y_audit, "~> 0.3.1", only: :test},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:ex_slop, "~> 0.1", only: [:dev, :test], runtime: false}
