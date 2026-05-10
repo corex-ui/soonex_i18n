@@ -4,7 +4,7 @@ config :logger, level: :warning
 
 config :soonex_i18n, :mcp_enabled, false
 
-config :tableau, :server, true
+config :tableau, :server, false
 
 config :wallaby,
   otp_app: :soonex_i18n,

@@ -32,9 +32,6 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
-      - name: Install inotify-tools
-        run: sudo apt-get update && sudo apt-get install -y inotify-tools
-
       - uses: browser-actions/setup-chrome@v2.1.2
         with:
           chrome-version: stable
