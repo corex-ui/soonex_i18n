@@ -74,7 +74,7 @@ defmodule Mix.Tasks.SoonexI18n.TableauBuild do
     token
   end
 
-  @site_apps [:soonex_i18n, :tableau, :localize_web, :corex]
+  @site_apps [:soonex_i18n, :tableau]
 
   defp discover_site_modules do
     @site_apps
