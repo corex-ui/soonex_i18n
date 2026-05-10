@@ -76,7 +76,7 @@ defmodule SoonexI18n.MixProject do
         "designex corex",
         "esbuild default",
         "tailwind default",
-        "tableau.build"
+        "soonex_i18n.tableau_build"
       ],
       test: ["pre.test", "test"],
       "assets.build": [
@@ -89,7 +89,7 @@ defmodule SoonexI18n.MixProject do
         "compile",
         "soonex_i18n.palette",
         "designex corex",
-        "tableau.build",
+        "soonex_i18n.tableau_build",
         "tailwind default --minify",
         "esbuild default --minify"
       ]

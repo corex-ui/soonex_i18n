@@ -646,7 +646,7 @@ msgstr ""
 #: lib/pages/home/faq.ex:38
 #, elixir-autogen, elixir-format, fuzzy
 msgid "A Tableau-driven coming-soon site that demonstrates Corex on static HTML: countdown, highlights, metrics, pricing, FAQ, waitlist, Markdown journal post, and footer. Tableau emits files you can host on GitHub Pages, S3, or any CDN."
-msgstr "موقع SoonexI18n يعمل بـ Tableau ويعرض Corex على HTML ثابت: عدّ تنازلي وإبراز ومقاييس وأسئلة شائعة وقائمة انتظار ومقال Markdown وتذييل, يُبنى بـ mix tableau.build ويُنشر كملفات عادية."
+msgstr "موقع SoonexI18n يعمل بـ Tableau ويعرض Corex على HTML ثابت: عدّ تنازلي وإبراز ومقاييس وأسئلة شائعة وقائمة انتظار ومقال Markdown وتذييل, يُبنى بـ mix soonex_i18n.tableau_build ويُنشر كملفات عادية."
 
 #: lib/pages/home/pricing.ex:68
 #, elixir-autogen, elixir-format

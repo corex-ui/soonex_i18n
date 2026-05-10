@@ -1,4 +1,4 @@
-defmodule Mix.Tasks.Tableau.Build do
+defmodule Mix.Tasks.SoonexI18n.TableauBuild do
   @moduledoc false
 
   use Mix.Task
@@ -7,7 +7,7 @@ defmodule Mix.Tasks.Tableau.Build do
 
   require Logger
 
-  @shortdoc "Builds the site"
+  @shortdoc "Builds the SoonexI18n static site (Tableau)"
 
   @async_opts [timeout: :infinity]
 
