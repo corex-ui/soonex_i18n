@@ -1,10 +1,16 @@
 defmodule Mix.Tasks.SoonexI18n.TableauBuild do
-  @shortdoc "Builds the Tableau site, lifting the upstream 5s page-render timeout"
+  @shortdoc "Builds the Tableau site with timeout: :infinity and visible progress"
 
   @moduledoc """
-  Same pipeline as `mix tableau.build`, but the page-render `Task.async_stream`
-  uses `timeout: :infinity` so a slow page on a cold CI runner does not crash
-  the build with `Task.Supervised.stream(5000)`.
+  Same pipeline as `mix tableau.build`, with three differences:
+
+  * `Task.async_stream` for module discovery and page render uses
+    `timeout: :infinity` (upstream defaults to 5 seconds, which is fragile on
+    cold CI runners that lazy-load Rust NIFs in MDEx and makeup_syntect).
+  * Module discovery is restricted to `:soonex_i18n` and `:tableau`. We do not
+    need extension hooks from every loaded module to ship the site.
+  * The task prints `[soonex_i18n.tableau_build] <step> <ms>` at every phase so
+    a hung CI run shows exactly which phase stalled.
   """
 
   use Mix.Task
@@ -13,31 +19,38 @@ defmodule Mix.Tasks.SoonexI18n.TableauBuild do
 
   require Logger
 
+  @site_apps [:soonex_i18n, :tableau]
+
   @impl Mix.Task
   def run(argv) do
+    log("starting")
     Application.ensure_all_started(:telemetry)
+    log("telemetry started")
+
     {:ok, config} = Tableau.Config.get()
     token = %{site: %{config: config}, graph: Graph.new()}
-    Mix.Task.run("app.start", ["--preload-modules"])
+    log("config loaded out=#{inspect(config.out_dir)}")
+
+    Mix.Task.run("app.start", [])
+    log("app.start done")
 
     {opts, _argv} = OptionParser.parse!(argv, strict: [out: :string])
-
     out = opts[:out] || config.out_dir
 
-    mods =
-      :code.all_available()
-      |> Task.async_stream(fn {mod, _, _} -> Module.concat([to_string(mod)]) end,
-        timeout: :infinity
-      )
-      |> Stream.map(fn {:ok, mod} -> mod end)
-      |> Enum.to_list()
+    mods = discover_site_modules()
+    log("site modules discovered count=#{length(mods)}")
 
     {:ok, config} = Tableau.Config.get()
     token = Map.put(token, :extensions, %{})
 
     token = mods |> extensions_for(:pre_build) |> run_extensions(:pre_build, token)
+    log("pre_build extensions complete")
+
     token = mods |> extensions_for(:pre_render) |> run_extensions(:pre_render, token)
+    log("pre_render extensions complete")
+
     graph = Tableau.Graph.insert(token.graph, mods)
+    log("graph built")
 
     File.mkdir_p!(out)
 
@@ -47,32 +60,35 @@ defmodule Mix.Tasks.SoonexI18n.TableauBuild do
       end
 
     token = put_in(token.site[:pages], Enum.map(pages, fn {_mod, page} -> page end))
+    log("rendering pages count=#{length(pages)}")
+
+    total = length(pages)
 
     pages =
       pages
-      |> Task.async_stream(
-        fn {mod, page} ->
-          try do
-            content = Tableau.Document.render(graph, mod, token, page)
-            permalink = Nodable.permalink(mod)
-            Map.merge(page, %{body: content, permalink: permalink})
-          rescue
-            exception ->
-              reraise TableauDevServer.BuildException,
-                      [page: page, exception: exception],
-                      __STACKTRACE__
-          end
-        end,
-        timeout: :infinity
-      )
-      |> Stream.map(fn
-        {:ok, result} -> result
-        {:exit, {exception, stacktrace}} -> reraise exception, stacktrace
+      |> Enum.with_index(1)
+      |> Enum.map(fn {{mod, page}, idx} ->
+        {us, result} =
+          :timer.tc(fn ->
+            try do
+              content = Tableau.Document.render(graph, mod, token, page)
+              permalink = Nodable.permalink(mod)
+              Map.merge(page, %{body: content, permalink: permalink})
+            rescue
+              exception ->
+                reraise TableauDevServer.BuildException,
+                        [page: page, exception: exception],
+                        __STACKTRACE__
+            end
+          end)
+
+        log("rendered #{idx}/#{total} #{describe_page(mod, page)} in #{div(us, 1000)} ms")
+        result
       end)
-      |> Enum.to_list()
 
     token = put_in(token.site[:pages], pages)
     token = mods |> extensions_for(:pre_write) |> run_extensions(:pre_write, token)
+    log("pre_write extensions complete")
 
     for %{body: body, permalink: permalink} <- token.site[:pages] do
       file_path = build_file_path(out, permalink)
@@ -80,11 +96,38 @@ defmodule Mix.Tasks.SoonexI18n.TableauBuild do
       File.write!(file_path, body)
     end
 
+    log("pages written")
+
     if File.exists?(config.include_dir) do
       File.cp_r!(config.include_dir, out)
     end
 
-    mods |> extensions_for(:post_write) |> run_extensions(:post_write, token)
+    token = mods |> extensions_for(:post_write) |> run_extensions(:post_write, token)
+    log("done")
+    token
+  end
+
+  defp log(msg) do
+    IO.puts(:stderr, "[soonex_i18n.tableau_build] " <> msg)
+  end
+
+  defp describe_page(mod, page) do
+    case page do
+      %{permalink: permalink, file: file} -> "#{permalink} (#{file})"
+      %{permalink: permalink} -> to_string(permalink)
+      _ -> inspect(mod)
+    end
+  end
+
+  defp discover_site_modules do
+    @site_apps
+    |> Enum.flat_map(fn app ->
+      case :application.get_key(app, :modules) do
+        {:ok, mods} -> mods
+        _ -> []
+      end
+    end)
+    |> Enum.uniq()
   end
 
   @file_extensions [".html"]
@@ -120,7 +163,9 @@ defmodule Mix.Tasks.SoonexI18n.TableauBuild do
           token = put_in(token.extensions[key], %{config: config})
 
           case apply(module, type, [token]) do
-            {:ok, token} -> token
+            {:ok, token} ->
+              token
+
             :error ->
               Logger.error("#{inspect(module)} failed to run")
               token
