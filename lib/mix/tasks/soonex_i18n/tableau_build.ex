@@ -68,21 +68,14 @@ defmodule Mix.Tasks.SoonexI18n.TableauBuild do
       pages
       |> Enum.with_index(1)
       |> Enum.map(fn {{mod, page}, idx} ->
+        log("rendering #{idx}/#{total} #{describe_page(mod, page)}")
+
         {us, result} =
           :timer.tc(fn ->
-            try do
-              content = Tableau.Document.render(graph, mod, token, page)
-              permalink = Nodable.permalink(mod)
-              Map.merge(page, %{body: content, permalink: permalink})
-            rescue
-              exception ->
-                reraise TableauDevServer.BuildException,
-                        [page: page, exception: exception],
-                        __STACKTRACE__
-            end
+            render_page_with_timeout(graph, mod, token, page, idx, total)
           end)
 
-        log("rendered #{idx}/#{total} #{describe_page(mod, page)} in #{div(us, 1000)} ms")
+        log("rendered  #{idx}/#{total} #{describe_page(mod, page)} in #{div(us, 1000)} ms")
         result
       end)
 
@@ -105,6 +98,51 @@ defmodule Mix.Tasks.SoonexI18n.TableauBuild do
     token = mods |> extensions_for(:post_write) |> run_extensions(:post_write, token)
     log("done")
     token
+  end
+
+  @page_render_timeout_ms 90_000
+
+  defp render_page_with_timeout(graph, mod, token, page, idx, total) do
+    task =
+      Task.async(fn ->
+        try do
+          content = Tableau.Document.render(graph, mod, token, page)
+          permalink = Nodable.permalink(mod)
+          {:ok, Map.merge(page, %{body: content, permalink: permalink})}
+        rescue
+          exception ->
+            {:raise, TableauDevServer.BuildException,
+             [page: page, exception: exception], __STACKTRACE__}
+        end
+      end)
+
+    case Task.yield(task, @page_render_timeout_ms) do
+      {:ok, {:ok, result}} ->
+        result
+
+      {:ok, {:raise, mod_to_raise, args, stacktrace}} ->
+        reraise mod_to_raise, args, stacktrace
+
+      {:exit, reason} ->
+        raise "page render exited reason=#{inspect(reason)} page=#{describe_page(mod, page)}"
+
+      nil ->
+        info =
+          Process.info(task.pid, [
+            :current_stacktrace,
+            :status,
+            :message_queue_len,
+            :reductions
+          ])
+
+        Task.shutdown(task, :brutal_kill)
+
+        raise """
+        page render timed out after #{@page_render_timeout_ms} ms.
+        page #{idx}/#{total}: #{describe_page(mod, page)}
+        process info: #{inspect(info, pretty: true, limit: :infinity, printable_limit: :infinity)}
+        """
+    end
   end
 
   defp log(msg) do
