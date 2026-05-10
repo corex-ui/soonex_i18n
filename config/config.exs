@@ -93,6 +93,7 @@ config :soonex_i18n, SoonexI18nWeb.Endpoint,
     "soonex_dev_secret_key_base_minimum_sixty_four_chars_long_placeholder_do_not_use_prod"
 
 config :localize,
+  default_locale: "en",
   supported_locales: ~w(en ar fr)
 
 import_config "#{Mix.env()}.exs"
