@@ -83,7 +83,7 @@ Client preferences use [`assets/js/theme.js`](assets/js/theme.js), [`assets/js/m
 MIX_ENV=prod mix build
 ```
 
-Outputs to `_site/`. Set your canonical URL in `config/prod.exs` (`config :tableau, :config, url: "https://your.domain"`).
+Outputs to `_site/`. In production, Tableau’s site URL comes from **`SOONEX_PUBLIC_URL`** when set (for example in GitHub Actions or GitHub **repository variables**); otherwise it defaults to the published demo at **`https://corex-ui.github.io/soonex_i18n`**. Override in `config/prod.exs` or the environment when you deploy your own domain.
 
 After permalink or routing changes, remove stale directories under `_site/` (for example `rm -rf _site`) before rebuilding so old paths do not linger on disk.
 
