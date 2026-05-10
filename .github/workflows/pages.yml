@@ -34,7 +34,7 @@ jobs:
           MIX_ENV: dev
 
       - name: Static site
-        run: mix soonex_i18n.tableau_build
+        run: mix tableau.build
         env:
           MIX_ENV: prod
           SOONEX_PUBLIC_URL: ${{ vars.SOONEX_PUBLIC_URL }}
