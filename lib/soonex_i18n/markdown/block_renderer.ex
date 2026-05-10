@@ -3,13 +3,15 @@ defmodule SoonexI18n.Markdown.BlockRenderer do
 
   use Gettext, backend: SoonexI18n.Gettext
 
+  alias Phoenix.HTML
+
   def render_fence_html(code, language, clipboard_id) do
     ensure_makeup_apps()
     highlighted = highlight_to_string(code, language)
     label = gettext("Copy code") |> html_body()
     tid = "#{clipboard_id}-src"
-    tid_attr = Phoenix.HTML.html_escape(tid) |> Phoenix.HTML.safe_to_string()
-    textarea_body = code |> Phoenix.HTML.html_escape() |> Phoenix.HTML.safe_to_string()
+    tid_attr = tid |> HTML.html_escape() |> HTML.safe_to_string()
+    textarea_body = code |> HTML.html_escape() |> HTML.safe_to_string()
 
     ~s"""
     <div class="relative">
@@ -41,13 +43,13 @@ defmodule SoonexI18n.Markdown.BlockRenderer do
         makeup.highlight_inner_html(code, lexer: name)
 
       :error ->
-        code |> Phoenix.HTML.html_escape() |> Phoenix.HTML.safe_to_string()
+        code |> HTML.html_escape() |> HTML.safe_to_string()
     end
   end
 
-  defp html_body(s), do: s |> Phoenix.HTML.html_escape() |> Phoenix.HTML.safe_to_string()
+  defp html_body(s), do: s |> HTML.html_escape() |> HTML.safe_to_string()
 
-  defp html_attr(s), do: s |> Phoenix.HTML.html_escape() |> Phoenix.HTML.safe_to_string()
+  defp html_attr(s), do: s |> HTML.html_escape() |> HTML.safe_to_string()
 
   defp ensure_makeup_apps do
     Enum.each(
