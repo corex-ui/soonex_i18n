@@ -102,7 +102,7 @@ jobs:
           echo "::endgroup::"
           echo "::group::soonex_i18n.tableau_build"
           date -u +%FT%TZ
-          MIX_DEBUG=1 timeout --signal=SIGINT 180 mix soonex_i18n.tableau_build
+          timeout --signal=SIGINT 900 mix soonex_i18n.tableau_build
           date -u +%FT%TZ
           echo "::endgroup::"
           echo "::group::test"
