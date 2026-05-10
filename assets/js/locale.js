@@ -19,8 +19,18 @@ import { parseList, whenControlReady, firstDetailValue } from "./controls-shared
     )
   }
 
+  const publicPathPrefix = () => {
+    const raw = html().getAttribute("data-public-path-prefix") || ""
+    return raw.replace(/\/+$/, "")
+  }
+
   const localeFromPathname = () => {
-    const segs = window.location.pathname.split("/").filter(Boolean)
+    let pathname = window.location.pathname
+    const pre = publicPathPrefix()
+    if (pre && pathname.startsWith(pre)) {
+      pathname = pathname.slice(pre.length) || "/"
+    }
+    const segs = pathname.split("/").filter(Boolean)
     const first = segs[0] || ""
     return validLocales().includes(first) ? first : ""
   }

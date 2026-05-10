@@ -53,6 +53,10 @@ defmodule SoonexI18n.RootLayout do
 
     og_image_url = base_url <> "/images/og.svg"
 
+    public_path_prefix =
+      SoonexI18nWeb.Endpoint.path("/")
+      |> String.trim_trailing("/")
+
     assigns =
       assigns
       |> Map.put(:site_name, site_name)
@@ -68,6 +72,7 @@ defmodule SoonexI18n.RootLayout do
       |> Map.put(:base_url, base_url)
       |> Map.put(:page_path, page_path)
       |> Map.put(:og_image_url, og_image_url)
+      |> Map.put(:public_path_prefix, public_path_prefix)
       |> Map.put(:flash, Map.get(assigns, :flash, %{}))
 
     ~H"""
@@ -83,6 +88,7 @@ defmodule SoonexI18n.RootLayout do
       data-locales={Enum.join(Locale.locales(), ",")}
       data-default-theme={SoonexI18n.Theme.default_theme()}
       data-locale-selected-path={Locale.selected_path(@page, @locale)}
+      data-public-path-prefix={@public_path_prefix}
     >
       <head>
         {SoonexI18n.Theme.head_script()}

@@ -102,7 +102,7 @@ defmodule SoonexI18n.Locale do
   def language_select_items(current_path) do
     items =
       Enum.map(locales(), fn loc ->
-        dest = swap_path(current_path, loc)
+        dest = current_path |> swap_path(loc) |> with_public_prefix()
 
         Item.new(%{
           id: dest,
@@ -115,10 +115,14 @@ defmodule SoonexI18n.Locale do
   end
 
   def language_select_value(current_path, locale) do
-    [swap_path(current_path, locale)]
+    [current_path |> swap_path(locale) |> with_public_prefix()]
   end
 
   def selected_path(page, locale) do
-    page |> current_path() |> swap_path(locale)
+    page |> current_path() |> swap_path(locale) |> with_public_prefix()
+  end
+
+  defp with_public_prefix(path) when is_binary(path) do
+    SoonexI18nWeb.Endpoint.path(path)
   end
 end
