@@ -1,4 +1,4 @@
-defmodule Mix.Tasks.SoonexI18nI18n.Gen.Post do
+defmodule Mix.Tasks.SoonexI18n.Gen.Post do
   use Mix.Task
 
   @shortdoc "Generate a new post"

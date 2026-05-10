@@ -24,14 +24,14 @@ defmodule SoonexI18n.HomePage.Pricing do
           </h2>
           <p>
             {gettext(
-              "SoonexI18n is MIT-licensed and will remain free to use and fork. Corex is free. Most products still need a pricing section—below is sample copy, tiers, and a billing toggle you replace with your own plans and checkout."
+              "SoonexI18n is MIT-licensed and will remain free to use and fork. Corex is free. Most products still need a pricing section, below is sample copy, tiers, and a billing toggle you replace with your own plans and checkout."
             )}
           </p>
         </div>
 
         <p class="m-0 text-center text-sm text-ink-muted">
           {gettext(
-            "Demonstrates Corex Switch wiring for monthly versus yearly display—swap labels and math for your billing rules."
+            "Demonstrates Corex Switch wiring for monthly versus yearly display, swap labels and math for your billing rules."
           )}
         </p>
 
@@ -61,11 +61,11 @@ defmodule SoonexI18n.HomePage.Pricing do
                    period: gettext("forever"),
                    blurb:
                      gettext(
-                       "The template itself: fork, run mix setup, ship Tableau or Phoenix—no charge, no upsell."
+                       "The template itself: fork, run setup, then ship with Tableau or Phoenix. No charge, no upsell."
                      ),
                    perks: [
                      gettext("Corex components + token-driven styling"),
-                     gettext("mix assets.build and mix tableau.build"),
+                     gettext("Assets plus static export"),
                      gettext("Palette to Tailwind v4 pipeline"),
                      gettext("_posts Markdown and RSS starter")
                    ],
@@ -83,7 +83,7 @@ defmodule SoonexI18n.HomePage.Pricing do
                    period: gettext("/mo"),
                    blurb:
                      gettext(
-                       "Placeholder tier—rename, reprice, and point the button at your checkout or waitlist."
+                       "Placeholder tier, rename, reprice, and point the button at your checkout or waitlist."
                      ),
                    perks: [
                      gettext("Shows featured styling and monthly or yearly math"),
@@ -106,7 +106,7 @@ defmodule SoonexI18n.HomePage.Pricing do
                    studio_from_yearly: gettext("from $2k"),
                    blurb:
                      gettext(
-                       "Placeholder for sales-led or enterprise deals—edit numbers and bullets for your motion."
+                       "Placeholder for sales-led or enterprise deals, edit numbers and bullets for your motion."
                      ),
                    perks: [
                      gettext("Illustrates custom price lines on the toggle"),

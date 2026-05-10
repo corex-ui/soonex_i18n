@@ -1,4 +1,4 @@
-defmodule SoonexI18nI18nWeb.Router do
+defmodule SoonexI18nWeb.Router do
   @moduledoc false
 
   use Phoenix.Router
@@ -7,14 +7,14 @@ defmodule SoonexI18nI18nWeb.Router do
     plug(:accepts, ["html"])
   end
 
-  scope "/", SoonexI18nI18nWeb do
+  scope "/", SoonexI18nWeb do
     pipe_through(:browser)
 
     get("/", PageController, :page)
     get("/docs", PageController, :page)
   end
 
-  scope "/:locale", SoonexI18nI18nWeb do
+  scope "/:locale", SoonexI18nWeb do
     pipe_through(:browser)
 
     get("/", PageController, :page)

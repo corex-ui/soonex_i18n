@@ -1,4 +1,4 @@
-defmodule SoonexI18nI18nWeb.PageController do
+defmodule SoonexI18nWeb.PageController do
   @moduledoc false
 
   use Phoenix.Controller, formats: [:html]

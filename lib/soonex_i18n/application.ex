@@ -9,7 +9,7 @@ defmodule SoonexI18n.Application do
   def start(_type, _args) do
     base = [
       {Phoenix.PubSub, name: SoonexI18n.PubSub},
-      SoonexI18nI18nWeb.Endpoint
+      SoonexI18nWeb.Endpoint
     ]
 
     children =

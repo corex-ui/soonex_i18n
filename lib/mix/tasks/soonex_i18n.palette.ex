@@ -1,4 +1,4 @@
-defmodule Mix.Tasks.SoonexI18nI18n.Palette do
+defmodule Mix.Tasks.SoonexI18n.Palette do
   @moduledoc false
 
   use Mix.Task

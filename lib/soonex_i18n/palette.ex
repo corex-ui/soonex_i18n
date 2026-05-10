@@ -312,10 +312,15 @@ defmodule SoonexI18n.Palette do
 
   defp neutral_at(hex, l_pct) do
     l = clamp01(l_pct / 100.0)
-    {:ok, c} = Color.new(hex)
-    {:ok, okl} = Color.convert(c, Color.Oklch)
-    {:ok, out} = Color.convert(%{okl | l: l}, Color.SRGB)
-    Color.to_hex(out)
+
+    with {:ok, c} <- Color.new(hex),
+         {:ok, okl} <- Color.convert(c, Color.Oklch),
+         {:ok, out} <- Color.convert(%{okl | l: l}, Color.SRGB) do
+      Color.to_hex(out)
+    else
+      {:error, reason} ->
+        raise "neutral_at(#{inspect(hex)}, #{l_pct}) failed: #{inspect(reason)}"
+    end
   end
 
   defp clamp_pct(v), do: min(99.0, max(1.0, v))

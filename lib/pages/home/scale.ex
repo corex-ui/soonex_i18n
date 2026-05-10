@@ -16,7 +16,7 @@ defmodule SoonexI18n.HomePage.Scale do
       data-reveal
     >
       <div class="home__section__inner">
-        <h2 id="home-numbers-heading" class="sr-only">
+        <h2 id="home-numbers-heading" class="sr-only text-ink-brand">
           {gettext("Corex by the numbers")}
         </h2>
         <div class="home__numbers">
@@ -26,16 +26,20 @@ defmodule SoonexI18n.HomePage.Scale do
             </span>
             <span class="home__numbers__label">{gettext("Components")}</span>
             <p class="home__numbers__hint">
-              {gettext("Works in Controller and Live View")}
+              {gettext(
+                "Same Corex pieces in Phoenix controllers and HEEx, or static HEEx builds with Tableau."
+              )}
             </p>
           </div>
           <div class="home__numbers__cell">
             <span class="home__numbers__value">
-              100<span class="home__numbers__value__suffix">+</span>
+              50<span class="home__numbers__value__suffix">+</span>
             </span>
             <span class="home__numbers__label">{gettext("API & Events")}</span>
             <p class="home__numbers__hint">
-              {gettext("From the Server and the Client")}
+              {gettext(
+                "Phoenix bindings such as phx-click in HEEx, client-side wiring from your templates, alongside JavaScript and TypeScript Corex hooks."
+              )}
             </p>
           </div>
           <div class="home__numbers__cell">
@@ -44,7 +48,7 @@ defmodule SoonexI18n.HomePage.Scale do
             </span>
             <span class="home__numbers__label">{gettext("Open Source")}</span>
             <p class="home__numbers__hint">
-              {gettext("Open Source and free to use. MIT License")}
+              {gettext("MIT licensed, fork, ship, and extend without a license fee.")}
             </p>
           </div>
           <div class="home__numbers__cell">
@@ -53,7 +57,9 @@ defmodule SoonexI18n.HomePage.Scale do
             </span>
             <span class="home__numbers__label">{gettext("Built in")}</span>
             <p class="home__numbers__hint">
-              {gettext("Keyboard, focus and ARIA from Zag.js machines.")}
+              {gettext(
+                "Keyboard flows, focus management, and ARIA patterns powered by Zag.js state machines."
+              )}
             </p>
           </div>
         </div>

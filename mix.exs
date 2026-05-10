@@ -38,7 +38,7 @@ defmodule SoonexI18n.MixProject do
        app: false,
        compile: false,
        depth: 1},
-      {:corex, path: "../../corex"},
+      {:corex, "~> 0.1.0-beta.3"},
       {:gettext, "~> 1.0"},
       {:localize_web, "~> 0.5.1"},
       {:color, "~> 0.11"},
@@ -52,11 +52,19 @@ defmodule SoonexI18n.MixProject do
       {:makeup_js, "~> 0.1"},
       {:rustler_precompiled, "~> 0.9", override: true},
       {:makeup_syntect, "~> 0.1.4"},
-      {:wallaby, "~> 0.30", only: :test},
-      {:a11y_audit, "~> 0.3.1", only: :test},
+      {:wallaby, "~> 0.30", only: :test, runtime: false},
+      {:a11y_audit, "~> 0.3.1", only: :test, runtime: false},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:ex_slop, "~> 0.1", only: [:dev, :test], runtime: false}
-    ]
+    ] ++ maybe_json_polyfill()
+  end
+
+  defp maybe_json_polyfill do
+    if Code.ensure_loaded?(:json) do
+      []
+    else
+      [{:json_polyfill, "~> 0.2 or ~> 1.0"}]
+    end
   end
 
   defp aliases do

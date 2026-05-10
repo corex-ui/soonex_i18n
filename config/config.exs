@@ -33,9 +33,11 @@ config :tailwind,
     )
   ]
 
-config :tableau, :assets,
-  tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]},
-  esbuild: {Esbuild, :install_and_run, [:default, ~w(--watch)]}
+if Mix.env() == :dev do
+  config :tableau, :assets,
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]},
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--watch)]}
+end
 
 config :tableau, :config,
   url: "http://localhost:4999",
@@ -82,7 +84,7 @@ config :phoenix,
   gettext_backend: SoonexI18n.Gettext,
   json_library: Jason
 
-config :soonex_i18n, SoonexI18nI18nWeb.Endpoint,
+config :soonex_i18n, SoonexI18nWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   pubsub_server: SoonexI18n.PubSub,
@@ -91,6 +93,7 @@ config :soonex_i18n, SoonexI18nI18nWeb.Endpoint,
     "soonex_dev_secret_key_base_minimum_sixty_four_chars_long_placeholder_do_not_use_prod"
 
 config :localize,
+  default_locale: "en",
   supported_locales: ~w(en ar fr)
 
 import_config "#{Mix.env()}.exs"
