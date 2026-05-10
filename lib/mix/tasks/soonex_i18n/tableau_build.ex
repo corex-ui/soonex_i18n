@@ -9,8 +9,6 @@ defmodule Mix.Tasks.SoonexI18n.TableauBuild do
 
   @shortdoc "Builds the SoonexI18n static site (Tableau)"
 
-  @async_opts [timeout: :infinity]
-
   @impl Mix.Task
   def run(argv) do
     Application.ensure_all_started(:telemetry)
@@ -42,26 +40,17 @@ defmodule Mix.Tasks.SoonexI18n.TableauBuild do
     token = put_in(token.site[:pages], Enum.map(pages, fn {_mod, page} -> page end))
 
     pages =
-      pages
-      |> Task.async_stream(
-        fn {mod, page} ->
-          try do
-            content = Tableau.Document.render(graph, mod, token, page)
-            permalink = Nodable.permalink(mod)
+      Enum.map(pages, fn {mod, page} ->
+        try do
+          content = Tableau.Document.render(graph, mod, token, page)
+          permalink = Nodable.permalink(mod)
 
-            Map.merge(page, %{body: content, permalink: permalink})
-          rescue
-            exception ->
-              reraise TableauDevServer.BuildException, [page: page, exception: exception], __STACKTRACE__
-          end
-        end,
-        @async_opts
-      )
-      |> Stream.map(fn
-        {:ok, result} -> result
-        {:exit, {exception, stacktrace}} -> reraise exception, stacktrace
+          Map.merge(page, %{body: content, permalink: permalink})
+        rescue
+          exception ->
+            reraise TableauDevServer.BuildException, [page: page, exception: exception], __STACKTRACE__
+        end
       end)
-      |> Enum.to_list()
 
     token = put_in(token.site[:pages], pages)
 
