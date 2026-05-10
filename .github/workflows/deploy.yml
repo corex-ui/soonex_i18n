@@ -42,15 +42,16 @@ jobs:
       - name: Restore Mix dependencies cache
         uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306
         with:
-          path: |
-            deps
-            _build
+          path: deps
           key: deploy-soonex-i18n-${{ runner.os }}-27.3-1.18.4-${{ hashFiles('mix.lock') }}
           restore-keys: |
             deploy-soonex-i18n-${{ runner.os }}-27.3-1.18.4-
 
       - name: Install Mix dependencies
         run: mix deps.get
+
+      - name: Download Localize locale data
+        run: mix localize.download_locales
 
       - name: Set up Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
@@ -64,7 +65,7 @@ jobs:
         run: npm ci
 
       - name: Build static site
-        run: mix build
+        run: mix clean && mix build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa

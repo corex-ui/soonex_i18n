@@ -48,9 +48,7 @@ jobs:
       - name: Restore Mix dependencies cache
         uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306
         with:
-          path: |
-            deps
-            _build
+          path: deps
           key: deps-soonex-i18n-${{ runner.os }}-${{ matrix.otp }}-${{ matrix.elixir }}-${{ hashFiles('mix.lock') }}
           restore-keys: |
             deps-soonex-i18n-${{ runner.os }}-${{ matrix.otp }}-${{ matrix.elixir }}
@@ -76,4 +74,4 @@ jobs:
         env:
           WALLABY_CHROME_BINARY: ${{ steps.setup-chrome.outputs.chrome-path }}
           WALLABY_CHROMEDRIVER_PATH: ${{ steps.setup-chrome.outputs.chromedriver-path }}
-        run: mix test --timeout 600000
+        run: mix clean && mix test --timeout 600000
