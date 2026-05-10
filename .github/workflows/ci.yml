@@ -33,6 +33,7 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
       - uses: browser-actions/setup-chrome@v2.1.2
+        id: setup-chrome
         with:
           chrome-version: stable
           install-dependencies: false
@@ -69,4 +70,7 @@ jobs:
         run: npm ci
 
       - name: Run tests
+        env:
+          WALLABY_CHROME_BINARY: ${{ steps.setup-chrome.outputs.chrome-path }}
+          WALLABY_CHROMEDRIVER_PATH: ${{ steps.setup-chrome.outputs.chromedriver-path }}
         run: mix test --timeout 600000
