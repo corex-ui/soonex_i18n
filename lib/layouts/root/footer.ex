@@ -158,7 +158,7 @@ defmodule SoonexI18n.Layouts.Root.Footer do
               <.heroicon name="hero-megaphone" />
             </.navigate>
             <.navigate
-              to="/feed.xml"
+              to={~p"/feed.xml"}
               class="button button--circle button--ghost"
               aria_label="RSS"
             >

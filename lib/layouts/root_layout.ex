@@ -6,6 +6,7 @@ defmodule SoonexI18n.RootLayout do
   use Tableau.Layout
   use Phoenix.Component
   use Corex
+  use SoonexI18n.Routes
   use Gettext, backend: SoonexI18n.Gettext
 
   import SoonexI18n.Layouts.Root.Demo, only: [demo_site_controls: 1]
@@ -87,17 +88,18 @@ defmodule SoonexI18n.RootLayout do
         {SoonexI18n.Theme.head_script()}
         {SoonexI18n.Mode.head_script()}
         <meta charset="utf-8" />
+        <base href={"#{@base_url}/"} />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="csrf-token" content={get_csrf_token()} />
 
-        <link rel="icon" href="/images/favicon.ico" sizes="48x48" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="icon" href={~p"/images/favicon.ico"} sizes="48x48" />
+        <link rel="icon" type="image/png" sizes="32x32" href={~p"/images/favicon-32x32.png"} />
+        <link rel="icon" type="image/png" sizes="16x16" href={~p"/images/favicon-16x16.png"} />
+        <link rel="apple-touch-icon" sizes="180x180" href={~p"/images/apple-touch-icon.png"} />
+        <link rel="icon" type="image/png" sizes="192x192" href={~p"/images/android-chrome-192x192.png"} />
+        <link rel="icon" type="image/png" sizes="512x512" href={~p"/images/android-chrome-512x512.png"} />
+        <link rel="manifest" href={~p"/site.webmanifest"} />
 
         <title>{@doc_title}</title>
         <meta name="description" content={@doc_description} />
@@ -136,8 +138,8 @@ defmodule SoonexI18n.RootLayout do
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         />
-        <link rel="stylesheet" href="/css/site.css" />
-        <script type="module" src="/js/site.js" />
+        <link rel="stylesheet" href={~p"/css/site.css"} />
+        <script type="module" src={~p"/js/site.js"} />
       </head>
 
       <body class="layout typo">
