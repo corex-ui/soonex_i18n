@@ -45,13 +45,8 @@ jobs:
         working-directory: assets
         run: npm ci
 
-      - name: Assets
-        run: mix assets.build
-        env:
-          MIX_ENV: dev
-
-      - name: Static site
-        run: mix tableau.build
+      - name: Build site
+        run: mix build
         env:
           MIX_ENV: prod
           SOONEX_PUBLIC_URL: ${{ vars.SOONEX_PUBLIC_URL }}
