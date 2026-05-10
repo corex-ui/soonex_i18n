@@ -65,7 +65,7 @@ mix assets.build
 
 ## Tests and CI
 
-[`mix test`](mix.exs) runs a **`pre.test`** alias (palette, designex, esbuild, tailwind, then **`mix tableau.build`**) before Wallaby feature tests. [`.github/workflows/ci.yml`](.github/workflows/ci.yml) mirrors that: it installs Chrome and Chromedriver via `browser-actions/setup-chrome`, exports **`WALLABY_CHROME_BINARY`** and **`WALLABY_CHROMEDRIVER_PATH`** from the action outputs, then runs **`mix test --timeout 600000`**. [`.github/workflows/pages.yml`](.github/workflows/pages.yml) builds the static site with **`mix tableau.build`** under `MIX_ENV=prod`.
+[`mix test`](mix.exs) runs a **`pre.test`** alias (palette, designex, esbuild, tailwind, then **`mix tableau.build`**) before Wallaby feature tests. [`.github/workflows/ci.yml`](.github/workflows/ci.yml) mirrors that: it installs Chrome and Chromedriver via `browser-actions/setup-chrome`, exports **`WALLABY_CHROME_BINARY`** and **`WALLABY_CHROMEDRIVER_PATH`** from the action outputs, then runs **`mix test --timeout 600000`**. [`.github/workflows/pages.yml`](.github/workflows/pages.yml) runs **`npm ci`** in **`assets/`** (so Tailwind can resolve **`lenis`** and other CSS imports from **`node_modules`**), then **`mix assets.build`** and **`mix tableau.build`** under `MIX_ENV=prod` for the published tree.
 
 ## Corex JavaScript paths
 
