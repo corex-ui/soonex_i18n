@@ -72,7 +72,7 @@ defmodule SoonexI18n.HomePage.Hero do
           <:second_label>{gettext("Sec")}</:second_label>
         </.timer>
 
-        <div class="flex flex-col gap-space-sm sm:flex-row sm:justify-center">
+        <div class="flex w-full flex-col items-center gap-space-sm sm:flex-row sm:justify-center">
           <.navigate to="#waitlist" class="button button--accent">
             {gettext("Join the waitlist")}
           </.navigate>

@@ -26,7 +26,7 @@ defmodule SoonexI18n.HomePage.Faq do
         <div class="min-w-0 w-full">
           <.accordion
             id="soonex_i18n-faq"
-            class="accordion accordion--accent accordion--xl w-full max-w-6xl"
+            class="accordion accordion--accent accordion--sm sm:accordion--md lg:accordion--xl w-full max-w-6xl"
             multiple={false}
             value="stack"
             items={
