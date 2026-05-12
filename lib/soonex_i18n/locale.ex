@@ -135,7 +135,7 @@ defmodule SoonexI18n.Locale do
         dest = current_path |> swap_path(loc) |> with_public_prefix()
 
         Item.new(%{
-          id: dest,
+          value: dest,
           to: dest,
           label: label(loc)
         })

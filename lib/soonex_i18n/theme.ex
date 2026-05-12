@@ -40,7 +40,7 @@ defmodule SoonexI18n.Theme do
 
   def select_items do
     themes()
-    |> Enum.map(fn t -> %{id: t, label: String.capitalize(t)} end)
+    |> Enum.map(fn t -> %{value: t, label: String.capitalize(t)} end)
     |> Corex.List.new()
   end
 end
