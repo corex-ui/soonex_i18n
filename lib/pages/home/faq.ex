@@ -33,7 +33,7 @@ defmodule SoonexI18n.HomePage.Faq do
               Corex.Content.new([
                 %{
                   value: "stack",
-                  trigger: gettext("What is SoonexI18n?"),
+                  label: gettext("What is SoonexI18n?"),
                   content:
                     gettext(
                       "A Tableau-driven coming-soon site that demonstrates Corex on static HTML: countdown, highlights, metrics, pricing, FAQ, waitlist, Markdown journal post, and footer. Tableau emits files you can host on GitHub Pages, S3, or any CDN."
@@ -42,7 +42,7 @@ defmodule SoonexI18n.HomePage.Faq do
                 },
                 %{
                   value: "tableau",
-                  trigger: gettext("How do builds and previews work?"),
+                  label: gettext("How do builds and previews work?"),
                   content:
                     gettext(
                       "The asset alias refreshes palette JSON, Designex, Tailwind, and esbuild. Tableau writes _site for production. The dev server watches HEEx and Markdown while you work. Journal posts live under _posts and render through MDEx."
@@ -51,7 +51,7 @@ defmodule SoonexI18n.HomePage.Faq do
                 },
                 %{
                   value: "liveview",
-                  trigger: gettext("What about Corex MCP?"),
+                  label: gettext("What about Corex MCP?"),
                   content:
                     gettext(
                       "In development, Corex can expose MCP tools backed by the component registry, list_components, get_component, so assistants pull slots and modifiers instead of inventing markup. It complements Localize and Gettext for structured authoring."
@@ -60,7 +60,7 @@ defmodule SoonexI18n.HomePage.Faq do
                 },
                 %{
                   value: "themes",
-                  trigger: gettext("Themes, modes, and locales?"),
+                  label: gettext("Themes, modes, and locales?"),
                   content:
                     gettext(
                       "data-theme and data-mode switch Neo, Uno, Duo, and Leo; theme and mode scripts in the layout sync controls and localStorage. Gettext and Localize back RTL locales such as Arabic alongside English."
@@ -69,7 +69,7 @@ defmodule SoonexI18n.HomePage.Faq do
                 },
                 %{
                   value: "next",
-                  trigger: gettext("What comes after this static template?"),
+                  label: gettext("What comes after this static template?"),
                   content:
                     gettext(
                       "A fuller Phoenix SoonexI18n application template is planned on top of the same Corex primitives, auth, data, and realtime, without throwing away this landing. Stay on the waitlist for migration notes."
@@ -82,7 +82,7 @@ defmodule SoonexI18n.HomePage.Faq do
             <:trigger :let={item}>
               <span class="flex min-w-0 items-center gap-space">
                 <.heroicon name={item.meta.icon} />
-                <span class="min-w-0 text-start">{item.trigger}</span>
+                <span class="min-w-0 text-start">{item.label}</span>
               </span>
             </:trigger>
             <:content :let={item}>
