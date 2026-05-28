@@ -4,13 +4,13 @@ defmodule SoonexI18n.HomePage.Hero do
   use Phoenix.Component
   use Corex
   use SoonexI18n.Routes
-  use Gettext, backend: SoonexI18n.Gettext
+  use SoonexI18n.GettextSigil
 
   attr(:countdown_ms, :integer, required: true)
 
   def hero(assigns) do
     locale = Gettext.get_locale(SoonexI18n.Gettext)
-    headline = gettext("Write Elixir, ship a static build.")
+    headline = ~t"Write Elixir, ship a static build."
 
     assigns =
       assigns
@@ -48,14 +48,14 @@ defmodule SoonexI18n.HomePage.Hero do
           <% end %>
         </h1>
 
-        <div class="flex max-w-xl flex-col gap-space-sm text-balance">
-          <h2 class="m-0 max-w-xl font-sans !text-base !font-normal leading-snug text-ink-muted md:!text-lg">
+        <div class="flex max-w-xl flex-col gap-space text-balance">
+          <h2 class="m-0 max-w-xl font-sans !text-base !font-normal leading-normal text-ink-muted md:!text-lg">
             <span class="text-ink-brand">Tableau</span>{" "}
-            {gettext("compiles HEEx to static files.")}
+            {~t"compiles HEEx to static files."}
           </h2>
-          <h3 class="m-0 max-w-xl font-sans !text-base !font-normal leading-snug text-ink-muted md:!text-lg">
+          <h3 class="m-0 max-w-xl font-sans !text-base !font-normal leading-normal text-ink-muted md:!text-lg">
             <span class="text-ink-brand">Corex</span>{" "}
-            {gettext("covers components, tokens, Markdown, locales, themes, and MCP for your editor.")}
+            {~t"covers components, tokens, Markdown, locales, themes, and MCP for your editor."}
           </h3>
         </div>
 
@@ -64,20 +64,20 @@ defmodule SoonexI18n.HomePage.Hero do
           countdown
           start_ms={@countdown_ms}
           target_ms={0}
-          class="timer timer--accent timer--text-lg sm:timer--text-xl md:timer--text-2xl lg:timer--text-5xl timer--rounded-xl"
+          class="timer timer--brand timer--text-lg sm:timer--text-xl md:timer--text-2xl lg:timer--text-5xl timer--rounded-xl"
         >
-          <:day_label>{gettext("Days")}</:day_label>
-          <:hour_label>{gettext("Hours")}</:hour_label>
-          <:minute_label>{gettext("Min")}</:minute_label>
-          <:second_label>{gettext("Sec")}</:second_label>
+          <:day_label>{~t"Days"}</:day_label>
+          <:hour_label>{~t"Hours"}</:hour_label>
+          <:minute_label>{~t"Min"}</:minute_label>
+          <:second_label>{~t"Sec"}</:second_label>
         </.timer>
 
-        <div class="flex w-full flex-col items-center gap-space-sm sm:flex-row sm:justify-center">
+        <div class="flex w-full flex-col items-center gap-space sm:flex-row sm:justify-center">
           <.navigate to="#waitlist" class="button button--accent">
-            {gettext("Join the waitlist")}
+            {~t"Join the waitlist"}
           </.navigate>
           <.navigate to={~p"/docs"} class="button button--ghost">
-            {gettext("Read the documentation")} <.heroicon name="hero-arrow-up-right" />
+            {~t"Read the documentation"} <.heroicon name="hero-arrow-up-right" />
           </.navigate>
         </div>
       </div>

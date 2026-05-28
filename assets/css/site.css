@@ -19,13 +19,15 @@
 @import "../corex/components/tooltip.css";
 @import "../corex/components/select.css";
 @import "../corex/components/tabs.css";
-@import "../corex/components/toggle-group.css";
+@import "../corex/components/toggle.css";
 @import "../corex/components/switch.css";
 @import "../corex/components/native-input.css";
 @import "../corex/components/checkbox.css";
 @import "../corex/components/data-list.css";
 @import "../corex/components/timer.css";
 @import "../corex/components/marquee.css";
+@import "./prose.css";
+@import "./post.css";
 @import "./home-numbers.css";
 @import "../corex/components/accordion.css";
 @import "../corex/components/avatar.css";

@@ -1,54 +1,31 @@
-import { parseList, whenControlReady, firstDetailValue } from "./controls-shared.js"
+import {
+  bindStoredPreference,
+  documentRoot,
+  firstDetailValue,
+  parseList,
+} from "./controls-shared.js"
 
-;(() => {
-  const html = () => document.documentElement
+const themes = () => parseList("data-themes")
 
-  const validThemes = () => parseList("data-themes")
-  const defaultTheme = () =>
-    html().getAttribute("data-default-theme") || validThemes()[0] || "neo"
+const defaultTheme = () =>
+  documentRoot().getAttribute("data-default-theme") || themes()[0] || "neo"
 
-  const readStoredTheme = () => localStorage.getItem("data-theme")
+const resolveTheme = (raw) => {
+  const allowed = themes()
+  return raw && allowed.includes(raw) ? raw : defaultTheme()
+}
 
-  const syncThemeSelect = (value) => {
+bindStoredPreference({
+  attr: "data-theme",
+  controlId: "theme-switcher",
+  resolve: resolveTheme,
+  syncControl: (theme) => {
     const root = document.getElementById("theme-switcher")
-    if (!root || !value) return
+    if (!root || !theme) return
     root.dispatchEvent(
-      new CustomEvent("corex:select:set-value", { detail: { value: [value] } }),
+      new CustomEvent("corex:select:set-value", { detail: { value: [theme] } }),
     )
-  }
-
-  const applyTheme = (theme) => {
-    const themes = validThemes()
-    const dt = defaultTheme()
-    const resolved = themes.includes(theme) ? theme : dt
-    localStorage.setItem("data-theme", resolved)
-    html().setAttribute("data-theme", resolved)
-    return resolved
-  }
-
-  const syncThemeFromDocument = () => {
-    const t = html().getAttribute("data-theme") || defaultTheme()
-    const themes = validThemes()
-    const dt = defaultTheme()
-    syncThemeSelect(themes.includes(t) ? t : dt)
-  }
-
-  applyTheme(
-    readStoredTheme() || html().getAttribute("data-theme") || defaultTheme(),
-  )
-
-  whenControlReady("theme-switcher", syncThemeFromDocument)
-
-  window.addEventListener("storage", (e) => {
-    if (e.key === "data-theme" && e.newValue) {
-      applyTheme(e.newValue)
-      whenControlReady("theme-switcher", syncThemeFromDocument)
-    }
-  })
-
-  window.addEventListener("corex:set-theme", (e) => {
-    const v = firstDetailValue(e)
-    applyTheme(v || defaultTheme())
-    whenControlReady("theme-switcher", syncThemeFromDocument)
-  })
-})()
+  },
+  clientEvent: "corex:set-theme",
+  parseClientEvent: (event) => firstDetailValue(event) || defaultTheme(),
+})

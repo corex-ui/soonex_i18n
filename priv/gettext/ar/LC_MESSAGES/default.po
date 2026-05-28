@@ -12,39 +12,34 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
 ""
 
-#: lib/layouts/root/demo.ex:51
-#: lib/layouts/root/demo.ex:54
+#: lib/layouts/root/demo.ex:56
+#: lib/layouts/root/demo.ex:59
 #, elixir-autogen, elixir-format
 msgid "Language"
 msgstr "اللغة"
 
-#: lib/layouts/root_layout.ex:144
+#: lib/layouts/root_layout.ex:169
 #, elixir-autogen, elixir-format
 msgid "Skip to content"
 msgstr "تخطي إلى المحتوى"
 
-#: lib/layouts/root/demo.ex:72
-#: lib/layouts/root/demo.ex:74
+#: lib/layouts/root/demo.ex:77
+#: lib/layouts/root/demo.ex:79
 #, elixir-autogen, elixir-format
 msgid "Theme"
 msgstr "المظهر"
 
-#: lib/layouts/root_layout.ex:193
+#: lib/layouts/root_layout.ex:218
 #, elixir-autogen, elixir-format
 msgid "%{name}"
 msgstr "%{name}"
 
-#: lib/layouts/root_layout.ex:212
+#: lib/layouts/root_layout.ex:234
 #, elixir-autogen, elixir-format
 msgid "A coming-soon static site. Learn more about %{name}."
 msgstr "موقع « قريبًا » ثابت. تعرّف أكثر على %{name}."
 
-#: lib/layouts/root/demo.ex:95
-#, elixir-autogen, elixir-format
-msgid "Toggle color mode"
-msgstr "تبديل وضع الألوان"
-
-#: lib/layouts/root/demo.ex:92
+#: lib/layouts/root/demo.ex:96
 #, elixir-autogen, elixir-format
 msgid "Color mode"
 msgstr "وضع الألوان"
@@ -60,7 +55,7 @@ msgstr "اتصل بنا"
 msgid "FAQ"
 msgstr "الأسئلة الشائعة"
 
-#: lib/layouts/root/demo.ex:109
+#: lib/layouts/root/demo.ex:113
 #, elixir-autogen, elixir-format
 msgid "Made with Corex"
 msgstr "صُنع باستخدام Corex"
@@ -77,7 +72,7 @@ msgstr "أبرز النقاط"
 
 #: lib/layouts/root/footer.ex:27
 #: lib/layouts/root/landing_chrome.ex:48
-#: lib/pages/home/faq.ex:99
+#: lib/pages/home/faq.ex:87
 #: lib/pages/home/hero.ex:77
 #, elixir-autogen, elixir-format, fuzzy
 msgid "Join the waitlist"
@@ -109,7 +104,7 @@ msgstr "قائمة الانتظار"
 msgid "Demo site controls"
 msgstr "عناصر تحكم موقع العرض"
 
-#: lib/layouts/root_layout.ex:187
+#: lib/layouts/root_layout.ex:212
 #, elixir-autogen, elixir-format
 msgid "%{name} · Elixir static site template"
 msgstr "%{name} · قالب موقع ثابت بلغة Elixir"
@@ -245,7 +240,7 @@ msgstr "ثانية"
 msgid "Social links"
 msgstr "روابط اجتماعية"
 
-#: lib/layouts/root_layout.ex:200
+#: lib/layouts/root_layout.ex:225
 #, elixir-autogen, elixir-format
 msgid "Tableau + Corex coming-soon template: static HEEx, design tokens, Markdown, locales. Join the %{name} waitlist."
 msgstr "قالب SoonexI18n من Tableau وCorex: HEEx ثابت ورموز تصميم وMarkdown ومحلات انضم إلى قائمة انتظار %{name}."
@@ -265,7 +260,7 @@ msgstr "Corex بالأرقام"
 msgid "Page not found"
 msgstr "الصفحة غير موجودة"
 
-#: lib/layouts/root_layout.ex:190
+#: lib/layouts/root_layout.ex:215
 #, elixir-autogen, elixir-format
 msgid "Page not found · %{name}"
 msgstr "الصفحة غير موجودة · %{name}"
@@ -275,29 +270,29 @@ msgstr "الصفحة غير موجودة · %{name}"
 msgid "The URL may be mistyped, or the page may have moved. Try the home page."
 msgstr "قد يكون الرابط خاطئًا أو انتقلت الصفحة. جرّب الصفحة الرئيسية."
 
-#: lib/layouts/root_layout.ex:206
+#: lib/layouts/root_layout.ex:228
 #, elixir-autogen, elixir-format
 msgid "This URL is not available on the %{name} static site."
 msgstr "هذا الرابط غير متاح على موقع %{name} الثابت."
 
-#: lib/pages/home/pricing.ex:40
+#: lib/pages/home/pricing.ex:36
 #, elixir-autogen, elixir-format
 msgid "Monthly billing"
 msgstr "فوترة شهرية"
 
-#: lib/pages/home/pricing.ex:50
+#: lib/pages/home/pricing.ex:46
 #, elixir-autogen, elixir-format
 msgid "Pay yearly (−20%)"
 msgstr "ادفع سنويًا (−٢٠٪)"
 
-#: lib/pages/home/pricing.ex:47
+#: lib/pages/home/pricing.ex:43
 #, elixir-autogen, elixir-format
 msgid "Toggle yearly billing with twenty percent discount"
 msgstr "تبديل الفوترة السنوية مع خصم ٢٠٪"
 
 #: lib/pages/home/pricing.ex:14
-#: lib/pages/home/pricing.ex:83
-#: lib/pages/home/pricing.ex:165
+#: lib/pages/home/pricing.ex:77
+#: lib/pages/home/pricing.ex:153
 #, elixir-autogen, elixir-format
 msgid "/mo"
 msgstr "/mo"
@@ -307,17 +302,17 @@ msgstr "/mo"
 msgid "/yr"
 msgstr "/yr"
 
-#: lib/pages/home/faq.ex:74
+#: lib/pages/home/faq.ex:64
 #, elixir-autogen, elixir-format
 msgid "A fuller Phoenix SoonexI18n application template is planned on top of the same Corex primitives, auth, data, and realtime, without throwing away this landing. Stay on the waitlist for migration notes."
 msgstr "يُخطط لقالب تطبيق Phoenix SoonexI18n أوضح فوق نفس أساسيات Corex, مصادقة وبيانات وفوري, دون التخلي عن هذه الصفحة. ابقَ على قائمة الانتظار لملاحظات الترحيل."
 
-#: lib/pages/home/scale.ex:38
+#: lib/pages/home/scale.ex:36
 #, elixir-autogen, elixir-format
 msgid "API & Events"
 msgstr "واجهة برمجة التطبيقات والأحداث"
 
-#: lib/pages/home/scale.ex:58
+#: lib/pages/home/scale.ex:54
 #, elixir-autogen, elixir-format
 msgid "Built in"
 msgstr "مُبنى في"
@@ -327,47 +322,47 @@ msgstr "مُبنى في"
 msgid "Components"
 msgstr "المكوّنات"
 
-#: lib/soonex_i18n/markdown/block_renderer.ex:21
+#: lib/soonex_i18n/markdown/block_renderer.ex:19
 #, elixir-autogen, elixir-format
 msgid "Copy code"
 msgstr "نسخ الرمز"
 
-#: lib/pages/home/highlights.ex:38
+#: lib/pages/home/highlights.ex:36
 #, elixir-autogen, elixir-format
 msgid "Corex MCP"
 msgstr "Corex MCP"
 
-#: lib/pages/home/pricing.ex:67
+#: lib/pages/home/pricing.ex:61
 #, elixir-autogen, elixir-format
 msgid "Corex components + token-driven styling"
 msgstr "مكوّنات Corex + تنسيق يعتمد على الرموز"
 
-#: lib/pages/home/highlights.ex:68
+#: lib/pages/home/highlights.ex:62
 #, elixir-autogen, elixir-format
 msgid "Corex exposes a component registry and MCP tools in development so assistants resolve slots, modifiers, and anatomy instead of guessing markup."
 msgstr "يعرض Corex سجل مكوّنات وأدوات MCP في التطوير لتختار الفتحات والمعدّلات والهيكل بدل تخمين العلامات."
 
-#: lib/pages/home/pricing.ex:103
+#: lib/pages/home/pricing.ex:95
 #, elixir-autogen, elixir-format
 msgid "Custom"
 msgstr "مخصّص"
 
-#: lib/pages/home/pricing.ex:92
+#: lib/pages/home/pricing.ex:84
 #, elixir-autogen, elixir-format
 msgid "Delete this column if you ship one price"
 msgstr "احذف هذا العمود إذا كان لديك سعر واحد"
 
-#: lib/pages/home/pricing.ex:33
+#: lib/pages/home/pricing.ex:31
 #, elixir-autogen, elixir-format
 msgid "Demonstrates Corex Switch wiring for monthly versus yearly display, swap labels and math for your billing rules."
 msgstr "يوضح توصيل Switch في Corex للعرض الشهري أو السنوي, بدّل النصوص والحسابات وفق قواعد الفوترة."
 
-#: lib/pages/home/highlights.ex:36
+#: lib/pages/home/highlights.ex:34
 #, elixir-autogen, elixir-format
 msgid "Design tokens"
 msgstr "رموز التصميم"
 
-#: lib/pages/home/waitlist.ex:26
+#: lib/pages/home/waitlist.ex:24
 #, elixir-autogen, elixir-format
 msgid "Early access, two weeks before the public drop."
 msgstr "وصول مبكر، قبل أسبوعين من الإصدار العام."
@@ -377,67 +372,67 @@ msgstr "وصول مبكر، قبل أسبوعين من الإصدار العام
 msgid "Elixir from palette to page."
 msgstr "Elixir من لوحة الألوان إلى الصفحة."
 
-#: lib/pages/home/pricing.ex:117
+#: lib/pages/home/pricing.ex:107
 #, elixir-autogen, elixir-format
 msgid "Example contact CTA"
 msgstr "مثال على دعوة اتصال"
 
-#: lib/pages/home/pricing.ex:102
+#: lib/pages/home/pricing.ex:94
 #, elixir-autogen, elixir-format
 msgid "Example custom"
 msgstr "مثال مخصّص"
 
-#: lib/pages/home/pricing.ex:139
+#: lib/pages/home/pricing.ex:129
 #, elixir-autogen, elixir-format
 msgid "Example highlight"
 msgstr "مثال على تمييز"
 
-#: lib/pages/home/pricing.ex:81
+#: lib/pages/home/pricing.ex:75
 #, elixir-autogen, elixir-format
 msgid "Example paid"
 msgstr "مثال مدفوع"
 
-#: lib/pages/home/pricing.ex:94
+#: lib/pages/home/pricing.ex:86
 #, elixir-autogen, elixir-format
 msgid "Example primary CTA"
 msgstr "مثال على دعوة رئيسية"
 
-#: lib/pages/home/highlights.ex:40
+#: lib/pages/home/highlights.ex:38
 #, elixir-autogen, elixir-format
 msgid "Gettext + Localize"
 msgstr "Gettext + Localize"
 
-#: lib/pages/home/pricing.ex:114
+#: lib/pages/home/pricing.ex:104
 #, elixir-autogen, elixir-format
 msgid "Hook forms or CRM links from the button"
 msgstr "اربط النماذج أو روابط CRM من الزر"
 
-#: lib/pages/home/pricing.ex:112
+#: lib/pages/home/pricing.ex:102
 #, elixir-autogen, elixir-format
 msgid "Illustrates custom price lines on the toggle"
 msgstr "يوضح أسعارًا مخصّصة على المبدّل"
 
-#: lib/pages/home/faq.ex:56
+#: lib/pages/home/faq.ex:50
 #, elixir-autogen, elixir-format
 msgid "In development, Corex can expose MCP tools backed by the component registry, list_components, get_component, so assistants pull slots and modifiers instead of inventing markup. It complements Localize and Gettext for structured authoring."
 msgstr "في التطوير يمكن لـ Corex عرض أدوات MCP مرتبطة بسجل المكوّنات, list_components وget_component, لتجلب الفتحات والمعدّلات بدل اختراع العلامات. يكمّل Localize وGettext للتحرير المنظم."
 
-#: lib/pages/home/waitlist.ex:66
+#: lib/pages/home/waitlist.ex:62
 #, elixir-autogen, elixir-format, fuzzy
 msgid "Join waitlist"
 msgstr "انضم إلى قائمة الانتظار"
 
-#: lib/pages/home/waitlist.ex:27
+#: lib/pages/home/waitlist.ex:25
 #, elixir-autogen, elixir-format
 msgid "Launch mail only: you choose product updates or silence."
 msgstr "بريد الإطلاق فقط: تختار تحديثات المنتج أو الصمت."
 
-#: lib/pages/home/highlights.ex:66
+#: lib/pages/home/highlights.ex:60
 #, elixir-autogen, elixir-format
 msgid "MCP-aware components"
 msgstr "مكوّنات واعية بـ MCP"
 
-#: lib/pages/home/highlights.ex:39
+#: lib/pages/home/highlights.ex:37
 #, elixir-autogen, elixir-format
 msgid "Markdown posts"
 msgstr "مقالات Markdown"
@@ -447,37 +442,37 @@ msgstr "مقالات Markdown"
 msgid "One launch email, optional build notes, no spam. Full Phoenix template lands after this static core. Get notified for both."
 msgstr "بريد إطلاق واحد، ملاحظات بناء اختيارية، لا spam. يصل قالب Phoenix الكامل بعد هذا الأساس الثابت. أبلغني بالاثنين."
 
-#: lib/pages/home/waitlist.ex:28
+#: lib/pages/home/waitlist.ex:26
 #, elixir-autogen, elixir-format
 msgid "One-click unsubscribe; we never sell or rent your email."
 msgstr "إلغاء اشتراك بنقرة؛ لا نبيع بريدك ولا نؤجره."
 
-#: lib/pages/home/scale.ex:49
+#: lib/pages/home/scale.ex:45
 #, elixir-autogen, elixir-format
 msgid "Open Source"
 msgstr "مفتوح المصدر"
 
-#: lib/pages/home/pricing.ex:69
+#: lib/pages/home/pricing.ex:63
 #, elixir-autogen, elixir-format
 msgid "Palette to Tailwind v4 pipeline"
 msgstr "مسار من اللوحة إلى Tailwind v4"
 
-#: lib/pages/home/pricing.ex:108
+#: lib/pages/home/pricing.ex:100
 #, elixir-autogen, elixir-format
 msgid "Placeholder for sales-led or enterprise deals, edit numbers and bullets for your motion."
 msgstr "عنصر نائب لصفقات مبيعات أو مؤسسات, عدّل الأرقام والنقاط لمسارك."
 
-#: lib/pages/home/pricing.ex:85
+#: lib/pages/home/pricing.ex:79
 #, elixir-autogen, elixir-format
 msgid "Placeholder tier, rename, reprice, and point the button at your checkout or waitlist."
 msgstr "مستوى نموذجي, أعد التسمية والسعر ووجّه الزر إلى الدفع أو قائمة الانتظار."
 
-#: lib/pages/home/pricing.ex:203
+#: lib/pages/home/pricing.ex:191
 #, elixir-autogen, elixir-format
 msgid "Questions about the template or Corex?"
 msgstr "أسئلة عن القالب أو Corex؟"
 
-#: lib/pages/home/pricing.ex:72
+#: lib/pages/home/pricing.ex:66
 #, elixir-autogen, elixir-format
 msgid "Read the docs"
 msgstr "اقرأ التوثيق"
@@ -487,27 +482,27 @@ msgstr "اقرأ التوثيق"
 msgid "Read the documentation"
 msgstr "اقرأ التوثيق"
 
-#: lib/pages/home/pricing.ex:115
+#: lib/pages/home/pricing.ex:105
 #, elixir-autogen, elixir-format
 msgid "Remove when you do not need a third tier"
 msgstr "أزلها إذا لم تحتج لمستوى ثالث"
 
-#: lib/pages/home/pricing.ex:91
+#: lib/pages/home/pricing.ex:83
 #, elixir-autogen, elixir-format
 msgid "Replace CTA text and destination freely"
 msgstr "استبدل نص ووجهة الدعوة بحرية"
 
-#: lib/pages/home/waitlist.ex:78
+#: lib/pages/home/waitlist.ex:74
 #, elixir-autogen, elixir-format
 msgid "Send me build updates"
 msgstr "أرسل لي تحديثات البناء"
 
-#: lib/pages/home/pricing.ex:89
+#: lib/pages/home/pricing.ex:81
 #, elixir-autogen, elixir-format
 msgid "Shows featured styling and monthly or yearly math"
 msgstr "يعرض تمييزًا وتنسيقًا وحسابًا شهريًا أو سنويًا"
 
-#: lib/pages/home/pricing.ex:59
+#: lib/pages/home/pricing.ex:55
 #, elixir-autogen, elixir-format
 msgid "SoonexI18n"
 msgstr "SoonexI18n"
@@ -522,113 +517,113 @@ msgstr "SoonexI18n مرخّص بـ MIT وسيبقى مجانيًا للاستخ�
 msgid "SoonexI18n stays free. Corex stays free. This block is a pricing example."
 msgstr "SoonexI18n يبقى مجانيًا. Corex يبقى مجانيًا. هذا القسم مثال على التسعير."
 
-#: lib/pages/home/highlights.ex:52
+#: lib/pages/home/highlights.ex:50
 #, elixir-autogen, elixir-format
 msgid "Static build, Elixir-native"
 msgstr "بناء ثابت أصلي لـ Elixir"
 
-#: lib/pages/home/faq.ex:98
+#: lib/pages/home/faq.ex:86
 #, elixir-autogen, elixir-format
 msgid "Still deciding?"
 msgstr "ما زلت تفكر؟"
 
-#: lib/pages/home/pricing.ex:90
+#: lib/pages/home/pricing.ex:82
 #, elixir-autogen, elixir-format
 msgid "Swap perks for your product bullets"
 msgstr "بدّل المزايا لنقاط منتجك"
 
-#: lib/pages/home/highlights.ex:33
+#: lib/pages/home/highlights.ex:31
 #, elixir-autogen, elixir-format
 msgid "Tableau static"
 msgstr "Tableau ثابت"
 
-#: lib/pages/home/highlights.ex:37
+#: lib/pages/home/highlights.ex:35
 #, elixir-autogen, elixir-format
 msgid "Tailwind v4"
 msgstr "Tailwind v4"
 
-#: lib/pages/home/faq.ex:63
+#: lib/pages/home/faq.ex:55
 #, elixir-autogen, elixir-format
 msgid "Themes, modes, and locales?"
 msgstr "السمات والأوضاع والمحلات؟"
 
-#: lib/pages/home/pricing.ex:145
+#: lib/pages/home/pricing.ex:135
 #, elixir-autogen, elixir-format
 msgid "Tier %{num}"
 msgstr "المستوى %{num}"
 
-#: lib/pages/home/pricing.ex:113
+#: lib/pages/home/pricing.ex:103
 #, elixir-autogen, elixir-format
 msgid "Use for contact sales, pilots, or quotes"
 msgstr "للمبيعات أو التجارب أو عروض الأسعار"
 
-#: lib/layouts/root_layout.ex:166
+#: lib/layouts/root_layout.ex:191
 #, elixir-autogen, elixir-format
 msgid "We lost the connection"
 msgstr "فُقد الاتصال"
 
-#: lib/pages/home/faq.ex:99
+#: lib/pages/home/faq.ex:87
 #, elixir-autogen, elixir-format
 msgid "We ship quietly and read every reply."
 msgstr "نُطلق بهدوء ونقرأ كل رد."
 
-#: lib/layouts/root_layout.ex:167
+#: lib/layouts/root_layout.ex:192
 #, elixir-autogen, elixir-format
 msgid "We're trying to reconnect you..."
 msgstr "نحاول إعادة الاتصال…"
 
-#: lib/pages/home/faq.ex:54
+#: lib/pages/home/faq.ex:48
 #, elixir-autogen, elixir-format
 msgid "What about Corex MCP?"
 msgstr "وماذا عن Corex MCP؟"
 
-#: lib/pages/home/faq.ex:72
+#: lib/pages/home/faq.ex:62
 #, elixir-autogen, elixir-format
 msgid "What comes after this static template?"
 msgstr "ماذا بعد هذا القالب الثابت؟"
 
-#: lib/pages/home/faq.ex:36
+#: lib/pages/home/faq.ex:34
 #, elixir-autogen, elixir-format
 msgid "What is SoonexI18n?"
 msgstr "ما هو SoonexI18n؟"
 
-#: lib/pages/home/waitlist.ex:58
+#: lib/pages/home/waitlist.ex:54
 #, elixir-autogen, elixir-format
 msgid "Your email"
 msgstr "بريدك"
 
-#: lib/pages/home/pricing.ex:70
+#: lib/pages/home/pricing.ex:64
 #, elixir-autogen, elixir-format
 msgid "_posts Markdown and RSS starter"
 msgstr "مقالات Markdown في _posts وبداية RSS"
 
-#: lib/pages/home/faq.ex:65
+#: lib/pages/home/faq.ex:57
 #, elixir-autogen, elixir-format
 msgid "data-theme and data-mode switch Neo, Uno, Duo, and Leo; theme and mode scripts in the layout sync controls and localStorage. Gettext and Localize back RTL locales such as Arabic alongside English."
 msgstr "data-theme وdata-mode يبدّلان Neo وUno وDuo وLeo؛ نصوص السمة والوضع في التخطيط تزامن عناصر التحكم وlocalStorage. يدعم Gettext وLocalize محلات RTL مثل العربية مع الإنجليزية."
 
-#: lib/pages/home/pricing.ex:61
+#: lib/pages/home/pricing.ex:57
 #, elixir-autogen, elixir-format
 msgid "forever"
 msgstr "للأبد"
 
-#: lib/pages/home/pricing.ex:104
-#: lib/pages/home/pricing.ex:105
+#: lib/pages/home/pricing.ex:96
+#: lib/pages/home/pricing.ex:97
 #, elixir-autogen, elixir-format
 msgid "from $2.5k"
 msgstr "من ٢٫٥ ألف دولار"
 
-#: lib/pages/home/pricing.ex:106
+#: lib/pages/home/pricing.ex:98
 #, elixir-autogen, elixir-format
 msgid "from $2k"
 msgstr "من ألفي دولار"
 
-#: lib/pages/home/waitlist.ex:42
+#: lib/pages/home/waitlist.ex:40
 #, elixir-autogen, elixir-format
 msgid "Thanks for joining"
 msgstr ""
 
-#: lib/pages/home/waitlist.ex:44
+#: lib/pages/home/waitlist.ex:42
 #, elixir-autogen, elixir-format
 msgid "This demo does not send or collect email. Point this form at your API or endpoint when you ship."
 msgstr ""
@@ -643,27 +638,27 @@ msgstr ""
 msgid "covers components, tokens, Markdown, locales, themes, and MCP for your editor."
 msgstr ""
 
-#: lib/pages/home/faq.ex:38
+#: lib/pages/home/faq.ex:36
 #, elixir-autogen, elixir-format, fuzzy
 msgid "A Tableau-driven coming-soon site that demonstrates Corex on static HTML: countdown, highlights, metrics, pricing, FAQ, waitlist, Markdown journal post, and footer. Tableau emits files you can host on GitHub Pages, S3, or any CDN."
 msgstr "موقع SoonexI18n يعمل بـ Tableau ويعرض Corex على HTML ثابت: عدّ تنازلي وإبراز ومقاييس وأسئلة شائعة وقائمة انتظار ومقال Markdown وتذييل, يُبنى بـ mix tableau.build ويُنشر كملفات عادية."
 
-#: lib/pages/home/pricing.ex:68
+#: lib/pages/home/pricing.ex:62
 #, elixir-autogen, elixir-format
 msgid "Assets plus static export"
 msgstr ""
 
-#: lib/pages/home/highlights.ex:54
+#: lib/pages/home/highlights.ex:52
 #, elixir-autogen, elixir-format, fuzzy
 msgid "Author in HEEx and Markdown under Tableau. Output is plain HTML, CSS, and ESM. Host on GitHub Pages, S3, or any CDN without a Node runtime on the edge."
 msgstr "اكتب بـ HEEx وMarkdown تحت Tableau. المخرجات HTML وCSS وESM, استضف على GitHub Pages أو S3 أو أي CDN دون تشغيل Node على الحافة."
 
-#: lib/pages/home/highlights.ex:59
+#: lib/pages/home/highlights.ex:55
 #, elixir-autogen, elixir-format, fuzzy
 msgid "Design pipeline in one app"
 msgstr "مسار التصميم في Mix"
 
-#: lib/pages/home/faq.ex:45
+#: lib/pages/home/faq.ex:41
 #, elixir-autogen, elixir-format
 msgid "How do builds and previews work?"
 msgstr ""
@@ -673,12 +668,12 @@ msgstr ""
 msgid "How static Tableau, Corex MCP, Markdown posts, and the asset side of this repo fit together, and how it relates to a future Phoenix SoonexI18n application template."
 msgstr "كيف يتكامل Tableau الثابت، خط أنابيب أصول Mix، أدوات Corex MCP، ومقالات Markdown, وعلاقة هذا المستودع بقالب تطبيق Phoenix SoonexI18n مستقبلًا."
 
-#: lib/pages/home/highlights.ex:61
+#: lib/pages/home/highlights.ex:57
 #, elixir-autogen, elixir-format, fuzzy
 msgid "Palette JSON feeds Designex and Corex component CSS. Tailwind v4 reads the same tokens so utilities and components stay aligned without hand-synced spreadsheets."
 msgstr "يغذي JSON للوحة Designex وCSS لمكوّنات Corex. يقرأ Tailwind v4 نفس الرموز لتبقى الأدوات والمكوّنات متوافقة دون جداول يدوية."
 
-#: lib/pages/home/highlights.ex:35
+#: lib/pages/home/highlights.ex:33
 #, elixir-autogen, elixir-format
 msgid "Palette and assets"
 msgstr ""
@@ -688,17 +683,17 @@ msgstr ""
 msgid "Palette, Corex, and Tailwind v4 read the same tokens. Scripts bundle from one app. Tableau ships static HTML built from HEEx you would use with LiveView, compiled ahead of deploy."
 msgstr ""
 
-#: lib/pages/home/highlights.ex:34
+#: lib/pages/home/highlights.ex:32
 #, elixir-autogen, elixir-format
 msgid "Tableau dev server"
 msgstr ""
 
-#: lib/pages/home/faq.ex:47
+#: lib/pages/home/faq.ex:43
 #, elixir-autogen, elixir-format
 msgid "The asset alias refreshes palette JSON, Designex, Tailwind, and esbuild. Tableau writes _site for production. The dev server watches HEEx and Markdown while you work. Journal posts live under _posts and render through MDEx."
 msgstr ""
 
-#: lib/pages/home/pricing.ex:63
+#: lib/pages/home/pricing.ex:59
 #, elixir-autogen, elixir-format, fuzzy
 msgid "The template itself: fork, run setup, then ship with Tableau or Phoenix. No charge, no upsell."
 msgstr "القالب نفسه: فرع، شغّل mix setup، انشر Tableau أو Phoenix, بلا رسوم ولا بيع إضافي."
@@ -708,17 +703,17 @@ msgstr "القالب نفسه: فرع، شغّل mix setup، انشر Tableau أ
 msgid "Write Elixir, ship a static build."
 msgstr "اكتب بلغة Elixir، انشر بناءً ثابتًا."
 
-#: lib/pages/home/scale.ex:60
+#: lib/pages/home/scale.ex:56
 #, elixir-autogen, elixir-format
 msgid "Keyboard flows, focus management, and ARIA patterns powered by Zag.js state machines."
 msgstr "تدفقات لوحة المفاتيح، إدارة التركيز، وأنماط ARIA عبر آلات حالة Zag.js."
 
-#: lib/pages/home/scale.ex:51
+#: lib/pages/home/scale.ex:47
 #, elixir-autogen, elixir-format
 msgid "MIT licensed, fork, ship, and extend without a license fee."
 msgstr "مرخّص بـ MIT, انسخ، انشر، ووسّع دون رسوم ترخيص."
 
-#: lib/pages/home/scale.ex:40
+#: lib/pages/home/scale.ex:38
 #, elixir-autogen, elixir-format
 msgid "Phoenix bindings such as phx-click in HEEx, client-side wiring from your templates, alongside JavaScript and TypeScript Corex hooks."
 msgstr "Phoenix bindings مثل phx-click في HEEx, سلوك في المتصفح من القوالب, مع خطاطيف Corex في JavaScript وTypeScript."

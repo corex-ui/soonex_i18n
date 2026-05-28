@@ -3,7 +3,7 @@ defmodule SoonexI18n.HomePage.Waitlist do
 
   use Phoenix.Component
   use Corex
-  use Gettext, backend: SoonexI18n.Gettext
+  use SoonexI18n.GettextSigil
 
   def waitlist(assigns) do
     ~H"""
@@ -14,18 +14,16 @@ defmodule SoonexI18n.HomePage.Waitlist do
       data-reveal
     >
       <div class="mx-auto flex w-full max-w-6xl flex-col items-center gap-space-xl lg:flex-row lg:items-start lg:justify-center lg:gap-x-space-xl">
-        <div class="flex w-full max-w-md flex-col items-center gap-space text-center">
-          <h2 id="soonex_i18n-waitlist-heading">{gettext("Be there when SoonexI18n ships.")}</h2>
-          <p class="m-0">
-            {gettext(
-              "One launch email, optional build notes, no spam. Full Phoenix template lands after this static core. Get notified for both."
-            )}
+        <div class="flex w-full max-w-md flex-col items-center gap-space-lg text-center">
+          <h2 id="soonex_i18n-waitlist-heading">{~t"Be there when SoonexI18n ships."}</h2>
+          <p class="m-0 leading-relaxed">
+            {~t"One launch email, optional build notes, no spam. Full Phoenix template lands after this static core. Get notified for both."}
           </p>
-          <ul class="m-0 flex w-full list-none flex-col gap-space-sm p-0 text-start">
+          <ul class="m-0 flex w-full list-none flex-col gap-space p-0 text-start">
             <%= for line <- [
-                  gettext("Early access, two weeks before the public drop."),
-                  gettext("Launch mail only: you choose product updates or silence."),
-                  gettext("One-click unsubscribe; we never sell or rent your email.")
+                  ~t"Early access, two weeks before the public drop.",
+                  ~t"Launch mail only: you choose product updates or silence.",
+                  ~t"One-click unsubscribe; we never sell or rent your email."
                 ] do %>
               <li class="flex gap-space-sm text-start">
                 <.heroicon name="hero-check" />
@@ -38,12 +36,10 @@ defmodule SoonexI18n.HomePage.Waitlist do
         <div class="w-full max-w-md min-w-0">
           <form
             id="soonex_i18n-waitlist-form"
-            class="flex flex-col gap-space"
-            data-waitlist-toast-title={gettext("Thanks for joining")}
+            class="flex flex-col gap-space-lg"
+            data-waitlist-toast-title={~t"Thanks for joining"}
             data-waitlist-toast-description={
-              gettext(
-                "This demo does not send or collect email. Point this form at your API or endpoint when you ship."
-              )
+              ~t"This demo does not send or collect email. Point this form at your API or endpoint when you ship."
             }
           >
             <div class="flex flex-col gap-space-sm sm:flex-row sm:items-end sm:gap-space">
@@ -55,7 +51,7 @@ defmodule SoonexI18n.HomePage.Waitlist do
                   required
                   class="native-input"
                 >
-                  <:label class="sr-only">{gettext("Your email")}</:label>
+                  <:label class="sr-only">{~t"Your email"}</:label>
                   <:icon><.heroicon name="hero-envelope" class="icon" /></:icon>
                 </.native_input>
               </div>
@@ -63,7 +59,7 @@ defmodule SoonexI18n.HomePage.Waitlist do
                 type="submit"
                 class="button button--accent button--sm"
               >
-                {gettext("Join waitlist")}
+                {~t"Join waitlist"}
               </button>
             </div>
             <.checkbox
@@ -75,7 +71,7 @@ defmodule SoonexI18n.HomePage.Waitlist do
               <:indicator>
                 <.heroicon name="hero-check" />
               </:indicator>
-              <:label>{gettext("Send me build updates")}</:label>
+              <:label>{~t"Send me build updates"}</:label>
             </.checkbox>
           </form>
         </div>

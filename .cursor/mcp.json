@@ -1,7 +1,0 @@
-{
-  "mcpServers": {
-    "corex": {
-      "url": "http://localhost:4004/corex/mcp"
-    }
-  }
-}

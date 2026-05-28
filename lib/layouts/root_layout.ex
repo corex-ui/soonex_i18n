@@ -7,7 +7,7 @@ defmodule SoonexI18n.RootLayout do
   use Phoenix.Component
   use Corex
   use SoonexI18n.Routes
-  use Gettext, backend: SoonexI18n.Gettext
+  use SoonexI18n.GettextSigil
 
   import SoonexI18n.Layouts.Root.Demo, only: [demo_site_controls: 1]
   import SoonexI18n.Layouts.Root.Footer, only: [site_footer: 1]
@@ -166,7 +166,7 @@ defmodule SoonexI18n.RootLayout do
       </head>
 
       <body class="layout typo">
-        <.navigate to="#main-content" class="link link--skip">{gettext("Skip to content")}</.navigate>
+        <.navigate to="#main-content" class="link link--skip">{~t"Skip to content"}</.navigate>
 
         <.demo_site_controls page={@page} locale={@locale} mode={@mode} />
         <.landing_chrome countdown_start_ms={@countdown_start_ms} />
@@ -188,8 +188,8 @@ defmodule SoonexI18n.RootLayout do
         </.toast_group>
         <.toast_client_error
           toast_group_id="layout-toast"
-          title={gettext("We lost the connection")}
-          description={gettext("We're trying to reconnect you...")}
+          title={~t"We lost the connection"}
+          description={~t"We're trying to reconnect you..."}
           type={:error}
           duration={:infinity}
         />
@@ -209,35 +209,29 @@ defmodule SoonexI18n.RootLayout do
         page[:title]
 
       page[:page_kind] == :home ->
-        gettext("%{name} · Elixir static site template", name: site_name)
+        ~t"#{name = site_name} · Elixir static site template"
 
       page[:page_kind] == :not_found ->
-        gettext("Page not found · %{name}", name: site_name)
+        ~t"Page not found · #{name = site_name}"
 
       true ->
-        gettext("%{name}", name: site_name)
+        ~t"#{name = site_name}"
     end
   end
 
   defp meta_description(page, site_name) do
     cond do
       page[:page_kind] == :home ->
-        gettext(
-          "Tableau + Corex coming-soon template: static HEEx, design tokens, Markdown, locales. Join the %{name} waitlist.",
-          name: site_name
-        )
+        ~t"Tableau + Corex coming-soon template: static HEEx, design tokens, Markdown, locales. Join the #{name = site_name} waitlist."
 
       page[:page_kind] == :not_found ->
-        gettext("This URL is not available on the %{name} static site.", name: site_name)
+        ~t"This URL is not available on the #{name = site_name} static site."
 
       present_string?(page[:description]) ->
         page[:description]
 
       true ->
-        gettext(
-          "A coming-soon static site. Learn more about %{name}.",
-          name: site_name
-        )
+        ~t"A coming-soon static site. Learn more about #{name = site_name}."
     end
   end
 

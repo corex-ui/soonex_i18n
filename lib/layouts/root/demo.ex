@@ -3,7 +3,7 @@ defmodule SoonexI18n.Layouts.Root.Demo do
 
   use Phoenix.Component
   use Corex
-  use Gettext, backend: SoonexI18n.Gettext
+  use SoonexI18n.GettextSigil
 
   attr(:page, :map, required: true)
   attr(:locale, :any, required: true)
@@ -13,7 +13,7 @@ defmodule SoonexI18n.Layouts.Root.Demo do
     ~H"""
     <div
       role="region"
-      aria-label={gettext("Demo site controls")}
+      aria-label={~t"Demo site controls"}
       class="fixed bottom-space end-space z-50 flex flex-col items-end gap-space"
     >
       <.floating_panel
@@ -28,13 +28,13 @@ defmodule SoonexI18n.Layouts.Root.Demo do
           }
         }
         resizable={false}
-        translation={%Corex.FloatingPanel.Translation{close: gettext("Close")}}
+        translation={%Corex.FloatingPanel.Translation{close: ~t"Close"}}
       >
         <:trigger class="button button--sm">
           <.heroicon name="hero-cog-6-tooth" />
-          {gettext("Template Options")}
+          {~t"Template Options"}
         </:trigger>
-        <:title>{gettext("Template Options")}</:title>
+        <:title>{~t"Template Options"}</:title>
         <:close_trigger>
           <.heroicon name="hero-x-mark" />
         </:close_trigger>
@@ -53,10 +53,10 @@ defmodule SoonexI18n.Layouts.Root.Demo do
               }
               redirect
               on_value_change_client="corex:set-locale"
-              translation={%Corex.Select.Translation{placeholder: gettext("Language")}}
+              translation={%Corex.Select.Translation{placeholder: ~t"Language"}}
               positioning={%Corex.Positioning{same_width: true}}
             >
-              <:label>{gettext("Language")}</:label>
+              <:label>{~t"Language"}</:label>
               <:trigger>
                 <.heroicon name="hero-language" />
               </:trigger>
@@ -74,9 +74,9 @@ defmodule SoonexI18n.Layouts.Root.Demo do
                 close_on_select={false}
                 update_trigger={false}
                 on_value_change_client="corex:set-theme"
-                translation={%Corex.Select.Translation{placeholder: gettext("Theme")}}
+                translation={%Corex.Select.Translation{placeholder: ~t"Theme"}}
               >
-                <:label>{gettext("Theme")}</:label>
+                <:label>{~t"Theme"}</:label>
                 <:trigger>
                   <.heroicon name="hero-chevron-down" />
                 </:trigger>
@@ -85,23 +85,22 @@ defmodule SoonexI18n.Layouts.Root.Demo do
                 </:item_indicator>
               </.select>
 
-              <.toggle_group
+              <.toggle
                 id="mode-switcher"
-                class="toggle-group toggle-group--sm toggle-group--duo toggle-group--circle"
-                multiple={false}
-                deselectable={true}
-                value={SoonexI18n.Mode.toggle_value(@mode)}
+                class="toggle toggle--sm"
+                data-toggle-dual-label
+                pressed={@mode == "dark"}
                 dir={SoonexI18n.Locale.dir(@locale)}
-                on_value_change_client="corex:set-mode"
+                on_pressed_change_client="corex:set-mode"
               >
-                <:label class="sr-only">{gettext("Color mode")}</:label>
-                <:item
-                  value="dark"
-                  aria_label={gettext("Toggle color mode")}
-                >
-                  {SoonexI18n.Mode.dual_icon()}
-                </:item>
-              </.toggle_group>
+                <span class="sr-only">{~t"Color mode"}</span>
+                <span>
+                  <.heroicon name="hero-moon" />
+                </span>
+                <span data-pressed>
+                  <.heroicon name="hero-sun" />
+                </span>
+              </.toggle>
             </div>
           </div>
         </:content>
@@ -111,7 +110,7 @@ defmodule SoonexI18n.Layouts.Root.Demo do
         class="button button--accent button--sm"
         external
       >
-        {gettext("Made with Corex")}
+        {~t"Made with Corex"}
         <.heroicon name="hero-arrow-down-tray" />
       </.navigate>
     </div>

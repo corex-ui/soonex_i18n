@@ -4,50 +4,46 @@ defmodule SoonexI18n.HomePage.Pricing do
   use Phoenix.Component
   use Corex
   use SoonexI18n.Routes
-  use Gettext, backend: SoonexI18n.Gettext
+  use SoonexI18n.GettextSigil
 
   def pricing(assigns) do
     ~H"""
     <section
       id="pricing"
       data-soonex_i18n-pricing
-      data-pricing-suffix-monthly={gettext("/mo")}
-      data-pricing-suffix-yearly={gettext("/yr")}
+      data-pricing-suffix-monthly={~t"/mo"}
+      data-pricing-suffix-yearly={~t"/yr"}
       class="relative flex min-h-dvh flex-col justify-center border-y border-border bg-ui-muted px-space py-size-xl"
       aria-labelledby="soonex_i18n-pricing-heading"
       data-reveal
     >
-      <div class="mx-auto flex w-full max-w-6xl flex-col gap-size">
-        <div class="layout__section-intro">
+      <div class="mx-auto flex w-full max-w-6xl flex-col gap-size-lg">
+        <div class="layout__section-intro gap-space-lg">
           <h2 id="soonex_i18n-pricing-heading">
-            {gettext("SoonexI18n stays free. Corex stays free. This block is a pricing example.")}
+            {~t"SoonexI18n stays free. Corex stays free. This block is a pricing example."}
           </h2>
-          <p>
-            {gettext(
-              "SoonexI18n is MIT-licensed and will remain free to use and fork. Corex is free. Most products still need a pricing section, below is sample copy, tiers, and a billing toggle you replace with your own plans and checkout."
-            )}
+          <p class="leading-relaxed">
+            {~t"SoonexI18n is MIT-licensed and will remain free to use and fork. Corex is free. Most products still need a pricing section, below is sample copy, tiers, and a billing toggle you replace with your own plans and checkout."}
           </p>
         </div>
 
-        <p class="m-0 text-center text-sm text-ink-muted">
-          {gettext(
-            "Demonstrates Corex Switch wiring for monthly versus yearly display, swap labels and math for your billing rules."
-          )}
+        <p class="m-0 text-center text-sm leading-relaxed text-ink-muted">
+          {~t"Demonstrates Corex Switch wiring for monthly versus yearly display, swap labels and math for your billing rules."}
         </p>
 
         <div class="flex flex-wrap items-center justify-center gap-space-md">
           <span class="text-sm font-medium text-ink">
-            {gettext("Monthly billing")}
+            {~t"Monthly billing"}
           </span>
 
           <.switch
             id="soonex_i18n-pricing-yearly"
             class="switch switch--accent switch--sm"
             on_checked_change_client="soonex_i18n-pricing-billing"
-            aria_label={gettext("Toggle yearly billing with twenty percent discount")}
+            aria_label={~t"Toggle yearly billing with twenty percent discount"}
           >
             <:label position={:post} class="text-sm text-ink-muted">
-              {gettext("Pay yearly (−20%)")}
+              {~t"Pay yearly (−20%)"}
             </:label>
           </.switch>
         </div>
@@ -56,20 +52,18 @@ defmodule SoonexI18n.HomePage.Pricing do
           <%= for {tier, idx} <- Enum.with_index([
                  %{
                    tier_key: "free",
-                   name: gettext("SoonexI18n"),
+                   name: ~t"SoonexI18n",
                    price: "$0",
-                   period: gettext("forever"),
+                   period: ~t"forever",
                    blurb:
-                     gettext(
-                       "The template itself: fork, run setup, then ship with Tableau or Phoenix. No charge, no upsell."
-                     ),
+                     ~t"The template itself: fork, run setup, then ship with Tableau or Phoenix. No charge, no upsell.",
                    perks: [
-                     gettext("Corex components + token-driven styling"),
-                     gettext("Assets plus static export"),
-                     gettext("Palette to Tailwind v4 pipeline"),
-                     gettext("_posts Markdown and RSS starter")
+                     ~t"Corex components + token-driven styling",
+                     ~t"Assets plus static export",
+                     ~t"Palette to Tailwind v4 pipeline",
+                     ~t"_posts Markdown and RSS starter"
                    ],
-                   cta_label: gettext("Read the docs"),
+                   cta_label: ~t"Read the docs",
                    cta_to: :docs,
                    cta_external: false,
                    cta_class: "button button--ghost",
@@ -78,20 +72,18 @@ defmodule SoonexI18n.HomePage.Pricing do
                  %{
                    tier_key: "pro",
                    monthly_usd: 49,
-                   name: gettext("Example paid"),
+                   name: ~t"Example paid",
                    price: "$49",
-                   period: gettext("/mo"),
+                   period: ~t"/mo",
                    blurb:
-                     gettext(
-                       "Placeholder tier, rename, reprice, and point the button at your checkout or waitlist."
-                     ),
+                     ~t"Placeholder tier, rename, reprice, and point the button at your checkout or waitlist.",
                    perks: [
-                     gettext("Shows featured styling and monthly or yearly math"),
-                     gettext("Swap perks for your product bullets"),
-                     gettext("Replace CTA text and destination freely"),
-                     gettext("Delete this column if you ship one price")
+                     ~t"Shows featured styling and monthly or yearly math",
+                     ~t"Swap perks for your product bullets",
+                     ~t"Replace CTA text and destination freely",
+                     ~t"Delete this column if you ship one price"
                    ],
-                   cta_label: gettext("Example primary CTA"),
+                   cta_label: ~t"Example primary CTA",
                    cta_to: "#waitlist",
                    cta_external: false,
                    cta_class: "button button--accent",
@@ -99,22 +91,20 @@ defmodule SoonexI18n.HomePage.Pricing do
                  },
                  %{
                    tier_key: "studio",
-                   name: gettext("Example custom"),
-                   price: gettext("Custom"),
-                   period: gettext("from $2.5k"),
-                   studio_from_monthly: gettext("from $2.5k"),
-                   studio_from_yearly: gettext("from $2k"),
+                   name: ~t"Example custom",
+                   price: ~t"Custom",
+                   period: ~t"from $2.5k",
+                   studio_from_monthly: ~t"from $2.5k",
+                   studio_from_yearly: ~t"from $2k",
                    blurb:
-                     gettext(
-                       "Placeholder for sales-led or enterprise deals, edit numbers and bullets for your motion."
-                     ),
+                     ~t"Placeholder for sales-led or enterprise deals, edit numbers and bullets for your motion.",
                    perks: [
-                     gettext("Illustrates custom price lines on the toggle"),
-                     gettext("Use for contact sales, pilots, or quotes"),
-                     gettext("Hook forms or CRM links from the button"),
-                     gettext("Remove when you do not need a third tier")
+                     ~t"Illustrates custom price lines on the toggle",
+                     ~t"Use for contact sales, pilots, or quotes",
+                     ~t"Hook forms or CRM links from the button",
+                     ~t"Remove when you do not need a third tier"
                    ],
-                   cta_label: gettext("Example contact CTA"),
+                   cta_label: ~t"Example contact CTA",
                    cta_to: "#",
                    cta_external: false,
                    cta_class: "button button--ghost",
@@ -127,7 +117,7 @@ defmodule SoonexI18n.HomePage.Pricing do
               data-studio-from-monthly={Map.get(tier, :studio_from_monthly)}
               data-studio-from-yearly={Map.get(tier, :studio_from_yearly)}
               class={[
-                "relative flex min-w-0 flex-col gap-space rounded-xl border bg-layer p-size-lg",
+                "relative flex min-w-0 flex-col gap-space-lg rounded-xl border bg-layer p-size-lg",
                 if(tier.featured,
                   do: "border-accent shadow-ui ring-1 ring-accent/30 lg:-translate-y-2",
                   else: "border-border"
@@ -136,18 +126,16 @@ defmodule SoonexI18n.HomePage.Pricing do
             >
               <%= if tier.featured do %>
                 <span class="badge badge--accent absolute right-space top-0 -translate-y-1/2">
-                  {gettext("Example highlight")}
+                  {~t"Example highlight"}
                 </span>
               <% end %>
 
               <div class="flex flex-col gap-space-sm">
                 <p class="ui-label uppercase tracking-widest text-ink-muted">
-                  {gettext("Tier %{num}",
-                    num: String.pad_leading("#{idx + 1}", 2, "0")
-                  )}
+                  {~t"Tier #{num = String.pad_leading("#{idx + 1}", 2, "0")}"}
                 </p>
                 <h3>{tier.name}</h3>
-                <p class="m-0">{tier.blurb}</p>
+                <p class="m-0 leading-relaxed">{tier.blurb}</p>
               </div>
 
               <%= case tier.tier_key do %>
@@ -162,7 +150,7 @@ defmodule SoonexI18n.HomePage.Pricing do
                       $49
                     </span>
                     <span class="text-sm" data-pricing-period>
-                      {gettext("/mo")}
+                      {~t"/mo"}
                     </span>
                   </div>
                 <% "studio" -> %>
@@ -179,7 +167,7 @@ defmodule SoonexI18n.HomePage.Pricing do
                   </div>
               <% end %>
 
-              <ul class="m-0 flex list-none flex-col gap-space-sm p-0">
+              <ul class="m-0 flex list-none flex-col gap-space p-0">
                 <%= for perk <- tier.perks do %>
                   <li class="flex items-start gap-space-sm text-start">
                     <.heroicon name="hero-check-circle" />
@@ -200,7 +188,7 @@ defmodule SoonexI18n.HomePage.Pricing do
         </ul>
 
         <p class="m-0 text-center text-sm text-ink-muted">
-          {gettext("Questions about the template or Corex?")}
+          {~t"Questions about the template or Corex?"}
           <.navigate to="#" class="link link--accent">hello@soonex_i18n.dev</.navigate>.
         </p>
       </div>

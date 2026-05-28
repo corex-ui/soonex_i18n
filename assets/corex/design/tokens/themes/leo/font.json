@@ -4,7 +4,8 @@
       "display": {
         "type": "fontFamily",
         "value": [
-          "Plus Jakarta Sans",
+          "Source Sans 3",
+          "Source Sans Pro",
           "ui-sans-serif",
           "system-ui",
           "sans-serif",
@@ -30,8 +31,8 @@
       "sans": {
         "type": "fontFamily",
         "value": [
-          "Inter",
-          "Inter var",
+          "Source Sans 3",
+          "Source Sans Pro",
           "ui-sans-serif",
           "system-ui",
           "sans-serif",
@@ -44,14 +45,12 @@
       "serif": {
         "type": "fontFamily",
         "value": [
-          "Plus Jakarta Sans",
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif",
-          "Apple Color Emoji",
-          "Segoe UI Emoji",
-          "Segoe UI Symbol",
-          "Noto Color Emoji"
+          "ui-serif",
+          "Georgia",
+          "Cambria",
+          "Times New Roman",
+          "Times",
+          "serif"
         ]
       }
     },

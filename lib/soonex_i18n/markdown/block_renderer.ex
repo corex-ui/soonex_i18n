@@ -3,7 +3,7 @@ defmodule SoonexI18n.Markdown.BlockRenderer do
 
   use Phoenix.Component
   use Corex
-  use Gettext, backend: SoonexI18n.Gettext
+  use SoonexI18n.GettextSigil
 
   alias Phoenix.HTML
 
@@ -16,7 +16,7 @@ defmodule SoonexI18n.Markdown.BlockRenderer do
       |> assign(:clipboard_id, clipboard_id)
       |> assign(:raw_code, code)
       |> assign(:highlighted, HTML.raw(highlighted))
-      |> assign(:aria_label, gettext("Copy code"))
+      |> assign(:aria_label, ~t"Copy code")
 
     fence_block(assigns)
     |> HTML.html_escape()

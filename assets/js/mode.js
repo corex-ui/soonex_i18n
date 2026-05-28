@@ -1,52 +1,29 @@
-import { whenControlReady, firstDetailValue } from "./controls-shared.js"
+import { bindStoredPreference } from "./controls-shared.js"
 
-;(() => {
-  const html = () => document.documentElement
+const systemMode = () =>
+  matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
 
-  const readStoredMode = () => localStorage.getItem("data-mode")
+const resolveMode = (raw) =>
+  raw === "dark" || raw === "light" ? raw : systemMode()
 
-  const getSystemMode = () =>
-    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
-
-  const syncModeToggle = (mode) => {
+bindStoredPreference({
+  attr: "data-mode",
+  controlId: "mode-switcher",
+  resolve: resolveMode,
+  syncControl: (mode) => {
     const root = document.getElementById("mode-switcher")
     if (!root) return
-    const value = mode === "dark" ? ["dark"] : []
     root.dispatchEvent(
-      new CustomEvent("corex:toggle-group:set-value", { detail: { value } }),
+      new CustomEvent("corex:toggle:set-pressed", {
+        bubbles: false,
+        detail: { pressed: mode === "dark" },
+      }),
     )
-  }
-
-  const applyMode = (mode) => {
-    const resolved =
-      mode === "dark" || mode === "light" ? mode : getSystemMode()
-    localStorage.setItem("data-mode", resolved)
-    html().setAttribute("data-mode", resolved)
-    return resolved
-  }
-
-  const syncModeFromDocument = () => {
-    const m = html().getAttribute("data-mode") || getSystemMode()
-    syncModeToggle(m === "dark" || m === "light" ? m : getSystemMode())
-  }
-
-  applyMode(
-    readStoredMode() || html().getAttribute("data-mode") || getSystemMode(),
-  )
-
-  whenControlReady("mode-switcher", syncModeFromDocument)
-
-  window.addEventListener("storage", (e) => {
-    if (e.key === "data-mode" && e.newValue) {
-      applyMode(e.newValue)
-      whenControlReady("mode-switcher", syncModeFromDocument)
-    }
-  })
-
-  window.addEventListener("corex:set-mode", (e) => {
-    const raw = e.detail?.value
-    const isDark = Array.isArray(raw) && raw.includes("dark")
-    applyMode(isDark ? "dark" : "light")
-    whenControlReady("mode-switcher", syncModeFromDocument)
-  })
-})()
+  },
+  clientEvent: "corex:set-mode",
+  parseClientEvent: (event) => {
+    const { pressed, value } = event.detail ?? {}
+    if (typeof pressed === "boolean") return pressed ? "dark" : "light"
+    return Array.isArray(value) && value.includes("dark") ? "dark" : "light"
+  },
+})

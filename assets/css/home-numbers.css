@@ -44,7 +44,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: --spacing(2);
+    gap: var(--spacing-space);
     padding: clamp(2rem, 4vw, 3rem) clamp(1.25rem, 3vw, 2rem);
     border-block-start: 1px solid var(--color-border);
   }
@@ -93,6 +93,7 @@
 
   .home__numbers__hint {
     margin: 0;
+    margin-block-start: var(--spacing-space-sm);
     font-size: var(--text-sm);
     line-height: var(--text-sm--line-height);
     color: var(--color-ink-muted);
