@@ -4,15 +4,19 @@ defmodule SoonexI18n.MixProject do
   def project do
     [
       app: :soonex_i18n,
-      version: "0.1.0",
-      elixir: "~> 1.15",
+      version: "0.2.0",
+      elixir: "~> 1.17",
       start_permanent: Mix.env() == :prod,
-      compilers: Mix.compilers(),
+      compilers: Mix.compilers() ++ [:corex_design],
+      elixirc_paths: elixirc_paths(Mix.env()),
       aliases: aliases(),
       deps: deps(),
       usage_rules: usage_rules()
     ]
   end
+
+  defp elixirc_paths(env) when env in [:dev, :test], do: ["lib", "lib_dev"]
+  defp elixirc_paths(_), do: ["lib"]
 
   def cli do
     [preferred_envs: [test: :test]]
@@ -39,12 +43,14 @@ defmodule SoonexI18n.MixProject do
        app: false,
        compile: false,
        depth: 1},
-      {:corex, "~> 0.1.0"},
+      # Local path deps until Corex 0.2.0 is published to Hex.
+      {:corex, path: "../../corex"},
+      {:corex_design, path: "../../corex/design", runtime: false},
+      {:corex_mcp, path: "../../corex/mcp", only: [:dev, :test]},
       {:gettext, "~> 1.0"},
       {:gettext_sigils, "~> 0.5.1"},
       {:localize_web, "~> 0.5.1"},
       {:color, "~> 0.11"},
-      {:designex, "~> 1.0"},
       {:floki, "~> 0.38"},
       {:makeup, "~> 1.2"},
       {:makeup_elixir, "~> 1.0"},
@@ -82,25 +88,27 @@ defmodule SoonexI18n.MixProject do
   defp aliases do
     [
       compile: ["compile"],
-      setup: ["deps.get", "localize.download_locales"],
+      "link.corex":
+        ~s[cmd sh -c "mkdir -p deps && ln -sfn ../../../corex deps/corex"],
+      setup: ["deps.get", "localize.download_locales", "link.corex", "corex.design.build"],
       "pre.test": [
-        "soonex_i18n.palette",
-        "designex corex",
+        "link.corex",
+        "corex.design.build",
         "esbuild default",
         "tailwind default",
         "tableau.build"
       ],
       test: ["pre.test", "test"],
       "assets.build": [
-        "soonex_i18n.palette",
-        "designex corex",
+        "link.corex",
+        "corex.design.build",
         "tailwind default",
         "esbuild default"
       ],
       build: [
         "compile",
-        "soonex_i18n.palette",
-        "designex corex",
+        "link.corex",
+        "corex.design.build",
         "tableau.build",
         "tailwind default --minify",
         "esbuild default --minify"

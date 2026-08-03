@@ -24,7 +24,7 @@ defmodule SoonexI18n.HomePage.Faq do
         <div class="min-w-0 w-full">
           <.accordion
             id="soonex_i18n-faq"
-            class="accordion accordion--accent accordion--sm sm:accordion--md lg:accordion--xl w-full max-w-6xl"
+            class="accordion ui-accent ui-size-sm sm:ui-size-md lg:ui-size-xl w-full max-w-6xl"
             multiple={false}
             value="stack"
             items={
@@ -40,7 +40,7 @@ defmodule SoonexI18n.HomePage.Faq do
                   value: "tableau",
                   label: ~t"How do builds and previews work?",
                   content:
-                    ~t"The asset alias refreshes palette JSON, Designex, Tailwind, and esbuild. Tableau writes _site for production. The dev server watches HEEx and Markdown while you work. Journal posts live under _posts and render through MDEx.",
+                    ~t"The asset alias runs mix corex.design.build, then Tailwind and esbuild. Tableau writes _site for production. The dev server watches HEEx and Markdown while you work. Journal posts live under _posts and render through MDEx.",
                   meta: %{icon: "hero-globe-alt"}
                 },
                 %{
@@ -84,7 +84,7 @@ defmodule SoonexI18n.HomePage.Faq do
 
         <p class="m-0 text-center text-sm">
           {~t"Still deciding?"}
-          <.navigate to="#waitlist" class="link link--brand">{~t"Join the waitlist"}</.navigate>. {~t"We ship quietly and read every reply."}
+          <.navigate to="#waitlist" class="link ui-brand">{~t"Join the waitlist"}</.navigate>. {~t"We ship quietly and read every reply."}
         </p>
       </div>
     </section>

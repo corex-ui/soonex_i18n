@@ -27,7 +27,7 @@ defmodule SoonexI18n.NotFoundPage do
         <p class="m-0 leading-relaxed text-ink-muted">
           {~t"The URL may be mistyped, or the page may have moved. Try the home page."}
         </p>
-        <.navigate to={~p"/"} class="button button--accent w-fit self-center">
+        <.navigate to={~p"/"} class="button ui-accent ui-solid w-fit self-center">
           {~t"Back to home"}
         </.navigate>
       </div>

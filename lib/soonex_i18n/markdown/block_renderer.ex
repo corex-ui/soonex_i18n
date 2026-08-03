@@ -32,7 +32,7 @@ defmodule SoonexI18n.Markdown.BlockRenderer do
       <.clipboard
         id={@clipboard_id}
         value={@raw_code}
-        class={["clipboard", "clipboard--sm", "absolute", "top-2", "right-2", "z-10"]}
+        class={["clipboard", "ui-size-sm", "absolute", "top-2", "right-2", "z-10"]}
         input={false}
         trigger_aria_label={@aria_label}
       >

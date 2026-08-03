@@ -6,8 +6,9 @@
 
 ## Prerequisites
 
-- Elixir ~> 1.15
+- Elixir ~> 1.17
 - Node.js (for `npm install` in `assets/`)
+- Local Corex checkout at `../../corex` (path deps for `corex`, `corex_design`, `corex_mcp` until Hex 0.2.0). `mix link.corex` / build aliases symlink `deps/corex` for esbuild.
 
 ## Quick start
 
@@ -15,12 +16,11 @@
 cd templates/soonex_i18n
 mix deps.get
 mix setup
-mix designex corex
 cd assets && npm install && cd ..
 mix tableau.server
 ```
 
-- `mix setup` runs `deps.get` and `mix localize.download_locales` so locale data is present before the first build.
+- `mix setup` runs `deps.get`, `mix localize.download_locales`, and `mix corex.design.build` so locale data and design CSS are present before the first build.
 - Dev: `http://localhost:4999`. Default locale is also served at `/`; locale-prefixed URLs (e.g. `/en/`, `/ar/`) are built per Gettext.
 - Prod: `MIX_ENV=prod mix build` → `_site/`. Set **`SOONEX_PUBLIC_URL`** for your deploy origin; default demo is `https://corex-ui.github.io/soonex_i18n`.
 
@@ -31,7 +31,7 @@ Rebuild assets: `mix assets.build`.
 ## Customize (where to edit)
 
 - **Brand / SEO (Gettext):** [`lib/layouts/root_layout.ex`](lib/layouts/root_layout.ex), [`lib/pages/home_page.ex`](lib/pages/home_page.ex).
-- **Themes:** [`lib/soonex_i18n/theme.ex`](lib/soonex_i18n/theme.ex) + [`assets/css/site.css`](assets/css/site.css) imports.
+- **Themes:** [`lib/soonex_i18n/theme.ex`](lib/soonex_i18n/theme.ex) + `config :corex_design` themes.
 - **Locales:** [`config/config.exs`](config/config.exs) `config :localize`, [`lib/soonex_i18n/gettext.ex`](lib/soonex_i18n/gettext.ex), [`lib/soonex_i18n/locale.ex`](lib/soonex_i18n/locale.ex). Keep **`default_locale`** a valid BCP 47 tag (template uses `"en"`) so CI and `mix tableau.build` do not depend on `LANG`.
 - **Routes in HEEx:** [`use SoonexI18n.Routes`](lib/soonex_i18n/routes.ex) — write `~p"/docs"` and let the locale (and prod path prefix) apply. Details: [Phoenix VerifiedRoutes — localized routes](https://hexdocs.pm/phoenix/Phoenix.VerifiedRoutes.html#module-localized-routes-and-path-prefixes).
 - **Language switcher:** [`SoonexI18n.Locale.swap_path/2`](lib/soonex_i18n/locale.ex).
@@ -47,11 +47,11 @@ Static rendering uses each page’s **permalink** and layout Gettext; there is n
 
 ## Tests and CI
 
-[`mix test`](mix.exs) runs palette, designex, esbuild, tailwind, and `mix tableau.build` before Wallaby tests via the **`pre.test`** alias. [`.github/workflows/ci.yml`](.github/workflows/ci.yml) installs Chrome/Chromedriver and runs `mix test --timeout 600000`. [`.github/workflows/pages.yml`](.github/workflows/pages.yml) downloads locales, runs `npm ci` in `assets/`, then prod build.
+[`mix test`](mix.exs) runs `corex.design.build`, esbuild, tailwind, and `mix tableau.build` before Wallaby tests via the **`pre.test`** alias. [`.github/workflows/ci.yml`](.github/workflows/ci.yml) installs Chrome/Chromedriver and runs `mix test --timeout 600000`. [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) publishes GitHub Pages **only after CI succeeds** on a **push to `main`**.
 
 ## Corex assets and JS
 
-Same as Soonex: `corex/*` imports in [`assets/js/site.js`](assets/js/site.js), **`NODE_PATH`** includes `deps`, **`mix designex corex`** after Corex upgrades. Optional path dep: `{:corex, path: "../../corex"}`.
+Same as Soonex: `corex/*` imports in [`assets/js/site.js`](assets/js/site.js), **`NODE_PATH`** includes `deps`, **`mix corex.design.build`** after Corex upgrades or `config :corex_design` changes. Generated CSS under `assets/corex/` is gitignored.
 
 Client scripts: [`assets/js/theme.js`](assets/js/theme.js), [`assets/js/mode.js`](assets/js/mode.js), [`assets/js/locale.js`](assets/js/locale.js), plus landing scripts in [`assets/js/landing*.js`](assets/js).
 

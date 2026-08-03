@@ -38,7 +38,7 @@ defmodule SoonexI18n.HomePage.Pricing do
 
           <.switch
             id="soonex_i18n-pricing-yearly"
-            class="switch switch--accent switch--sm"
+            class="switch ui-accent ui-size-sm"
             on_checked_change_client="soonex_i18n-pricing-billing"
             aria_label={~t"Toggle yearly billing with twenty percent discount"}
           >
@@ -66,7 +66,7 @@ defmodule SoonexI18n.HomePage.Pricing do
                    cta_label: ~t"Read the docs",
                    cta_to: :docs,
                    cta_external: false,
-                   cta_class: "button button--ghost",
+                   cta_class: "button ui-ghost",
                    featured: false
                  },
                  %{
@@ -86,7 +86,7 @@ defmodule SoonexI18n.HomePage.Pricing do
                    cta_label: ~t"Example primary CTA",
                    cta_to: "#waitlist",
                    cta_external: false,
-                   cta_class: "button button--accent",
+                   cta_class: "button ui-accent ui-solid",
                    featured: true
                  },
                  %{
@@ -107,7 +107,7 @@ defmodule SoonexI18n.HomePage.Pricing do
                    cta_label: ~t"Example contact CTA",
                    cta_to: "#",
                    cta_external: false,
-                   cta_class: "button button--ghost",
+                   cta_class: "button ui-ghost",
                    featured: false
                  }
                ]) do %>
@@ -117,7 +117,7 @@ defmodule SoonexI18n.HomePage.Pricing do
               data-studio-from-monthly={Map.get(tier, :studio_from_monthly)}
               data-studio-from-yearly={Map.get(tier, :studio_from_yearly)}
               class={[
-                "relative flex min-w-0 flex-col gap-space-lg rounded-xl border bg-layer p-size-lg",
+                "relative flex min-w-0 flex-col gap-space-lg rounded-xl border bg-surface p-size-lg",
                 if(tier.featured,
                   do: "border-accent shadow-ui ring-1 ring-accent/30 lg:-translate-y-2",
                   else: "border-border"
@@ -125,7 +125,7 @@ defmodule SoonexI18n.HomePage.Pricing do
               ]}
             >
               <%= if tier.featured do %>
-                <span class="badge badge--accent absolute right-space top-0 -translate-y-1/2">
+                <span class="badge ui-accent absolute right-space top-0 -translate-y-1/2">
                   {~t"Example highlight"}
                 </span>
               <% end %>
@@ -189,7 +189,7 @@ defmodule SoonexI18n.HomePage.Pricing do
 
         <p class="m-0 text-center text-sm text-ink-muted">
           {~t"Questions about the template or Corex?"}
-          <.navigate to="#" class="link link--accent">hello@soonex_i18n.dev</.navigate>.
+          <.navigate to="#" class="link ui-accent">hello@soonex_i18n.dev</.navigate>.
         </p>
       </div>
     </section>

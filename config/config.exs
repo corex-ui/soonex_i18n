@@ -18,6 +18,9 @@ config :esbuild,
       "NODE_PATH" =>
         [
           Path.expand("../deps", __DIR__),
+          # Path dep: package.json + priv/static live in the Corex checkout, not deps/corex.
+          # From config/, project root is ..; same ../../corex as mix.exs from root.
+          Path.expand("../../corex", Path.join(__DIR__, "..")),
           Path.expand("../node_modules", __DIR__)
         ]
         |> Enum.join(":")
@@ -71,14 +74,39 @@ config :tableau, Tableau.RSSExtension,
 
 config :elixir, :time_zone_database, Tz.TimeZoneDatabase
 
-config :designex,
-  version: "1.0.2",
-  commit: "1da4b31",
-  cd: Path.expand("../assets", __DIR__),
-  dir: "corex",
-  corex: [
-    build_args: ~w(--dir=design --script=build.mjs --tokens=tokens)
-  ]
+config :corex_design,
+  output: "assets/corex",
+  default_theme: :neo,
+  default_mode: :light,
+  themes: [:neo, :uno, :duo, :leo],
+  modes: [:light, :dark],
+  scales: [],
+  components: [
+    :toast,
+    :typo,
+    :"layout-heading",
+    :icon,
+    :button,
+    :link,
+    :badge,
+    :code,
+    :clipboard,
+    :tooltip,
+    :select,
+    :tabs,
+    :toggle,
+    :switch,
+    :"native-input",
+    :checkbox,
+    :"data-list",
+    :timer,
+    :marquee,
+    :accordion,
+    :avatar,
+    :"floating-panel",
+    :scrollbar
+  ],
+  semantics: [:accent, :brand, :alert, :info, :success]
 
 config :phoenix,
   gettext_backend: SoonexI18n.Gettext,
