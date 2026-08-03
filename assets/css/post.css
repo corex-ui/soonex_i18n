@@ -23,7 +23,7 @@
     font-weight: var(--font-weight-semibold);
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--color-ink-brand);
+    color: var(--color-brand-text);
   }
 
   .blog__display {
@@ -181,7 +181,7 @@
   }
 
   .blog__article-shell.markdown li::marker {
-    color: var(--color-ink-brand);
+    color: var(--color-brand-text);
     font-weight: var(--font-weight-semibold);
   }
 

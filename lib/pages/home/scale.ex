@@ -16,7 +16,7 @@ defmodule SoonexI18n.HomePage.Scale do
       data-reveal
     >
       <div class="home__section__inner">
-        <h2 id="home-numbers-heading" class="sr-only text-ink-brand">
+        <h2 id="home-numbers-heading" class="sr-only text-brand-text">
           {~t"Corex by the numbers"}
         </h2>
         <div class="home__numbers">

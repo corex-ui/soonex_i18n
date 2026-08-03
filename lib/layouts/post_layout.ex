@@ -37,7 +37,7 @@ defmodule SoonexI18n.PostLayout do
       <header class="blog__post-hero" aria-labelledby="post-heading">
         <div class="blog__inner blog__post-hero__inner">
           <div class="blog__post-toolbar">
-            <.navigate to={~p"/"} class="blog__back link link--accent">
+            <.navigate to={~p"/"} class="blog__back link ui-accent">
               <.heroicon name="hero-arrow-left" class="blog__back__icon" />
               {~t"Back to home"}
             </.navigate>
@@ -53,7 +53,7 @@ defmodule SoonexI18n.PostLayout do
               class="blog__post-tags m-0 flex list-none flex-wrap gap-space-sm p-0"
             >
               <li :for={tag <- @post_tags}>
-                <span class="badge badge--muted badge--sm">{tag}</span>
+                <span class="badge ui-size-sm">{tag}</span>
               </li>
             </ul>
           </div>

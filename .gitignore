@@ -28,5 +28,8 @@ saas-*.tar
 
 /assets/node_modules/
 
+# Generated Corex Design CSS (mix corex.design.build)
+/assets/corex/
+
 # Temporary files, for example, from tests.
 /tmp/

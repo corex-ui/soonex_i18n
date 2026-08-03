@@ -79,7 +79,7 @@
   }
 
   .home__numbers__value__suffix {
-    color: var(--color-ink-brand);
+    color: var(--color-brand-text);
   }
 
   .home__numbers__label {

@@ -23,7 +23,7 @@ defmodule SoonexI18n.HomePage.Highlights do
 
         <.marquee
           id="soonex_i18n-marquee"
-          class="marquee marquee--accent max-w-none"
+          class="marquee ui-accent max-w-none"
           duration={28}
           spacing="2.5rem"
           pause_on_interaction={false}
@@ -54,7 +54,7 @@ defmodule SoonexI18n.HomePage.Highlights do
                  %{
                    title: ~t"Design pipeline in one app",
                    body:
-                     ~t"Palette JSON feeds Designex and Corex component CSS. Tailwind v4 reads the same tokens so utilities and components stay aligned without hand-synced spreadsheets."
+                     ~t"config :corex_design drives mix corex.design.build for themes and component CSS. Tailwind v4 reads the same tokens so utilities and components stay aligned without hand-synced spreadsheets."
                  },
                  %{
                    title: ~t"MCP-aware components",
@@ -62,7 +62,7 @@ defmodule SoonexI18n.HomePage.Highlights do
                      ~t"Corex exposes a component registry and MCP tools in development so assistants resolve slots, modifiers, and anatomy instead of guessing markup."
                  }
                ] do %>
-            <li class="min-w-0 rounded-xl border border-border bg-layer p-size">
+            <li class="min-w-0 rounded-xl border border-border bg-surface p-size">
               <h3>{card.title}</h3>
               <p class="leading-relaxed">{card.body}</p>
             </li>

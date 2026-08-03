@@ -11,7 +11,7 @@ defmodule SoonexI18n.Layouts.Root.LandingChrome do
     ~H"""
     <div
       data-scroll-progress
-      class="pointer-events-none fixed inset-x-0 top-0 z-[55] h-1 overflow-hidden bg-layer"
+      class="pointer-events-none fixed inset-x-0 top-0 z-[55] h-1 overflow-hidden bg-surface"
       aria-hidden="true"
     >
       <div
@@ -28,7 +28,7 @@ defmodule SoonexI18n.Layouts.Root.LandingChrome do
       class="fixed inset-x-0 top-0 z-50 flex w-full justify-center px-space pt-1 motion-safe:will-change-[opacity,transform]"
       style="opacity: 0; transform: translate3d(0, -100%, 0); pointer-events: none;"
     >
-      <div class="flex w-full max-w-4xl flex-col items-center gap-space rounded-4xl rounded-t-none border border-t-0 border-border bg-layer px-size py-space-sm shadow-ui sm:flex-row sm:justify-center sm:gap-space-xl sm:py-space">
+      <div class="flex w-full max-w-4xl flex-col items-center gap-space rounded-4xl rounded-t-none border border-t-0 border-border bg-surface px-size py-space-sm shadow-ui sm:flex-row sm:justify-center sm:gap-space-xl sm:py-space">
         <p class="ui-label max-sm:sr-only uppercase tracking-widest text-ink-muted">
           {~t"Launching in"}
         </p>
@@ -37,14 +37,14 @@ defmodule SoonexI18n.Layouts.Root.LandingChrome do
           countdown
           start_ms={@countdown_start_ms}
           target_ms={0}
-          class="timer timer--brand timer--text-xs sm:timer--text-sm timer--rounded-xl"
+          class="timer ui-brand ui-rounded-xl ui-size-sm"
         >
           <:day_label>{~t"Days"}</:day_label>
           <:hour_label>{~t"Hours"}</:hour_label>
           <:minute_label>{~t"Min"}</:minute_label>
           <:second_label>{~t"Sec"}</:second_label>
         </.timer>
-        <.navigate to="#waitlist" class="button button--accent">
+        <.navigate to="#waitlist" class="button ui-accent ui-solid">
           {~t"Join the waitlist"}
         </.navigate>
       </div>

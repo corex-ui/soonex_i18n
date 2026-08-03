@@ -14,7 +14,7 @@ defmodule SoonexI18n.Layouts.Root.Footer do
       <div class="layout__footer__content">
         <div class="grid gap-space-xl lg:grid-cols-12 lg:gap-space-lg">
           <div class="flex flex-col gap-space-lg lg:col-span-4">
-            <span class="badge badge--accent w-fit">
+            <span class="badge ui-accent w-fit">
               {~t"Coming soon · Q3 2026"}
             </span>
             <h2>
@@ -23,7 +23,7 @@ defmodule SoonexI18n.Layouts.Root.Footer do
             <p class="max-w-prose leading-relaxed text-ink-muted">
               {~t"One email at launch. Optional build updates. No spam, no resale, ever."}
             </p>
-            <.navigate to={~p"/" <> "#waitlist"} class="button button--accent w-fit">
+            <.navigate to={~p"/" <> "#waitlist"} class="button ui-accent ui-solid w-fit">
               {~t"Join the waitlist"}
             </.navigate>
           </div>
@@ -38,27 +38,27 @@ defmodule SoonexI18n.Layouts.Root.Footer do
               </p>
               <ul class="m-0 flex list-none flex-col gap-space p-0">
                 <li>
-                  <.navigate to={~p"/" <> "#highlights"} class="link link--accent">
+                  <.navigate to={~p"/" <> "#highlights"} class="link ui-accent">
                     {~t"Highlights"}
                   </.navigate>
                 </li>
                 <li>
-                  <.navigate to={~p"/" <> "#scale"} class="link link--accent">
+                  <.navigate to={~p"/" <> "#scale"} class="link ui-accent">
                     {~t"Scale"}
                   </.navigate>
                 </li>
                 <li>
-                  <.navigate to={~p"/" <> "#pricing"} class="link link--accent">
+                  <.navigate to={~p"/" <> "#pricing"} class="link ui-accent">
                     {~t"Pricing"}
                   </.navigate>
                 </li>
                 <li>
-                  <.navigate to={~p"/" <> "#faq"} class="link link--accent">
+                  <.navigate to={~p"/" <> "#faq"} class="link ui-accent">
                     {~t"FAQ"}
                   </.navigate>
                 </li>
                 <li>
-                  <.navigate to={~p"/" <> "#waitlist"} class="link link--accent">
+                  <.navigate to={~p"/" <> "#waitlist"} class="link ui-accent">
                     {~t"Waitlist"}
                   </.navigate>
                 </li>
@@ -71,22 +71,22 @@ defmodule SoonexI18n.Layouts.Root.Footer do
               </p>
               <ul class="m-0 flex list-none flex-col gap-space p-0">
                 <li>
-                  <.navigate to="#" class="link link--accent">
+                  <.navigate to="#" class="link ui-accent">
                     {~t"GitHub"}
                   </.navigate>
                 </li>
                 <li>
-                  <.navigate to={~p"/docs"} class="link link--accent">
+                  <.navigate to={~p"/docs"} class="link ui-accent">
                     {~t"Documentation"}
                   </.navigate>
                 </li>
                 <li>
-                  <.navigate to="#" class="link link--accent">
+                  <.navigate to="#" class="link ui-accent">
                     {~t"Changelog"}
                   </.navigate>
                 </li>
                 <li>
-                  <.navigate to={~p"/" <> "#highlights"} class="link link--accent">
+                  <.navigate to={~p"/" <> "#highlights"} class="link ui-accent">
                     {~t"Templates"}
                   </.navigate>
                 </li>
@@ -99,15 +99,15 @@ defmodule SoonexI18n.Layouts.Root.Footer do
               </p>
               <ul class="m-0 flex list-none flex-col gap-space p-0">
                 <li>
-                  <.navigate to="#" class="link link--accent">{~t"About"}</.navigate>
+                  <.navigate to="#" class="link ui-accent">{~t"About"}</.navigate>
                 </li>
                 <li>
-                  <.navigate to="#" class="link link--accent">
+                  <.navigate to="#" class="link ui-accent">
                     {~t"Contact"}
                   </.navigate>
                 </li>
                 <li>
-                  <.navigate to="#" class="link link--accent">{~t"Press"}</.navigate>
+                  <.navigate to="#" class="link ui-accent">{~t"Press"}</.navigate>
                 </li>
               </ul>
             </div>
@@ -118,13 +118,13 @@ defmodule SoonexI18n.Layouts.Root.Footer do
               </p>
               <ul class="m-0 flex list-none flex-col gap-space p-0">
                 <li>
-                  <.navigate to="#" class="link link--accent">{~t"Privacy"}</.navigate>
+                  <.navigate to="#" class="link ui-accent">{~t"Privacy"}</.navigate>
                 </li>
                 <li>
-                  <.navigate to="#" class="link link--accent">{~t"Terms"}</.navigate>
+                  <.navigate to="#" class="link ui-accent">{~t"Terms"}</.navigate>
                 </li>
                 <li>
-                  <.navigate to="#" class="link link--accent">
+                  <.navigate to="#" class="link ui-accent">
                     {~t"License"}
                   </.navigate>
                 </li>
@@ -145,21 +145,21 @@ defmodule SoonexI18n.Layouts.Root.Footer do
           >
             <.navigate
               to="#"
-              class="button button--circle button--ghost"
+              class="button ui-ghost ui-trigger--circle"
               aria_label="GitHub"
             >
               <.heroicon name="hero-code-bracket-square" />
             </.navigate>
             <.navigate
               to="#"
-              class="button button--circle button--ghost"
+              class="button ui-ghost ui-trigger--circle"
               aria_label="X / Twitter"
             >
               <.heroicon name="hero-megaphone" />
             </.navigate>
             <.navigate
               to={~p"/feed.xml"}
-              class="button button--circle button--ghost"
+              class="button ui-ghost ui-trigger--circle"
               aria_label="RSS"
             >
               <.heroicon name="hero-rss" />

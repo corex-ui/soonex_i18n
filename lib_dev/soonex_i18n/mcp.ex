@@ -8,7 +8,7 @@ defmodule SoonexI18n.Mcp do
   plug(:not_found)
 
   defp not_found(conn, _) do
-    if conn.halted? do
+    if conn.halted do
       conn
     else
       conn

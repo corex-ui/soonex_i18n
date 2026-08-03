@@ -273,7 +273,8 @@ defmodule SoonexI18n.Palette do
 
   defp ink_output_key("default"), do: "ink"
   defp ink_output_key("link"), do: "link"
-  defp ink_output_key(other), do: "ink-#{other}"
+  defp ink_output_key("muted"), do: "ink-muted"
+  defp ink_output_key(other), do: "#{other}-text"
 
   defp ink_reference(surface) do
     Enum.min_by(surface, fn {_k, c} ->

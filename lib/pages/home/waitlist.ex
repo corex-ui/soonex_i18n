@@ -57,7 +57,7 @@ defmodule SoonexI18n.HomePage.Waitlist do
               </div>
               <button
                 type="submit"
-                class="button button--accent button--sm"
+                class="button ui-accent ui-solid ui-size-sm"
               >
                 {~t"Join waitlist"}
               </button>
@@ -66,7 +66,7 @@ defmodule SoonexI18n.HomePage.Waitlist do
               id="soonex_i18n-waitlist-updates"
               name="waitlist[updates]"
               checked={true}
-              class="checkbox checkbox--accent"
+              class="checkbox ui-accent"
             >
               <:indicator>
                 <.heroicon name="hero-check" />

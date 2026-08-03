@@ -30,7 +30,7 @@ defmodule SoonexI18n.Layouts.Root.Demo do
         resizable={false}
         translation={%Corex.FloatingPanel.Translation{close: ~t"Close"}}
       >
-        <:trigger class="button button--sm">
+        <:trigger class="button ui-size-sm">
           <.heroicon name="hero-cog-6-tooth" />
           {~t"Template Options"}
         </:trigger>
@@ -42,7 +42,7 @@ defmodule SoonexI18n.Layouts.Root.Demo do
           <div class="flex flex-col gap-size">
             <.select
               id="corex-language-switch"
-              class="select select--sm w-full min-w-0"
+              class="select ui-size-sm w-full min-w-0"
               dir={SoonexI18n.Locale.dir(@locale)}
               items={SoonexI18n.Locale.language_select_items(SoonexI18n.Locale.current_path(@page))}
               value={
@@ -67,7 +67,7 @@ defmodule SoonexI18n.Layouts.Root.Demo do
             <div class="flex flex-row items-end gap-space">
               <.select
                 id="theme-switcher"
-                class="select select--sm w-full min-w-0"
+                class="select ui-size-sm w-full min-w-0"
                 dir={SoonexI18n.Locale.dir(@locale)}
                 items={SoonexI18n.Theme.select_items()}
                 value={[]}
@@ -87,7 +87,7 @@ defmodule SoonexI18n.Layouts.Root.Demo do
 
               <.toggle
                 id="mode-switcher"
-                class="toggle toggle--sm"
+                class="toggle ui-size-sm"
                 data-toggle-dual-label
                 pressed={@mode == "dark"}
                 dir={SoonexI18n.Locale.dir(@locale)}
@@ -107,7 +107,7 @@ defmodule SoonexI18n.Layouts.Root.Demo do
       </.floating_panel>
       <.navigate
         to="https://corex.gigalixirapp.com/templates"
-        class="button button--accent button--sm"
+        class="button ui-accent ui-solid ui-size-sm"
         external
       >
         {~t"Made with Corex"}
