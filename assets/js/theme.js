@@ -22,6 +22,8 @@ bindStoredPreference({
   syncControl: (theme) => {
     const root = document.getElementById("theme-switcher")
     if (!root || !theme) return
+    const current = root.getAttribute("data-value") || ""
+    if (current.split(",").map((s) => s.trim()).includes(theme)) return
     root.dispatchEvent(
       new CustomEvent("corex:select:set-value", { detail: { value: [theme] } }),
     )

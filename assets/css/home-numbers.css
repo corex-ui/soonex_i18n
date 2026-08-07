@@ -43,7 +43,8 @@
   .home__numbers__cell {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: var(--spacing-size-sm);
     padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 3.5vw, 2.5rem);
     border-block-start: 1px solid var(--color-border);
@@ -61,6 +62,11 @@
   }
 
   @media (min-width: 64rem) {
+    .home__numbers__cell {
+      align-items: flex-start;
+      text-align: start;
+    }
+
     .home__numbers__cell:nth-child(2n + 1) {
       border-inline-start: 1px solid var(--color-border);
     }

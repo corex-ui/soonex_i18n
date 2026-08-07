@@ -37,11 +37,11 @@ export function bindStoredPreference({
   const read = () =>
     resolve(localStorage.getItem(attr) || documentRoot().getAttribute(attr))
 
-  const commit = (raw) => {
+  const commit = (raw, { sync = true } = {}) => {
     const value = resolve(raw)
     localStorage.setItem(attr, value)
     documentRoot().setAttribute(attr, value)
-    whenControlReady(controlId, () => syncControl(value))
+    if (sync) whenControlReady(controlId, () => syncControl(value))
   }
 
   commit(read())
@@ -52,7 +52,11 @@ export function bindStoredPreference({
 
   if (clientEvent && parseClientEvent) {
     window.addEventListener(clientEvent, (event) => {
-      commit(parseClientEvent(event))
+      const next = resolve(parseClientEvent(event))
+      // Toggle/select APIs re-fire change when we sync — ignore no-ops or the
+      // preference (and page background) oscillates.
+      if (documentRoot().getAttribute(attr) === next) return
+      commit(next)
     })
   }
 }

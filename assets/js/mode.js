@@ -13,10 +13,13 @@ bindStoredPreference({
   syncControl: (mode) => {
     const root = document.getElementById("mode-switcher")
     if (!root) return
+    const pressed = mode === "dark"
+    const button = root.querySelector('[data-scope="toggle"][data-part="root"]')
+    if (button && (button.getAttribute("data-state") === "on") === pressed) return
     root.dispatchEvent(
       new CustomEvent("corex:toggle:set-pressed", {
         bubbles: false,
-        detail: { pressed: mode === "dark" },
+        detail: { pressed },
       }),
     )
   },
