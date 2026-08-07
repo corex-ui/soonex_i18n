@@ -165,7 +165,7 @@ defmodule SoonexI18n.RootLayout do
         <script type="module" src={~p"/js/site.js"} />
       </head>
 
-      <body class="layout typo">
+      <body class="layout typo flex min-h-dvh flex-col bg-root text-ink antialiased">
         <.navigate to="#main-content" class="link link--skip">{~t"Skip to content"}</.navigate>
 
         <.demo_site_controls page={@page} locale={@locale} mode={@mode} />
@@ -173,7 +173,7 @@ defmodule SoonexI18n.RootLayout do
 
         <main
           id="main-content"
-          class="layout__main"
+          class="layout__main flex-1"
           data-landing
         >
           {render(@inner_content)}
