@@ -25,9 +25,9 @@ defmodule SoonexI18n.HomePage.Hero do
         </div>
       </div>
 
-      <div class={"relative z-1 #{Shell.stage()} grid grid-cols-1 items-center gap-size-lg lg:grid-cols-2 lg:gap-size-xl xl:grid-cols-[minmax(0,1fr)_minmax(22rem,1.15fr)]"}>
+      <div class={"relative z-1 #{Shell.stage()} grid grid-cols-1 items-center justify-items-center gap-size-lg lg:grid-cols-2 lg:justify-items-stretch lg:gap-size-xl xl:grid-cols-[minmax(0,1fr)_minmax(22rem,1.15fr)]"}>
         <div
-          class="flex w-full max-w-xl flex-col items-center gap-size-md text-center lg:max-w-none lg:items-start lg:text-start"
+          class="mx-auto flex w-full max-w-xl flex-col items-center gap-size-md text-center lg:mx-0 lg:max-w-none lg:items-start lg:text-start"
           data-hero
         >
           <p class="m-0 text-sm font-semibold uppercase tracking-[0.2em] text-brand-text">
