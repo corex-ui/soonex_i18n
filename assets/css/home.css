@@ -19,8 +19,8 @@
 }
 
 .timer.ui-success [data-scope="timer"][data-part="item-label"] {
-  color: var(--ctl-ink-text, var(--color-success-text));
-  opacity: 0.72;
+  color: var(--color-ink-muted);
+  opacity: 1;
 }
 
 /* Hero countdown: freestanding composition (no nested card) */
