@@ -32,7 +32,7 @@ defmodule SoonexI18n.HomePage.Highlights do
     ~H"""
     <section
       id="highlights"
-      class={"#{Shell.section()} border-y border-border bg-root"}
+      class={"#{Shell.section()} border-y border-border"}
       aria-labelledby="soonex_i18n-highlights-heading"
     >
       <div class={"#{Shell.stage()} home-stack flex flex-col"}>

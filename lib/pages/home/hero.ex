@@ -13,19 +13,11 @@ defmodule SoonexI18n.HomePage.Hero do
   def hero(assigns) do
     ~H"""
     <header
-      class={"relative isolate #{Shell.section()} overflow-x-hidden"}
+      class={"#{Shell.section()} overflow-x-hidden"}
       aria-labelledby="soonex_i18n-headline"
       data-hero-boundary
     >
-      <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-        <div
-          class="absolute inset-0 bg-[length:var(--spacing-size-lg)_var(--spacing-size-lg)] bg-[linear-gradient(var(--color-border)_1px,transparent_1px),linear-gradient(90deg,var(--color-border)_1px,transparent_1px)] opacity-[0.18]"
-          data-parallax
-        >
-        </div>
-      </div>
-
-      <div class={"relative z-1 #{Shell.stage()} grid grid-cols-1 items-center justify-items-center gap-size-lg lg:grid-cols-2 lg:justify-items-stretch lg:gap-size-xl xl:grid-cols-[minmax(0,1fr)_minmax(22rem,1.15fr)]"}>
+      <div class={"#{Shell.stage()} grid grid-cols-1 items-center justify-items-center gap-size-lg lg:grid-cols-2 lg:justify-items-stretch lg:gap-size-xl xl:grid-cols-[minmax(0,1fr)_minmax(22rem,1.15fr)]"}>
         <div
           class="mx-auto flex w-full max-w-xl flex-col items-center gap-size-md text-center lg:mx-0 lg:max-w-none lg:items-start lg:text-start"
           data-hero

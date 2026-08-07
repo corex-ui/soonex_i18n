@@ -71,6 +71,12 @@
     color: var(--color-ink-muted);
   }
 
+  .blog__listing {
+    padding-block: clamp(2rem, 4vw, 3.5rem) clamp(3rem, 6vw, 5rem);
+    background-color: color-mix(in oklab, var(--color-surface) 55%, var(--color-root));
+    border-block: 1px solid var(--color-border);
+  }
+
   .blog__grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -94,8 +100,8 @@
     padding: var(--spacing-size-lg);
     border-radius: var(--radius-xl);
     border: 1px solid var(--color-border);
-    background: var(--color-root);
-    box-shadow: var(--shadow-layer);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-ui);
     text-decoration: none;
     color: inherit;
     transition:
@@ -120,7 +126,7 @@
   }
 
   .blog__card--static:hover {
-    box-shadow: var(--shadow-layer);
+    box-shadow: var(--shadow-ui);
     transform: none;
   }
 

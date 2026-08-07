@@ -18,8 +18,8 @@ defmodule SoonexI18n.Layouts.Root.Footer do
       |> assign(:hexdocs, @hexdocs)
 
     ~H"""
-    <footer class="px-space py-size-lg">
-      <div class="mx-auto flex w-fit max-w-[min(100%,56rem)] flex-col gap-space-xl rounded-4xl border border-border bg-surface px-size py-size shadow-ui sm:px-size-lg sm:py-size-lg">
+    <footer class="border-t border-border bg-surface px-space py-size-lg">
+      <div class="mx-auto flex w-fit max-w-[min(100%,56rem)] flex-col gap-space-xl rounded-4xl border border-border bg-root px-size py-size shadow-ui sm:px-size-lg sm:py-size-lg">
         <div class="grid gap-x-size-xl gap-y-space-xl sm:grid-cols-2 lg:grid-cols-3">
           <div class="flex flex-col gap-space">
             <p class="m-0 text-sm font-semibold uppercase tracking-[0.18em] text-brand-text">

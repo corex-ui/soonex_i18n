@@ -12,11 +12,11 @@ defmodule SoonexI18n.HomePage.Faq do
     ~H"""
     <section
       id="faq"
-      class={"#{Shell.section()} border-y border-border"}
+      class={"#{Shell.section()} border-y border-border bg-ui-muted"}
       aria-labelledby="soonex_i18n-faq-heading"
     >
       <div class={"#{Shell.stage()} grid grid-cols-1 items-start justify-items-center gap-size-xl lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.2fr)] lg:justify-items-stretch"}>
-        <div class="mx-auto flex w-full max-w-2xl flex-col items-center gap-size-md text-center lg:mx-0 lg:max-w-none lg:items-start lg:text-start lg:sticky lg:top-40">
+        <div class="mx-auto flex w-full max-w-2xl flex-col items-center justify-self-center gap-size-md text-center lg:mx-0 lg:max-w-none lg:items-start lg:justify-self-auto lg:text-start lg:sticky lg:top-40">
           <h2 id="soonex_i18n-faq-heading" class={Shell.section_heading()}>
             {~t"Lorem"} <span class="text-brand-text">{~t"FAQ"}</span>
           </h2>
@@ -28,10 +28,10 @@ defmodule SoonexI18n.HomePage.Faq do
           </p>
         </div>
 
-        <div class="mx-auto min-w-0 w-full max-w-2xl lg:mx-0 lg:max-w-none">
+        <div class="mx-auto flex w-full max-w-2xl justify-center justify-self-center lg:mx-0 lg:block lg:max-w-none lg:justify-self-auto">
           <.accordion
             id="soonex_i18n-faq"
-            class="accordion ui-accent ui-size-sm sm:ui-size-md lg:ui-size-xl w-full"
+            class="accordion ui-accent ui-size-sm sm:ui-size-md lg:ui-size-xl mx-auto w-full max-w-none"
             multiple={true}
             value={["stack"]}
             items={faq_items()}
