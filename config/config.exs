@@ -18,9 +18,6 @@ config :esbuild,
       "NODE_PATH" =>
         [
           Path.expand("../deps", __DIR__),
-          # Path dep: package.json + priv/static live in the Corex checkout, not deps/corex.
-          # From config/, project root is ..; same ../../corex as mix.exs from root.
-          Path.expand("../../corex", Path.join(__DIR__, "..")),
           Path.expand("../node_modules", __DIR__)
         ]
         |> Enum.join(":")
@@ -44,12 +41,13 @@ end
 
 config :tableau, :config,
   url: "http://localhost:4999",
+  include_dir: Path.expand("../extra", __DIR__),
   converters: [md: SoonexI18n.MDExConverter],
   markdown: [
     mdex: [
       extension: [
         table: true,
-        header_ids: "",
+        header_id_prefix: "",
         tasklist: true,
         strikethrough: true,
         autolink: true,

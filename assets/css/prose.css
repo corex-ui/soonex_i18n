@@ -139,4 +139,17 @@
   .markdown.corex-callout--warning .markdown.corex-callout-title {
     color: var(--color-alert);
   }
+
+  .typo.prose.markdown img {
+    max-width: min(100%, 40rem);
+    height: auto;
+  }
+
+  .typo.prose.markdown img[src*="/images/tech/"] {
+    width: 3rem;
+    max-width: 3rem;
+    height: auto;
+    border: none;
+    border-radius: 0;
+  }
 }

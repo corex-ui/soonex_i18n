@@ -4,10 +4,14 @@
 
 @import "../corex/corex.css";
 @source "../corex";
+@source "../../lib";
 
+@import "./blog.css";
 @import "./prose.css";
-@import "./post.css";
+@import "./home.css";
 @import "./home-numbers.css";
+
+@custom-variant dark (&:where([data-mode=dark], [data-mode=dark] *));
 
 html.lenis,
 html.lenis body {

@@ -11,6 +11,7 @@ defmodule SoonexI18nWeb.Router do
     pipe_through(:browser)
 
     get("/", PageController, :page)
+    get("/blog", PageController, :page)
     get("/docs", PageController, :page)
   end
 
@@ -18,6 +19,7 @@ defmodule SoonexI18nWeb.Router do
     pipe_through(:browser)
 
     get("/", PageController, :page)
+    get("/blog", PageController, :page)
     get("/docs", PageController, :page)
   end
 end

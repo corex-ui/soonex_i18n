@@ -1,9 +1,5 @@
 import { bindLandingScrollChrome } from "./landing-scroll-chrome.js"
-import { runLandingHero } from "./landing-hero.js"
-import { runLandingReveal } from "./landing-reveal.js"
 import { runLandingParallax } from "./landing-parallax.js"
-
-const easeOut = [0.22, 1, 0.36, 1]
 
 export function initLanding() {
   const root = document.querySelector("[data-landing]")
@@ -22,12 +18,7 @@ export function initLanding() {
 
   const stops = []
 
-  runLandingHero(root, reducedMotion, easeOut)
-
   stops.push(bindLandingScrollChrome(stickyBar, heroBoundary, progressFill))
-
-  stops.push(...runLandingReveal(root, easeOut))
-
   stops.push(...runLandingParallax(root, reducedMotion))
 
   function teardown() {

@@ -2,13 +2,13 @@
 
 **Tableau** static site with Corex, Gettext locales, Localize metadata, and verified-route-friendly `~p` paths. Single-locale sibling: [github.com/corex-ui/soonex](https://github.com/corex-ui/soonex).
 
-**Corex docs:** [installation](https://hexdocs.pm/corex/installation.html), [API](https://hexdocs.pm/corex/api.html), [Events](https://hexdocs.pm/corex/events.html), [Tableau + Corex](https://hexdocs.pm/corex/tableau.html), [localize](https://hexdocs.pm/corex/localize.html).
+**Corex docs:** [installation](https://hexdocs.pm/corex/installation.html), [Tableau + Corex](https://hexdocs.pm/corex/tableau.html), [localize](https://hexdocs.pm/corex/localize.html), [Design](https://hexdocs.pm/corex/design.html), [update guide](https://hexdocs.pm/corex/update.html).
 
 ## Prerequisites
 
 - Elixir ~> 1.17
 - Node.js (for `npm install` in `assets/`)
-- Local Corex checkout at `../../corex` (path deps for `corex`, `corex_design`, `corex_mcp` until Hex 0.2.0). `mix link.corex` / build aliases symlink `deps/corex` for esbuild.
+- Hex packages `corex`, `corex_design`, and `corex_mcp` (`~> 0.2.0`)
 
 ## Quick start
 
@@ -33,8 +33,9 @@ Rebuild assets: `mix assets.build`.
 - **Brand / SEO (Gettext):** [`lib/layouts/root_layout.ex`](lib/layouts/root_layout.ex), [`lib/pages/home_page.ex`](lib/pages/home_page.ex).
 - **Themes:** [`lib/soonex_i18n/theme.ex`](lib/soonex_i18n/theme.ex) + `config :corex_design` themes.
 - **Locales:** [`config/config.exs`](config/config.exs) `config :localize`, [`lib/soonex_i18n/gettext.ex`](lib/soonex_i18n/gettext.ex), [`lib/soonex_i18n/locale.ex`](lib/soonex_i18n/locale.ex). Keep **`default_locale`** a valid BCP 47 tag (template uses `"en"`) so CI and `mix tableau.build` do not depend on `LANG`.
-- **Routes in HEEx:** [`use SoonexI18n.Routes`](lib/soonex_i18n/routes.ex) — write `~p"/docs"` and let the locale (and prod path prefix) apply. Details: [Phoenix VerifiedRoutes — localized routes](https://hexdocs.pm/phoenix/Phoenix.VerifiedRoutes.html#module-localized-routes-and-path-prefixes).
+- **Routes in HEEx:** [`use SoonexI18n.Routes`](lib/soonex_i18n/routes.ex) — write `~p"/docs"` or `~p"/blog"` and let the locale (and prod path prefix) apply. Details: [Phoenix VerifiedRoutes — localized routes](https://hexdocs.pm/phoenix/Phoenix.VerifiedRoutes.html#module-localized-routes-and-path-prefixes).
 - **Language switcher:** [`SoonexI18n.Locale.swap_path/2`](lib/soonex_i18n/locale.ex).
+- **Blog:** per-locale indexes at `/en/blog`, `/ar/blog`, `/fr/blog`. Post YAML `tags:` render as badges only — **Tableau TagExtension is not enabled** (locale tag archives are unsupported).
 
 Static rendering uses each page’s **permalink** and layout Gettext; there is no Phoenix `conn`. For a full Phoenix app, add something like `Localize.Plug.PutLocale` as in Corex e2e.
 

@@ -4,90 +4,134 @@ defmodule SoonexI18n.HomePage.Faq do
   use Phoenix.Component
   use Corex
   use SoonexI18n.GettextSigil
+  use SoonexI18n.Routes
+
+  alias SoonexI18n.Layouts.Shell
 
   def faq(assigns) do
     ~H"""
     <section
       id="faq"
-      class="relative flex min-h-dvh flex-col justify-start border-y border-border px-space py-size-xl"
+      class={"#{Shell.section()} border-y border-border"}
       aria-labelledby="soonex_i18n-faq-heading"
-      data-reveal
     >
-      <div class="mx-auto flex w-full max-w-6xl flex-col gap-size-lg">
-        <div class="layout__section-intro gap-space-lg">
-          <h2 id="soonex_i18n-faq-heading">{~t"FAQ"}</h2>
-          <p class="leading-relaxed">
-            {~t"How static Tableau, Corex MCP, Markdown posts, and the asset side of this repo fit together, and how it relates to a future Phoenix SoonexI18n application template."}
+      <div class={"#{Shell.stage()} grid grid-cols-1 items-start gap-size-xl lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.2fr)]"}>
+        <div class="flex flex-col gap-size-md lg:sticky lg:top-40">
+          <h2 id="soonex_i18n-faq-heading" class={Shell.section_heading()}>
+            {~t"Lorem"} <span class="text-brand-text">{~t"FAQ"}</span>
+          </h2>
+          <p class={Shell.lede()}>
+            {~t"Ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."}
+          </p>
+          <p class="m-0 text-sm">
+            <.navigate to="#waitlist" class="link ui-brand">{~t"Join the waitlist"}</.navigate>
           </p>
         </div>
 
         <div class="min-w-0 w-full">
           <.accordion
             id="soonex_i18n-faq"
-            class="accordion ui-accent ui-size-sm sm:ui-size-md lg:ui-size-xl w-full max-w-6xl"
-            multiple={false}
-            value="stack"
-            items={
-              Corex.Content.new([
-                %{
-                  value: "stack",
-                  label: ~t"What is SoonexI18n?",
-                  content:
-                    ~t"A Tableau-driven coming-soon site that demonstrates Corex on static HTML: countdown, highlights, metrics, pricing, FAQ, waitlist, Markdown journal post, and footer. Tableau emits files you can host on GitHub Pages, S3, or any CDN.",
-                  meta: %{icon: "hero-squares-2x2"}
-                },
-                %{
-                  value: "tableau",
-                  label: ~t"How do builds and previews work?",
-                  content:
-                    ~t"The asset alias runs mix corex.design.build, then Tailwind and esbuild. Tableau writes _site for production. The dev server watches HEEx and Markdown while you work. Journal posts live under _posts and render through MDEx.",
-                  meta: %{icon: "hero-globe-alt"}
-                },
-                %{
-                  value: "liveview",
-                  label: ~t"What about Corex MCP?",
-                  content:
-                    ~t"In development, Corex can expose MCP tools backed by the component registry, list_components, get_component, so assistants pull slots and modifiers instead of inventing markup. It complements Localize and Gettext for structured authoring.",
-                  meta: %{icon: "hero-bolt"}
-                },
-                %{
-                  value: "themes",
-                  label: ~t"Themes, modes, and locales?",
-                  content:
-                    ~t"data-theme and data-mode switch Neo, Uno, Duo, and Leo; theme and mode scripts in the layout sync controls and localStorage. Gettext and Localize back RTL locales such as Arabic alongside English.",
-                  meta: %{icon: "hero-swatch"}
-                },
-                %{
-                  value: "next",
-                  label: ~t"What comes after this static template?",
-                  content:
-                    ~t"A fuller Phoenix SoonexI18n application template is planned on top of the same Corex primitives, auth, data, and realtime, without throwing away this landing. Stay on the waitlist for migration notes.",
-                  meta: %{icon: "hero-rocket-launch"}
-                }
-              ])
-            }
+            class="accordion ui-accent ui-size-sm sm:ui-size-md lg:ui-size-xl w-full"
+            multiple={true}
+            value={["stack"]}
+            items={faq_items()}
           >
             <:trigger :let={item}>
               <span class="flex min-w-0 items-center gap-space">
-                <.heroicon name={item.meta.icon} />
+                <span class="flex shrink-0 -space-x-2" aria-hidden="true">
+                  <span
+                    :for={tech <- item.meta.tech}
+                    class="inline-flex size-7 items-center justify-center rounded-full border border-border bg-surface p-space-xs"
+                  >
+                    <img
+                      src={SoonexI18n.Public.path(tech.src)}
+                      alt=""
+                      class="size-4 object-contain"
+                      loading="lazy"
+                    />
+                  </span>
+                </span>
                 <span class="min-w-0 text-start">{item.label}</span>
               </span>
             </:trigger>
             <:content :let={item}>
-              <p>{item.content}</p>
+              <p class="m-0 leading-relaxed">{item.content}</p>
             </:content>
             <:indicator>
               <.heroicon name="hero-chevron-right" />
             </:indicator>
           </.accordion>
         </div>
-
-        <p class="m-0 text-center text-sm">
-          {~t"Still deciding?"}
-          <.navigate to="#waitlist" class="link ui-brand">{~t"Join the waitlist"}</.navigate>. {~t"We ship quietly and read every reply."}
-        </p>
       </div>
     </section>
     """
+  end
+
+  defp faq_items do
+    Corex.Content.new([
+      %{
+        value: "stack",
+        label: ~t"Lorem ipsum dolor sit amet?",
+        content:
+          ~t"Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+        meta: %{
+          tech: [
+            %{name: "Tableau", src: "/images/tech/tableau.jpg"},
+            %{name: "Elixir", src: "/images/tech/elixir.svg"},
+            %{name: "Hex", src: "/images/tech/hex.svg"}
+          ]
+        }
+      },
+      %{
+        value: "builds",
+        label: ~t"Sed do eiusmod tempor?",
+        content:
+          ~t"Incididunt ut labore et dolore magna aliqua. Quis nostrud exercitation ullamco laboris nisi ut aliquip.",
+        meta: %{
+          tech: [
+            %{name: "Tailwind", src: "/images/tech/tailwind.svg"},
+            %{name: "Hex", src: "/images/tech/hex.svg"}
+          ]
+        }
+      },
+      %{
+        value: "mcp",
+        label: ~t"Ut enim ad minim veniam?",
+        content:
+          ~t"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        meta: %{
+          tech: [
+            %{name: "Phoenix", src: "/images/tech/phoenix.svg"},
+            %{name: "TypeScript", src: "/images/tech/typescript.svg"},
+            %{name: "Zag.js", src: "/images/tech/zag.webp"}
+          ]
+        }
+      },
+      %{
+        value: "themes",
+        label: ~t"Excepteur sint occaecat?",
+        content:
+          ~t"Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        meta: %{
+          tech: [
+            %{name: "CSS", src: "/images/tech/css.svg"},
+            %{name: "Figma", src: "/images/tech/figma.svg"}
+          ]
+        }
+      },
+      %{
+        value: "next",
+        label: ~t"Anim id est laborum?",
+        content:
+          ~t"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+        meta: %{
+          tech: [
+            %{name: "Phoenix", src: "/images/tech/phoenix.svg"},
+            %{name: "Zag.js", src: "/images/tech/zag.webp"},
+            %{name: "Ecto", src: "/images/tech/ecto.png"}
+          ]
+        }
+      }
+    ])
   end
 end

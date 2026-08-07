@@ -11,36 +11,43 @@ export function scrollProgress01() {
 }
 
 export function bindLandingScrollChrome(stickyBar, heroBoundary, progressFill) {
-  const stickyOk =
-    stickyBar instanceof HTMLElement && heroBoundary instanceof HTMLElement
+  const stickyEl = stickyBar instanceof HTMLElement ? stickyBar : null
+  const boundaryEl = heroBoundary instanceof HTMLElement ? heroBoundary : null
   const progressOk = progressFill instanceof HTMLElement
 
-  if (!stickyOk && !progressOk) {
+  if (!stickyEl && !progressOk) {
     return () => {}
   }
 
-  if (stickyOk) {
-    stickyBar.style.transition =
+  if (stickyEl) {
+    stickyEl.style.transition =
       "opacity 0.25s ease-out, transform 0.25s ease-out"
   }
 
   let alive = true
   let rafId = null
 
+  const pastReveal = () => {
+    if (boundaryEl) {
+      const r = boundaryEl.getBoundingClientRect()
+      return boundaryEl.hasAttribute("data-hero-sentinel")
+        ? r.top <= stickyRevealPx
+        : r.bottom <= stickyRevealPx
+    }
+    return window.scrollY > stickyRevealPx
+  }
+
   const tick = () => {
     if (!alive) {
       return
     }
-    if (stickyOk) {
-      const r = heroBoundary.getBoundingClientRect()
-      const pastHero = heroBoundary.hasAttribute("data-hero-sentinel")
-        ? r.top <= stickyRevealPx
-        : r.bottom <= stickyRevealPx
-      stickyBar.style.opacity = pastHero ? "1" : "0"
-      stickyBar.style.transform = pastHero
+    if (stickyEl) {
+      const show = pastReveal()
+      stickyEl.style.opacity = show ? "1" : "0"
+      stickyEl.style.transform = show
         ? "translate3d(0, 0, 0)"
         : "translate3d(0, -100%, 0)"
-      stickyBar.style.pointerEvents = pastHero ? "auto" : "none"
+      stickyEl.style.pointerEvents = show ? "auto" : "none"
     }
     if (progressOk) {
       const p = scrollProgress01()

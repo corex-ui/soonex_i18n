@@ -7,9 +7,11 @@ defmodule SoonexI18n.PostLayout do
   use SoonexI18n.GettextSigil
   use SoonexI18n.Routes
 
+  alias SoonexI18n.Layouts.Shell
+
   def template(assigns) do
     page = assigns.page
-    title = page[:title] || ~t"Post"
+    title = page[:title] || Gettext.gettext(SoonexI18n.Gettext, "Post")
     description = page[:description]
     date = page[:date]
 
@@ -33,24 +35,22 @@ defmodule SoonexI18n.PostLayout do
       |> Map.put(:post_tags, tags)
 
     ~H"""
-    <article class="blog blog--post">
-      <header class="blog__post-hero" aria-labelledby="post-heading">
-        <div class="blog__inner blog__post-hero__inner">
-          <div class="blog__post-toolbar">
-            <.navigate to={~p"/"} class="blog__back link ui-accent">
-              <.heroicon name="hero-arrow-left" class="blog__back__icon" />
-              {~t"Back to home"}
-            </.navigate>
-          </div>
-          <div class="blog__post-head">
-            <div :if={@post_date_label} class="blog__post-meta">
-              <p class="blog__eyebrow">{@post_date_label}</p>
-            </div>
-            <h1 id="post-heading" class="blog__display">{@post_title}</h1>
-            <p :if={@post_description} class="blog__lede blog__lede--post">{@post_description}</p>
+    <article class={"#{Shell.stage()} flex min-h-dvh flex-col gap-space-xl pt-size-xl pb-size-xl"}>
+      <nav class="blog__nav" aria-label={~t"Post"}>
+        <.navigate to={~p"/blog"} class="link ui-nav w-fit">
+          <.heroicon name="hero-arrow-left" /> {~t"Back to blog"}
+        </.navigate>
+      </nav>
+
+      <header class="blog__hero blog__hero--post" aria-labelledby="post-heading">
+        <div class="blog__head">
+          <p :if={@post_date_label} class="blog__eyebrow">{@post_date_label}</p>
+          <h1 id="post-heading" class="blog__display">{@post_title}</h1>
+          <p :if={@post_description} class="blog__lede">{@post_description}</p>
+          <div class="blog__meta">
             <ul
               :if={@post_tags != []}
-              class="blog__post-tags m-0 flex list-none flex-wrap gap-space-sm p-0"
+              class="m-0 flex list-none flex-wrap gap-space-sm p-0"
             >
               <li :for={tag <- @post_tags}>
                 <span class="badge ui-size-sm">{tag}</span>
@@ -59,13 +59,10 @@ defmodule SoonexI18n.PostLayout do
           </div>
         </div>
       </header>
-      <section class="blog__post-body" aria-label={~t"Article"}>
-        <div class="blog__inner">
-          <div class="blog__article-shell typo markdown prose max-w-none">
-            {{:safe, render(@inner_content)}}
-          </div>
-        </div>
-      </section>
+
+      <div class="typo markdown prose max-w-none">
+        {{:safe, render(@inner_content)}}
+      </div>
     </article>
     """
   end

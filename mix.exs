@@ -31,7 +31,9 @@ defmodule SoonexI18n.MixProject do
 
   defp deps do
     [
-      {:tableau, "~> 0.26"},
+      {:tableau, "~> 0.30"},
+      # Override Tableau's ~> 0.11.1 pin for patched MDEx (CVE fixes from 0.13.2+).
+      {:mdex, "~> 0.13.5", override: true},
       {:tailwind, "~> 0.3", runtime: Mix.env() == :dev},
       {:phoenix_live_view, "~> 1.0"},
       {:esbuild, "~> 0.10", runtime: Mix.env() == :dev},
@@ -43,10 +45,9 @@ defmodule SoonexI18n.MixProject do
        app: false,
        compile: false,
        depth: 1},
-      # Local path deps until Corex 0.2.0 is published to Hex.
-      {:corex, path: "../../corex"},
-      {:corex_design, path: "../../corex/design", runtime: false},
-      {:corex_mcp, path: "../../corex/mcp", only: [:dev, :test]},
+      {:corex, "~> 0.2.0"},
+      {:corex_design, "~> 0.2.0", runtime: false},
+      {:corex_mcp, "~> 0.2.0", only: [:dev, :test]},
       {:gettext, "~> 1.0"},
       {:gettext_sigils, "~> 0.5.1"},
       {:localize_web, "~> 0.5.1"},
@@ -88,11 +89,8 @@ defmodule SoonexI18n.MixProject do
   defp aliases do
     [
       compile: ["compile"],
-      "link.corex":
-        ~s[cmd sh -c "mkdir -p deps && ln -sfn ../../../corex deps/corex"],
-      setup: ["deps.get", "localize.download_locales", "link.corex", "corex.design.build"],
+      setup: ["deps.get", "localize.download_locales", "corex.design.build"],
       "pre.test": [
-        "link.corex",
         "corex.design.build",
         "esbuild default",
         "tailwind default",
@@ -100,14 +98,12 @@ defmodule SoonexI18n.MixProject do
       ],
       test: ["pre.test", "test"],
       "assets.build": [
-        "link.corex",
         "corex.design.build",
         "tailwind default",
         "esbuild default"
       ],
       build: [
         "compile",
-        "link.corex",
         "corex.design.build",
         "tableau.build",
         "tailwind default --minify",

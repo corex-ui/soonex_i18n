@@ -211,6 +211,9 @@ defmodule SoonexI18n.RootLayout do
       page[:page_kind] == :home ->
         ~t"#{name = site_name} · Elixir static site template"
 
+      page[:page_kind] == :blog_index ->
+        ~t"Blog · #{name = site_name}"
+
       page[:page_kind] == :not_found ->
         ~t"Page not found · #{name = site_name}"
 
@@ -223,6 +226,9 @@ defmodule SoonexI18n.RootLayout do
     cond do
       page[:page_kind] == :home ->
         ~t"Tableau + Corex coming-soon template: static HEEx, design tokens, Markdown, locales. Join the #{name = site_name} waitlist."
+
+      page[:page_kind] == :blog_index ->
+        ~t"Markdown journal posts for #{name = site_name}, compiled by Tableau into static pages."
 
       page[:page_kind] == :not_found ->
         ~t"This URL is not available on the #{name = site_name} static site."
