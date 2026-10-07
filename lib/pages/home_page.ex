@@ -5,8 +5,12 @@ defmodule SoonexI18n.HomePage do
   use Corex
 
   import SoonexI18n.HomePage.Hero, only: [hero: 1]
-  import SoonexI18n.HomePage.Highlights, only: [highlights: 1]
-  import SoonexI18n.HomePage.Scale, only: [scale: 1]
+  import SoonexI18n.HomePage.Logos, only: [logos: 1]
+  import SoonexI18n.HomePage.Showcase, only: [showcase: 1]
+  import SoonexI18n.HomePage.Features, only: [features: 1]
+  import SoonexI18n.HomePage.HowItWorks, only: [how_it_works: 1]
+  import SoonexI18n.HomePage.Proof, only: [proof: 1]
+  import SoonexI18n.HomePage.Journal, only: [journal: 1]
   import SoonexI18n.HomePage.Faq, only: [faq: 1]
   import SoonexI18n.HomePage.Waitlist, only: [waitlist: 1]
 
@@ -14,22 +18,19 @@ defmodule SoonexI18n.HomePage do
     assigns =
       assigns
       |> Map.put(
-        :countdown_ms,
-        max(DateTime.diff(~U[2026-09-01 00:00:00Z], DateTime.utc_now(), :millisecond), 0)
-      )
-      |> Map.put(:stats_components, length(Corex.component_ids()))
-      |> Map.put(
         :posts,
-        assigns
-        |> Map.get(:posts, [])
-        |> List.wrap()
+        SoonexI18n.Locale.local_posts(Map.get(assigns, :posts, []), assigns.page)
       )
 
     ~H"""
     <div id="home" class="w-full text-ink">
-      <.hero countdown_ms={@countdown_ms} />
-      <.highlights posts={@posts} />
-      <.scale stats_components={@stats_components} />
+      <.hero />
+      <.logos />
+      <.showcase />
+      <.features />
+      <.how_it_works />
+      <.proof />
+      <.journal posts={@posts} />
       <.faq />
       <.waitlist />
     </div>
@@ -38,19 +39,13 @@ defmodule SoonexI18n.HomePage do
 end
 
 for locale <- SoonexI18n.Locale.locales() do
-  mod = Module.concat(SoonexI18n.HomePage, String.upcase(locale))
-
-  permalink = "/#{locale}/"
-
-  title = "SoonexI18n"
-
   Module.create(
-    mod,
+    Module.concat(SoonexI18n.HomePage, String.upcase(locale)),
     quote do
       use Tableau.Page,
         layout: SoonexI18n.RootLayout,
-        permalink: unquote(permalink),
-        title: unquote(title),
+        permalink: unquote("/#{locale}/"),
+        title: "Soonex",
         page_kind: :home
 
       def template(assigns), do: SoonexI18n.HomePage.template(assigns)

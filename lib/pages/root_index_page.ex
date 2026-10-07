@@ -4,8 +4,9 @@ defmodule SoonexI18n.RootIndexPage do
   use Tableau.Page,
     layout: SoonexI18n.RootLayout,
     permalink: "/",
-    title: "SoonexI18n",
-    page_kind: :home
+    title: "Soonex",
+    page_kind: :home,
+    sitemap: %{priority: 1.0, changefreq: "weekly"}
 
   use Phoenix.Component
 

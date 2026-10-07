@@ -11,490 +11,1281 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: lib/layouts/root/demo.ex:56
-#: lib/layouts/root/demo.ex:59
+#: lib/layouts/root/demo.ex:65
+#: lib/layouts/root/demo.ex:67
+#: lib/pages/privacy_page.ex:60
 #, elixir-autogen, elixir-format
 msgid "Language"
 msgstr "Langue"
 
-#: lib/layouts/root_layout.ex:169
+#: lib/layouts/root_layout.ex:190
 #, elixir-autogen, elixir-format
 msgid "Skip to content"
 msgstr "Aller au contenu"
 
-#: lib/layouts/root/demo.ex:77
-#: lib/layouts/root/demo.ex:79
+#: lib/layouts/root/demo.ex:95
+#: lib/layouts/root/demo.ex:97
 #, elixir-autogen, elixir-format
 msgid "Theme"
 msgstr "Thème"
 
-#: lib/layouts/root_layout.ex:221
-#, elixir-autogen, elixir-format
-msgid "%{name}"
-msgstr "%{name}"
-
-#: lib/layouts/root_layout.ex:240
-#, elixir-autogen, elixir-format
-msgid "A coming-soon static site. Learn more about %{name}."
-msgstr "Un site « bientôt disponible ». En savoir plus sur %{name}."
-
-#: lib/layouts/root/demo.ex:96
+#: lib/layouts/root/demo.ex:114
 #, elixir-autogen, elixir-format
 msgid "Color mode"
-msgstr "Mode couleur"
+msgstr "Mode de couleur"
 
-#: lib/layouts/root/footer.ex:40
-#: lib/pages/home/faq.ex:21
+#: lib/layouts/root/nav.ex:92
 #, elixir-autogen, elixir-format
 msgid "FAQ"
 msgstr "FAQ"
 
-#: lib/layouts/root/demo.ex:113
-#, elixir-autogen, elixir-format
-msgid "Made with Corex"
-msgstr "Fait avec Corex"
-
-#: lib/layouts/root/demo.ex:31
+#: lib/layouts/root/demo.ex:36
+#: lib/soonex_i18n/corex_strings.ex:16
 #, elixir-autogen, elixir-format
 msgid "Close"
 msgstr "Fermer"
 
-#: lib/layouts/root/footer.ex:37
-#: lib/pages/home/hero.ex:50
-#, elixir-autogen, elixir-format
-msgid "Highlights"
-msgstr "Points forts"
-
-#: lib/layouts/root/footer.ex:104
-#: lib/layouts/root/landing_chrome.ex:52
-#: lib/pages/home/faq.ex:27
-#: lib/pages/home/hero.ex:69
+#: lib/pages/home/hero.ex:35
+#: lib/pages/home/waitlist.ex:102
 #, elixir-autogen, elixir-format
 msgid "Join the waitlist"
 msgstr "Rejoindre la liste d'attente"
 
-#: lib/layouts/root/demo.ex:35
-#: lib/layouts/root/demo.ex:37
+#: lib/layouts/root/demo.ex:39
+#: lib/layouts/root/demo.ex:41
 #, elixir-autogen, elixir-format
 msgid "Template Options"
 msgstr "Options du modèle"
 
-#: lib/layouts/root/footer.ex:43
+#: lib/layouts/root/footer.ex:105
 #, elixir-autogen, elixir-format
 msgid "Waitlist"
 msgstr "Liste d'attente"
 
-#: lib/layouts/root/demo.ex:16
+#: lib/layouts/root/demo.ex:20
 #, elixir-autogen, elixir-format
 msgid "Demo site controls"
-msgstr "Contrôles de démo"
+msgstr "Réglages du site de démo"
 
-#: lib/layouts/root_layout.ex:212
-#, elixir-autogen, elixir-format
-msgid "%{name} · Elixir static site template"
-msgstr "%{name} · modèle de site statique Elixir"
-
-#: lib/pages/blog_index_page.ex:34
-#: lib/pages/not_found_page.ex:31
-#, elixir-autogen, elixir-format
-msgid "Back to home"
-msgstr "Retour à l'accueil"
-
-#: lib/layouts/root/landing_chrome.ex:43
-#: lib/pages/home/hero.ex:95
-#, elixir-autogen, elixir-format
-msgid "Days"
-msgstr "Jours"
-
-#: lib/layouts/root/footer.ex:80
-#, elixir-autogen, elixir-format
-msgid "GitHub"
-msgstr "GitHub"
-
-#: lib/layouts/root/landing_chrome.ex:44
-#: lib/pages/home/hero.ex:96
-#, elixir-autogen, elixir-format
-msgid "Hours"
-msgstr "Heures"
-
-#: lib/layouts/root/footer.ex:53
-#, elixir-autogen, elixir-format
-msgid "Documentation"
-msgstr "Documentation"
-
-#: lib/layouts/root/landing_chrome.ex:28
-#, elixir-autogen, elixir-format
-msgid "Launch countdown"
-msgstr "Compte à rebours du lancement"
-
-#: lib/layouts/root/landing_chrome.ex:34
-#: lib/pages/home/hero.ex:82
-#, elixir-autogen, elixir-format
-msgid "Launching in"
-msgstr "Lancement dans"
-
-#: lib/layouts/root/landing_chrome.ex:45
-#: lib/pages/home/hero.ex:97
-#, elixir-autogen, elixir-format
-msgid "Min"
-msgstr "Min"
-
-#: lib/layouts/post_layout.ex:39
+#: lib/layouts/post_layout.ex:16
 #, elixir-autogen, elixir-format
 msgid "Post"
 msgstr "Article"
 
-#: lib/layouts/root/footer.ex:51
-#, elixir-autogen, elixir-format
-msgid "Resources"
-msgstr "Ressources"
-
-#: lib/layouts/root/landing_chrome.ex:46
-#: lib/pages/home/hero.ex:98
-#, elixir-autogen, elixir-format
-msgid "Sec"
-msgstr "Sec"
-
-#: lib/layouts/root_layout.ex:228
-#, elixir-autogen, elixir-format
-msgid "Tableau + Corex coming-soon template: static HEEx, design tokens, Markdown, locales. Join the %{name} waitlist."
-msgstr "Modèle bientôt disponible Tableau + Corex : HEEx statique, design tokens, Markdown, locales. Rejoignez la liste d'attente %{name}."
-
-#: lib/pages/not_found_page.ex:25
+#: lib/pages/not_found_page.ex:32
 #, elixir-autogen, elixir-format
 msgid "Page not found"
 msgstr "Page introuvable"
 
-#: lib/layouts/root_layout.ex:218
+#: lib/layouts/root_layout.ex:236
 #, elixir-autogen, elixir-format
 msgid "Page not found · %{name}"
 msgstr "Page introuvable · %{name}"
 
-#: lib/pages/not_found_page.ex:28
-#, elixir-autogen, elixir-format
-msgid "The URL may be mistyped, or the page may have moved. Try the home page."
-msgstr "L'URL est peut-être incorrecte, ou la page a déménagé. Essayez l'accueil."
-
-#: lib/layouts/root_layout.ex:234
-#, elixir-autogen, elixir-format
-msgid "This URL is not available on the %{name} static site."
-msgstr "Cette URL n'est pas disponible sur le site statique %{name}."
-
-#: lib/soonex_i18n/markdown/block_renderer.ex:19
+#: lib/soonex_i18n/markdown/block_renderer.ex:21
 #, elixir-autogen, elixir-format
 msgid "Copy code"
 msgstr "Copier le code"
 
-#: lib/pages/home/waitlist.ex:52
+#: lib/layouts/root/nav.ex:63
+#: lib/layouts/root/nav.ex:100
+#: lib/pages/home/faq.ex:28
+#: lib/pages/home/showcase.ex:115
 #, elixir-autogen, elixir-format
 msgid "Join waitlist"
-msgstr "S'inscrire"
+msgstr "Rejoindre la liste"
 
-#: lib/pages/home/waitlist.ex:66
-#, elixir-autogen, elixir-format
-msgid "Send me build updates"
-msgstr "M'envoyer les mises à jour"
-
-#: lib/layouts/root/footer.ex:26
-#: lib/pages/home/hero.ex:34
-#: lib/pages/home/waitlist.ex:21
-#, elixir-autogen, elixir-format
-msgid "SoonexI18n"
-msgstr "SoonexI18n"
-
-#: lib/layouts/root_layout.ex:191
+#: lib/layouts/root_layout.ex:209
 #, elixir-autogen, elixir-format
 msgid "We lost the connection"
 msgstr "Connexion perdue"
 
-#: lib/layouts/root_layout.ex:192
+#: lib/layouts/root_layout.ex:210
 #, elixir-autogen, elixir-format
 msgid "We're trying to reconnect you..."
-msgstr "Nous tentons de vous reconnecter…"
+msgstr "Nous essayons de vous reconnecter..."
 
-#: lib/pages/home/waitlist.ex:45
-#, elixir-autogen, elixir-format
-msgid "Your email"
-msgstr "Votre e-mail"
-
-#: lib/pages/home/waitlist.ex:31
-#, elixir-autogen, elixir-format
-msgid "Thanks for joining"
-msgstr "Merci de nous rejoindre"
-
-#: lib/pages/home/waitlist.ex:33
-#, elixir-autogen, elixir-format
-msgid "This demo does not send or collect email. Point this form at your API or endpoint when you ship."
-msgstr "Cette démo n'envoie ni ne collecte d'e-mails. Branchez ce formulaire sur votre API au lancement."
-
-#: lib/pages/blog_index_page.ex:42
-#, elixir-autogen, elixir-format
-msgid "All"
-msgstr "Tous"
-
-#: lib/pages/home/faq.ex:124
-#, elixir-autogen, elixir-format
-msgid "Anim id est laborum?"
-msgstr "Anim id est laborum ?"
-
-#: lib/layouts/post_layout.ex:41
-#, elixir-autogen, elixir-format
-msgid "Back to blog"
-msgstr "Retour au blog"
-
-#: lib/layouts/root/footer.ex:46
-#: lib/pages/blog_index_page.ex:32
-#, elixir-autogen, elixir-format
-msgid "Blog"
-msgstr "Blog"
-
-#: lib/pages/home/hero.ex:102
-#, elixir-autogen, elixir-format
-msgid "Consectetur adipiscing elit · launch window Q3 2026"
-msgstr "Consectetur adipiscing elit · fenêtre de lancement T3 2026"
-
-#: lib/pages/home/highlights.ex:44
-#, elixir-autogen, elixir-format
-msgid "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-msgstr "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
-#: lib/pages/home/faq.ex:76
-#: lib/pages/home/hero.ex:45
-#, elixir-autogen, elixir-format
-msgid "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-msgstr "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
-
-#: lib/pages/home/faq.ex:114
-#, elixir-autogen, elixir-format
-msgid "Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-msgstr "Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-#: lib/pages/home/scale.ex:50
-#, elixir-autogen, elixir-format
-msgid "Dolor"
-msgstr "Dolor"
-
-#: lib/pages/home/waitlist.ex:24
-#, elixir-autogen, elixir-format
-msgid "Dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-msgstr "Dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
-#: lib/pages/home/faq.ex:101
-#, elixir-autogen, elixir-format
-msgid "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-msgstr "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-
-#: lib/pages/home/scale.ex:43
-#, elixir-autogen, elixir-format
-msgid "Eiusmod tempor incididunt ut labore et dolore magna."
-msgstr "Eiusmod tempor incididunt ut labore et dolore magna."
-
-#: lib/pages/home/faq.ex:112
-#, elixir-autogen, elixir-format
-msgid "Excepteur sint occaecat?"
-msgstr "Excepteur sint occaecat ?"
-
-#: lib/layouts/root/footer.ex:35
-#, elixir-autogen, elixir-format
-msgid "Explore"
-msgstr "Explorer"
-
-#: lib/layouts/root/footer.ex:91
-#, elixir-autogen, elixir-format
-msgid "Hexdocs"
-msgstr "Hexdocs"
-
-#: lib/pages/home/faq.ex:89
-#, elixir-autogen, elixir-format
-msgid "Incididunt ut labore et dolore magna aliqua. Quis nostrud exercitation ullamco laboris nisi ut aliquip."
-msgstr "Incididunt ut labore et dolore magna aliqua. Quis nostrud exercitation ullamco laboris nisi ut aliquip."
-
-#: lib/pages/home/scale.ex:41
-#, elixir-autogen, elixir-format
-msgid "Ipsum"
-msgstr "Ipsum"
-
-#: lib/pages/home/highlights.ex:100
-#, elixir-autogen, elixir-format
-msgid "Ipsum dolor sit amet consectetur adipiscing"
-msgstr "Ipsum dolor sit amet consectetur adipiscing"
-
-#: lib/pages/home/scale.ex:34
-#, elixir-autogen, elixir-format
-msgid "Ipsum dolor sit amet, consectetur adipiscing elit sed do."
-msgstr "Ipsum dolor sit amet, consectetur adipiscing elit sed do."
-
-#: lib/pages/home/faq.ex:24
-#, elixir-autogen, elixir-format
-msgid "Ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."
-msgstr "Ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."
-
-#: lib/pages/blog_index_page.ex:40
-#: lib/pages/home/highlights.ex:97
+#: lib/layouts/post_layout.ex:52
+#: lib/layouts/root/footer.ex:68
+#: lib/layouts/root/nav.ex:91
+#: lib/pages/blog_index_page.ex:25
+#: lib/pages/home/journal.ex:29
+#: lib/pages/not_found_page.ex:42
+#: lib/pages/tags_index_page.ex:33
 #, elixir-autogen, elixir-format
 msgid "Journal"
 msgstr "Journal"
 
-#: lib/pages/home/faq.ex:21
-#: lib/pages/home/scale.ex:32
-#, elixir-autogen, elixir-format
-msgid "Lorem"
-msgstr "Lorem"
-
-#: lib/pages/home/highlights.ex:41
-#: lib/pages/home/waitlist.ex:21
-#, elixir-autogen, elixir-format
-msgid "Lorem ipsum"
-msgstr "Lorem ipsum"
-
-#: lib/pages/home/hero.ex:84
-#, elixir-autogen, elixir-format
-msgid "Lorem ipsum countdown"
-msgstr "Compte à rebours Lorem ipsum"
-
-#: lib/pages/home/hero.ex:41
-#, elixir-autogen, elixir-format
-msgid "Lorem ipsum dolor"
-msgstr "Lorem ipsum dolor"
-
-#: lib/pages/home/hero.ex:53
-#, elixir-autogen, elixir-format
-msgid "Lorem ipsum dolor sit amet, consectetur."
-msgstr "Lorem ipsum dolor sit amet, consectetur."
-
-#: lib/pages/home/faq.ex:74
-#, elixir-autogen, elixir-format
-msgid "Lorem ipsum dolor sit amet?"
-msgstr "Lorem ipsum dolor sit amet ?"
-
-#: lib/pages/home/scale.ex:24
-#, elixir-autogen, elixir-format
-msgid "Lorem ipsum metrics"
-msgstr "Indicateurs Lorem ipsum"
-
-#: lib/pages/blog_index_page.ex:45
-#, elixir-autogen, elixir-format
-msgid "Markdown in"
-msgstr "Markdown dans"
-
-#: lib/pages/blog_index_page.ex:79
-#, elixir-autogen, elixir-format
-msgid "No posts yet. Add Markdown files to"
-msgstr "Pas encore d'articles. Ajoutez des fichiers Markdown dans"
-
-#: lib/layouts/root/footer.ex:31
-#, elixir-autogen, elixir-format
-msgid "Open source · MIT"
-msgstr "Open source · MIT"
-
-#: lib/pages/home/hero.ex:56
-#, elixir-autogen, elixir-format
-msgid "Quis nostrud exercitation ullamco laboris."
-msgstr "Quis nostrud exercitation ullamco laboris."
-
-#: lib/layouts/root/footer.ex:56
-#, elixir-autogen, elixir-format
-msgid "RSS"
-msgstr "RSS"
-
-#: lib/pages/home/hero.ex:72
+#: lib/pages/home/journal.ex:41
 #, elixir-autogen, elixir-format
 msgid "Read the journal"
 msgstr "Lire le journal"
 
-#: lib/pages/home/highlights.ex:102
-#, elixir-autogen, elixir-format
-msgid "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-msgstr "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
-#: lib/pages/home/hero.ex:54
-#, elixir-autogen, elixir-format
-msgid "Sed do eiusmod tempor incididunt ut."
-msgstr "Sed do eiusmod tempor incididunt ut."
-
-#: lib/pages/home/faq.ex:87
-#, elixir-autogen, elixir-format
-msgid "Sed do eiusmod tempor?"
-msgstr "Sed do eiusmod tempor ?"
-
-#: lib/pages/home/faq.ex:126
-#, elixir-autogen, elixir-format
-msgid "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
-msgstr "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
-
-#: lib/pages/home/scale.ex:59
-#, elixir-autogen, elixir-format
-msgid "Sit amet"
-msgstr "Sit amet"
-
-#: lib/layouts/root/footer.ex:29
-#, elixir-autogen, elixir-format
-msgid "Tableau static site template with Corex components, tokens, and MCP—fork it, ship it, stay free."
-msgstr "Modèle de site Tableau avec composants Corex, tokens et MCP — forkez, publiez, restez libre."
-
-#: lib/pages/home/scale.ex:61
-#, elixir-autogen, elixir-format
-msgid "Ullamco laboris nisi ut aliquip ex ea commodo consequat."
-msgstr "Ullamco laboris nisi ut aliquip ex ea commodo consequat."
-
-#: lib/pages/home/scale.ex:52
-#, elixir-autogen, elixir-format
-msgid "Ut enim ad minim veniam, quis nostrud exercitation."
-msgstr "Ut enim ad minim veniam, quis nostrud exercitation."
-
-#: lib/pages/home/faq.ex:99
-#, elixir-autogen, elixir-format
-msgid "Ut enim ad minim veniam?"
-msgstr "Ut enim ad minim veniam ?"
-
-#: lib/pages/home/hero.ex:55
-#, elixir-autogen, elixir-format
-msgid "Ut labore et dolore magna aliqua enim."
-msgstr "Ut labore et dolore magna aliqua enim."
-
-#: lib/pages/home/highlights.ex:41
-#, elixir-autogen, elixir-format
-msgid "dolor sit"
-msgstr "dolor sit"
-
-#: lib/pages/blog_index_page.ex:51
-#, elixir-autogen, elixir-format
-msgid "post"
-msgstr "article"
-
-#: lib/pages/blog_index_page.ex:42
-#: lib/pages/blog_index_page.ex:51
-#, elixir-autogen, elixir-format
-msgid "posts"
-msgstr "articles"
-
-#: lib/pages/home/hero.ex:41
-#, elixir-autogen, elixir-format
-msgid "sit amet"
-msgstr "sit amet"
-
-#: lib/pages/blog_index_page.ex:81
-#, elixir-autogen, elixir-format
-msgid "to get started."
-msgstr "pour commencer."
-
-#: lib/pages/blog_index_page.ex:47
-#, elixir-autogen, elixir-format
-msgid "— compiled by Tableau into static pages you can host anywhere."
-msgstr "— compilé par Tableau en pages statiques hébergeables partout."
-
-#: lib/layouts/root_layout.ex:215
-#, elixir-autogen, elixir-format
-msgid "Blog · %{name}"
-msgstr "Blog · %{name}"
-
-#: lib/layouts/root_layout.ex:231
-#, elixir-autogen, elixir-format
-msgid "Markdown journal posts for %{name}, compiled by Tableau into static pages."
-msgstr "Articles du journal Markdown pour %{name}, compilés par Tableau en pages statiques."
-
-#: lib/pages/blog_index_page.ex:65
-#: lib/pages/home/highlights.ex:79
+#: lib/layouts/articles.ex:42
+#: lib/pages/home/journal.ex:73
 #, elixir-autogen, elixir-format
 msgid "Untitled"
 msgstr "Sans titre"
+
+#: lib/pages/tags_index_page.ex:66
+#, elixir-autogen, elixir-format
+msgid "%{count} post"
+msgid_plural "%{count} posts"
+msgstr[0] "%{count} article"
+msgstr[1] "%{count} articles"
+
+#: lib/pages/blog_index_page.ex:28
+#, elixir-autogen, elixir-format
+msgid "%{count} post."
+msgid_plural "%{count} posts."
+msgstr[0] "%{count} article."
+msgstr[1] "%{count} articles."
+
+#: lib/layouts/root_layout.ex:233
+#, elixir-autogen, elixir-format
+msgid "%{name} · Launch %{date}"
+msgstr "%{name} · Lancement le %{date}"
+
+#: lib/pages/home/features.ex:27
+#, elixir-autogen, elixir-format
+msgid "A focused set of building blocks that cover the first impression, the signup, and the story you tell while you build."
+msgstr "Un ensemble ciblé de briques qui couvrent la première impression, l'inscription et l'histoire que vous racontez pendant la construction."
+
+#: lib/pages/home/features.ex:85
+#, elixir-autogen, elixir-format
+msgid "A journal that ships"
+msgstr "Un journal prêt à publier"
+
+#: lib/pages/home/proof.ex:29
+#, elixir-autogen, elixir-format
+msgid "A launch page is the first product your users touch. It should be as accessible, fast, and considered as the thing you are about to ship."
+msgstr "Une page de lancement est le premier produit que vos utilisateurs touchent. Elle doit être aussi accessible, rapide et soignée que ce que vous vous apprêtez à livrer."
+
+#: lib/pages/home/features.ex:81
+#, elixir-autogen, elixir-format
+msgid "A validated signup form with role select and toast feedback, ready for your provider."
+msgstr "Un formulaire d'inscription validé, avec choix du rôle et notification, prêt pour votre fournisseur."
+
+#: lib/pages/home/showcase.ex:157
+#: lib/pages/home/showcase.ex:158
+#: lib/soonex_i18n/accessibility.ex:129
+#: lib/soonex_i18n/accessibility.ex:132
+#, elixir-autogen, elixir-format
+msgid "Accessibility"
+msgstr "Accessibilité"
+
+#: lib/pages/privacy_page.ex:56
+#, elixir-autogen, elixir-format
+msgid "Accessibility settings"
+msgstr "Réglages d'accessibilité"
+
+#: lib/layouts/root/footer.ex:72
+#, elixir-autogen, elixir-format
+msgid "All posts"
+msgstr "Tous les articles"
+
+#: lib/layouts/post_layout.ex:64
+#, elixir-autogen, elixir-format
+msgid "All tags"
+msgstr "Tous les tags"
+
+#: lib/pages/privacy_page.ex:82
+#: lib/soonex_i18n/cookie_consent.ex:134
+#, elixir-autogen, elixir-format
+msgid "Analytics"
+msgstr "Mesure d'audience"
+
+#: lib/soonex_i18n/cookie_consent.ex:140
+#, elixir-autogen, elixir-format
+msgid "Analytics cookies"
+msgstr "Cookies de mesure d'audience"
+
+#: lib/layouts/root/footer.ex:130
+#, elixir-autogen, elixir-format
+msgid "Back to top ↑"
+msgstr "Retour en haut ↑"
+
+#: lib/pages/home/waitlist.ex:37
+#, elixir-autogen, elixir-format
+msgid "Be first through the door."
+msgstr "Soyez les premiers à entrer."
+
+#: lib/pages/home/showcase.ex:37
+#, elixir-autogen, elixir-format
+msgid "Brand once, everywhere."
+msgstr "Votre marque, une fois, partout."
+
+#: lib/layouts/root_layout.ex:259
+#, elixir-autogen, elixir-format
+msgid "Browse journal tags on %{name}."
+msgstr "Parcourez les tags du journal sur %{name}."
+
+#: lib/pages/tags_index_page.ex:30
+#, elixir-autogen, elixir-format
+msgid "Browse the journal by topic"
+msgstr "Parcourir le journal par sujet"
+
+#: lib/pages/home/how_it_works.ex:110
+#, elixir-autogen, elixir-format
+msgid "Build static HTML into _site/ and publish it to GitHub Pages or any static host."
+msgstr "Générez le HTML statique dans _site/ et publiez-le sur GitHub Pages ou tout hébergeur statique."
+
+#: lib/pages/home/logos.ex:23
+#, elixir-autogen, elixir-format
+msgid "Built on the tools Phoenix teams already trust"
+msgstr "Construit avec les outils auxquels les équipes Phoenix font déjà confiance"
+
+#: lib/layouts/root/footer.ex:46
+#, elixir-autogen, elixir-format
+msgid "Capabilities"
+msgstr "Fonctionnalités"
+
+#: lib/pages/privacy_page.ex:112
+#, elixir-autogen, elixir-format
+msgid "Changes"
+msgstr "Modifications"
+
+#: lib/pages/privacy_page.ex:107
+#, elixir-autogen, elixir-format
+msgid "Children"
+msgstr "Enfants"
+
+#: lib/pages/home/how_it_works.ex:77
+#, elixir-autogen, elixir-format
+msgid "Clone the repo, fetch Hex dependencies, and build the design assets in one command."
+msgstr "Clonez le dépôt, récupérez les dépendances Hex et générez les assets de design en une commande."
+
+#: lib/pages/home/showcase.ex:133
+#, elixir-autogen, elixir-format
+msgid "Colors are generated from a handful of seeds, so contrast holds in every mode."
+msgstr "Les couleurs sont générées à partir de quelques graines, le contraste tient donc dans tous les modes."
+
+#: lib/pages/home/proof.ex:52
+#, elixir-autogen, elixir-format
+msgid "Config block for your whole brand"
+msgstr "Bloc de config pour toute votre marque"
+
+#: lib/pages/privacy_page.ex:117
+#, elixir-autogen, elixir-format
+msgid "Contact"
+msgstr "Contact"
+
+#: lib/soonex_i18n/accessibility.ex:183
+#, elixir-autogen, elixir-format
+msgid "Contrast"
+msgstr "Contraste"
+
+#: lib/pages/privacy_page.ex:72
+#, elixir-autogen, elixir-format
+msgid "Cookie categories"
+msgstr "Catégories de cookies"
+
+#: lib/pages/privacy_page.ex:64
+#, elixir-autogen, elixir-format
+msgid "Cookie consent"
+msgstr "Consentement aux cookies"
+
+#: lib/soonex_i18n/cookie_consent.ex:55
+#: lib/soonex_i18n/cookie_consent.ex:109
+#, elixir-autogen, elixir-format
+msgid "Cookie preferences"
+msgstr "Préférences de cookies"
+
+#: lib/soonex_i18n/cookie_consent.ex:104
+#, elixir-autogen, elixir-format
+msgid "Cookies"
+msgstr "Cookies"
+
+#: lib/pages/home/faq.ex:68
+#: lib/pages/home/how_it_works.ex:58
+#: lib/pages/home/showcase.ex:58
+#, elixir-autogen, elixir-format
+msgid "Copied"
+msgstr "Copié"
+
+#: lib/pages/home/faq.ex:56
+#: lib/pages/home/faq.ex:64
+#: lib/pages/home/how_it_works.ex:46
+#: lib/pages/home/showcase.ex:46
+#, elixir-autogen, elixir-format
+msgid "Copy"
+msgstr "Copier"
+
+#: lib/pages/home/how_it_works.ex:54
+#, elixir-autogen, elixir-format
+msgid "Copy %{label}"
+msgstr "Copier %{label}"
+
+#: lib/pages/home/showcase.ex:54
+#, elixir-autogen, elixir-format
+msgid "Copy build command"
+msgstr "Copier la commande de build"
+
+#: lib/soonex_i18n/accessibility.ex:139
+#, elixir-autogen, elixir-format
+msgid "Corex accessibility guide"
+msgstr "guide d'accessibilité Corex"
+
+#: lib/layouts/root/demo.ex:131
+#, elixir-autogen, elixir-format
+msgid "Corex docs"
+msgstr "Docs Corex"
+
+#: lib/pages/home/faq.ex:87
+#, elixir-autogen, elixir-format
+msgid "Corex is an accessible UI kit for Phoenix. Soonex uses its static-site integration: design tokens from config :corex_design, ui-* modifiers in HEEx, and client hooks that bring widgets to life without a server."
+msgstr "Corex est un kit d'interface accessible pour Phoenix. Soonex utilise son intégration pour sites statiques : des tokens de design issus de config :corex_design, des modificateurs ui-* dans le HEEx et des hooks client qui animent les widgets sans serveur."
+
+#: lib/pages/home/hero.ex:56
+#, elixir-autogen, elixir-format
+msgid "Countdown to launch"
+msgstr "Compte à rebours du lancement"
+
+#: lib/soonex_i18n/accessibility.ex:185
+#, elixir-autogen, elixir-format
+msgid "Cursor"
+msgstr "Curseur"
+
+#: lib/pages/home/how_it_works.ex:89
+#: lib/pages/home/how_it_works.ex:90
+#: lib/soonex_i18n/cookie_consent.ex:76
+#, elixir-autogen, elixir-format
+msgid "Customize"
+msgstr "Personnaliser"
+
+#: lib/soonex_i18n/accessibility.ex:190
+#: lib/soonex_i18n/accessibility.ex:196
+#: lib/soonex_i18n/accessibility.ex:198
+#: lib/soonex_i18n/accessibility.ex:200
+#, elixir-autogen, elixir-format
+msgid "Default"
+msgstr "Par défaut"
+
+#: lib/pages/privacy_page.ex:104
+#, elixir-autogen, elixir-format
+msgid "Depending on where you live, you may have rights to access, correct, or delete personal data. On this demo, the only data involved is what your browser stores locally; you control it directly. For a production deployment you operate, provide a contact path and process requests under your own policy."
+msgstr "Selon votre lieu de résidence, vous pouvez disposer de droits d'accès, de rectification ou de suppression de vos données personnelles. Sur cette démo, les seules données concernées sont celles que votre navigateur stocke localement ; vous les contrôlez directement. Pour un déploiement en production que vous exploitez, fournissez un moyen de contact et traitez les demandes selon votre propre politique."
+
+#: lib/pages/home/features.ex:46
+#, elixir-autogen, elixir-format
+msgid "Design tokens that stay readable."
+msgstr "Des tokens de design qui restent lisibles."
+
+#: lib/pages/home/waitlist.ex:121
+#, elixir-autogen, elixir-format
+msgid "Designer"
+msgstr "Designer"
+
+#: lib/pages/home/faq.ex:103
+#, elixir-autogen, elixir-format
+msgid "Do I need npm?"
+msgstr "Ai-je besoin de npm ?"
+
+#: lib/pages/home/hero.ex:22
+#, elixir-autogen, elixir-format
+msgid "Doors open %{date}"
+msgstr "Ouverture le %{date}"
+
+#: lib/pages/home/waitlist.ex:35
+#, elixir-autogen, elixir-format
+msgid "Early access"
+msgstr "Accès anticipé"
+
+#: lib/pages/home/how_it_works.ex:97
+#, elixir-autogen, elixir-format
+msgid "Edit copy in lib/pages/home, translations in priv/gettext, and the launch date in SoonexI18n.Launch."
+msgstr "Modifiez les textes dans lib/pages/home, les traductions dans priv/gettext et la date de lancement dans SoonexI18n.Launch."
+
+#: lib/pages/home/faq.ex:93
+#, elixir-autogen, elixir-format
+msgid "Edit seeds, dimensions, and typography under config :corex_design, then run mix corex.design.build. Light and dark modes regenerate from the same config."
+msgstr "Modifiez les graines, les dimensions et la typographie dans config :corex_design, puis lancez mix corex.design.build. Les modes clair et sombre sont régénérés à partir de la même config."
+
+#: lib/layouts/root/footer.ex:88
+#, elixir-autogen, elixir-format
+msgid "Elsewhere"
+msgstr "Ailleurs"
+
+#: lib/pages/home/waitlist.ex:98
+#, elixir-autogen, elixir-format
+msgid "Email me launch notes"
+msgstr "M'envoyer les notes de lancement"
+
+#: lib/pages/home/waitlist.ex:120
+#, elixir-autogen, elixir-format
+msgid "Engineer"
+msgstr "Ingénieur·e"
+
+#: lib/soonex_i18n/cookie_consent.ex:83
+#: lib/soonex_i18n/cookie_consent.ex:163
+#, elixir-autogen, elixir-format
+msgid "Essential only"
+msgstr "Essentiels uniquement"
+
+#: lib/pages/home/showcase.ex:29
+#, elixir-autogen, elixir-format
+msgid "Every control on this page is a Corex component rendered to static HTML and hydrated in the browser. Switch themes in Template Options and watch the whole page follow."
+msgstr "Chaque contrôle de cette page est un composant Corex rendu en HTML statique puis hydraté dans le navigateur. Changez de thème dans Options du modèle et regardez toute la page suivre."
+
+#: lib/pages/home/features.ex:24
+#, elixir-autogen, elixir-format
+msgid "Everything a launch page needs. Nothing it doesn't."
+msgstr "Tout ce dont une page de lancement a besoin. Rien de superflu."
+
+#: lib/soonex_i18n/accessibility.ex:186
+#, elixir-autogen, elixir-format
+msgid "Focus"
+msgstr "Focus"
+
+#: lib/pages/privacy_page.ex:120
+#, elixir-autogen, elixir-format
+msgid "For production sites you deploy, replace this address with your own."
+msgstr "Pour les sites que vous déployez en production, remplacez cette adresse par la vôtre."
+
+#: lib/pages/home/waitlist.ex:119
+#, elixir-autogen, elixir-format
+msgid "Founder"
+msgstr "Fondateur·rice"
+
+#: lib/pages/home/showcase.ex:137
+#, elixir-autogen, elixir-format
+msgid "Four starting themes: neo, uno, duo, and leo."
+msgstr "Quatre thèmes de départ : neo, uno, duo et leo."
+
+#: lib/pages/home/how_it_works.ex:22
+#, elixir-autogen, elixir-format
+msgid "From clone to live in an afternoon."
+msgstr "Du clone à la mise en ligne en un après-midi."
+
+#: lib/soonex_i18n/accessibility.ex:194
+#, elixir-autogen, elixir-format
+msgid "Full"
+msgstr "Complète"
+
+#: lib/soonex_i18n/cookie_consent.ex:136
+#, elixir-autogen, elixir-format
+msgid "Help us understand how the site is used. Off by default on this marketing site today."
+msgstr "Nous aide à comprendre l'utilisation du site. Désactivé par défaut sur ce site vitrine."
+
+#: lib/soonex_i18n/accessibility.ex:193
+#, elixir-autogen, elixir-format
+msgid "High"
+msgstr "Élevé"
+
+#: lib/pages/blog_index_page.ex:32
+#: lib/pages/not_found_page.ex:39
+#: lib/pages/privacy_page.ex:26
+#, elixir-autogen, elixir-format
+msgid "Home"
+msgstr "Accueil"
+
+#: lib/pages/home/showcase.ex:151
+#, elixir-autogen, elixir-format
+msgid "Hooks load lazily, so the first paint stays light."
+msgstr "Les hooks se chargent à la demande, le premier affichage reste léger."
+
+#: lib/pages/home/faq.ex:91
+#, elixir-autogen, elixir-format
+msgid "How do I change colors and typography?"
+msgstr "Comment changer les couleurs et la typographie ?"
+
+#: lib/pages/home/waitlist.ex:85
+#, elixir-autogen, elixir-format
+msgid "I am a"
+msgstr "Je suis"
+
+#: lib/pages/privacy_page.ex:46
+#, elixir-autogen, elixir-format
+msgid "Information stored on your device"
+msgstr "Informations stockées sur votre appareil"
+
+#: lib/pages/home/showcase.ex:136
+#, elixir-autogen, elixir-format
+msgid "Ink, surface, and accent pairs are checked for readable contrast."
+msgstr "Les paires encre, surface et accent sont vérifiées pour un contraste lisible."
+
+#: lib/pages/home/showcase.ex:143
+#: lib/pages/home/showcase.ex:144
+#, elixir-autogen, elixir-format
+msgid "Interactivity"
+msgstr "Interactivité"
+
+#: lib/pages/home/waitlist.ex:40
+#, elixir-autogen, elixir-format
+msgid "Join the list for launch day access, release notes, and the occasional behind-the-scenes post. No spam, unsubscribe anytime."
+msgstr "Inscrivez-vous pour l'accès le jour du lancement, les notes de version et quelques coulisses. Pas de spam, désinscription à tout moment."
+
+#: lib/layouts/articles.ex:91
+#, elixir-autogen, elixir-format
+msgid "Journal cover"
+msgstr "Couverture de l'article"
+
+#: lib/layouts/root_layout.ex:235
+#, elixir-autogen, elixir-format
+msgid "Journal · %{name}"
+msgstr "Journal · %{name}"
+
+#: lib/pages/home/showcase.ex:150
+#, elixir-autogen, elixir-format
+msgid "Keyboard and screen reader behavior comes from Zag state machines."
+msgstr "Le comportement au clavier et avec les lecteurs d'écran vient des machines à états Zag."
+
+#: lib/soonex_i18n/accessibility.ex:197
+#, elixir-autogen, elixir-format
+msgid "Large"
+msgstr "Grand"
+
+#: lib/soonex_i18n/accessibility.ex:191
+#, elixir-autogen, elixir-format
+msgid "Larger"
+msgstr "Plus grand"
+
+#: lib/pages/privacy_page.ex:33
+#, elixir-autogen, elixir-format
+msgid "Last updated: %{date}"
+msgstr "Dernière mise à jour : %{date}"
+
+#: lib/pages/home/hero.ex:25
+#, elixir-autogen, elixir-format
+msgid "Launch pages that feel finished before you ship."
+msgstr "Des pages de lancement abouties avant même la sortie."
+
+#: lib/pages/home/showcase.ex:68
+#, elixir-autogen, elixir-format
+msgid "Light and dark"
+msgstr "Clair et sombre"
+
+#: lib/pages/home/showcase.ex:135
+#, elixir-autogen, elixir-format
+msgid "Light and dark palettes regenerate from the same seeds."
+msgstr "Les palettes claire et sombre sont régénérées à partir des mêmes graines."
+
+#: lib/soonex_i18n/accessibility.ex:187
+#, elixir-autogen, elixir-format
+msgid "Links"
+msgstr "Liens"
+
+#: lib/pages/home/showcase.ex:65
+#, elixir-autogen, elixir-format
+msgid "Live UI"
+msgstr "Interface en direct"
+
+#: lib/pages/home/features.ex:73
+#, elixir-autogen, elixir-format
+msgid "Live components"
+msgstr "Composants vivants"
+
+#: lib/pages/home/showcase.ex:21
+#, elixir-autogen, elixir-format
+msgid "Live preview"
+msgstr "Aperçu en direct"
+
+#: lib/pages/privacy_page.ex:99
+#, elixir-autogen, elixir-format
+msgid "Local preference data persists until you clear it or until the browser removes it under its own storage policies. Because nothing is sent to a backend in the demo, we do not hold copies of your choices on our servers."
+msgstr "Les préférences locales persistent jusqu'à ce que vous les effaciez ou que le navigateur les supprime selon ses propres règles de stockage. Comme rien n'est envoyé à un backend dans la démo, nous ne conservons aucune copie de vos choix sur nos serveurs."
+
+#: lib/pages/home/how_it_works.ex:93
+#, elixir-autogen, elixir-format
+msgid "Make it yours with one config block and plain HEEx content modules."
+msgstr "Faites-le vôtre avec un bloc de config et de simples modules de contenu HEEx."
+
+#: lib/pages/home/features.ex:86
+#, elixir-autogen, elixir-format
+msgid "Markdown posts with tags, RSS, and pagination keep early followers in the loop."
+msgstr "Des articles Markdown avec tags, RSS et pagination tiennent vos premiers abonnés informés."
+
+#: lib/pages/home/waitlist.ex:122
+#, elixir-autogen, elixir-format
+msgid "Marketer"
+msgstr "Marketeur·euse"
+
+#: lib/pages/privacy_page.ex:86
+#: lib/soonex_i18n/cookie_consent.ex:145
+#, elixir-autogen, elixir-format
+msgid "Marketing"
+msgstr "Marketing"
+
+#: lib/soonex_i18n/cookie_consent.ex:151
+#, elixir-autogen, elixir-format
+msgid "Marketing cookies"
+msgstr "Cookies marketing"
+
+#: lib/pages/home/showcase.ex:116
+#, elixir-autogen, elixir-format
+msgid "Maybe later"
+msgstr "Plus tard"
+
+#: lib/layouts/root/nav.ex:42
+#, elixir-autogen, elixir-format
+msgid "Menu"
+msgstr "Menu"
+
+#: lib/soonex_i18n/accessibility.ex:184
+#, elixir-autogen, elixir-format
+msgid "Motion"
+msgstr "Animations"
+
+#: lib/pages/privacy_page.ex:78
+#: lib/soonex_i18n/cookie_consent.ex:123
+#, elixir-autogen, elixir-format
+msgid "Necessary"
+msgstr "Nécessaires"
+
+#: lib/soonex_i18n/cookie_consent.ex:129
+#, elixir-autogen, elixir-format
+msgid "Necessary cookies"
+msgstr "Cookies nécessaires"
+
+#: lib/soonex_i18n/cookie_consent.ex:113
+#, elixir-autogen, elixir-format
+msgid "Necessary preferences always stay on. Toggle the rest below."
+msgstr "Les préférences nécessaires restent toujours actives. Réglez le reste ci-dessous."
+
+#: lib/layouts/root_layout.ex:256
+#, elixir-autogen, elixir-format
+msgid "Necessary preferences stay on this device. Analytics and marketing stay off unless you allow them."
+msgstr "Les préférences nécessaires restent sur cet appareil. La mesure d'audience et le marketing restent désactivés sauf si vous les autorisez."
+
+#: lib/soonex_i18n/cookie_consent.ex:59
+#, elixir-autogen, elixir-format
+msgid "Necessary preferences stay on your device. Analytics and marketing stay off unless you allow them."
+msgstr "Les préférences nécessaires restent sur votre appareil. La mesure d'audience et le marketing restent désactivés sauf si vous les autorisez."
+
+#: lib/layouts/articles.ex:21
+#: lib/pages/home/journal.ex:45
+#, elixir-autogen, elixir-format
+msgid "No posts yet."
+msgstr "Aucun article pour l'instant."
+
+#: lib/pages/tags_index_page.ex:39
+#, elixir-autogen, elixir-format
+msgid "No tags yet."
+msgstr "Aucun tag pour l'instant."
+
+#: lib/pages/home/faq.ex:105
+#, elixir-autogen, elixir-format
+msgid "No. Mix, Tailwind, and esbuild ship in the repo. There is no package.json — run mix setup and mix server to work locally."
+msgstr "Non. Mix, Tailwind et esbuild sont fournis dans le dépôt. Il n'y a pas de package.json : lancez mix setup puis mix server pour travailler en local."
+
+#: lib/pages/home/journal.ex:34
+#, elixir-autogen, elixir-format
+msgid "Notes from the build."
+msgstr "Carnet de construction."
+
+#: lib/pages/home/faq.ex:99
+#, elixir-autogen, elixir-format
+msgid "Nowhere until you connect a provider. Out of the box, submitting shows a confirmation toast and stores nothing. The field names are ready to post to Buttondown, ConvertKit, or your own endpoint."
+msgstr "Nulle part tant que vous ne branchez pas de fournisseur. Par défaut, l'envoi affiche une notification de confirmation et ne stocke rien. Les noms de champs sont prêts pour Buttondown, ConvertKit ou votre propre endpoint."
+
+#: lib/pages/home/showcase.ex:35
+#, elixir-autogen, elixir-format
+msgid "One config"
+msgstr "Une seule config"
+
+#: lib/pages/home/faq.ex:50
+#, elixir-autogen, elixir-format
+msgid "Open the waitlist"
+msgstr "Ouvrir la liste d'attente"
+
+#: lib/soonex_i18n/cookie_consent.ex:147
+#, elixir-autogen, elixir-format
+msgid "Optional marketing tags. Off by default; nothing loads unless you allow them."
+msgstr "Balises marketing optionnelles. Désactivées par défaut ; rien ne se charge sans votre accord."
+
+#: lib/pages/home/features.ex:49
+#, elixir-autogen, elixir-format
+msgid "Palettes are generated from seeds, so light mode, dark mode, and high contrast all stay legible without hand-tuned color stacks."
+msgstr "Les palettes sont générées à partir de graines : mode clair, mode sombre et contraste élevé restent lisibles sans réglages de couleurs à la main."
+
+#: lib/layouts/media.ex:31
+#, elixir-autogen, elixir-format
+msgid "Photography from Unsplash (Unsplash License). Tool marks from Simple Icons (CC0) and the Tableau project."
+msgstr "Photographies Unsplash (licence Unsplash). Logos d'outils issus de Simple Icons (CC0) et du projet Tableau."
+
+#: lib/pages/home/how_it_works.ex:114
+#, elixir-autogen, elixir-format
+msgid "Point the waitlist form at your email provider and go live."
+msgstr "Reliez le formulaire de liste d'attente à votre fournisseur d'e-mails et mettez en ligne."
+
+#: lib/layouts/post_layout.ex:86
+#, elixir-autogen, elixir-format
+msgid "Post cover"
+msgstr "Couverture de l'article"
+
+#: lib/soonex_i18n/accessibility.ex:134
+#, elixir-autogen, elixir-format
+msgid "Preferences for this device. See the"
+msgstr "Préférences pour cet appareil. Consultez le"
+
+#: lib/pages/home/showcase.ex:163
+#, elixir-autogen, elixir-format
+msgid "Preferences persist locally with no account or backend."
+msgstr "Les préférences sont conservées localement, sans compte ni backend."
+
+#: lib/layouts/root/nav.ex:52
+#, elixir-autogen, elixir-format
+msgid "Primary"
+msgstr "Principale"
+
+#: lib/layouts/root/footer.ex:124
+#: lib/pages/privacy_page.ex:20
+#: lib/soonex_i18n/cookie_consent.ex:68
+#, elixir-autogen, elixir-format
+msgid "Privacy"
+msgstr "Confidentialité"
+
+#: lib/layouts/root_layout.ex:237
+#, elixir-autogen, elixir-format
+msgid "Privacy · %{name}"
+msgstr "Confidentialité · %{name}"
+
+#: lib/layouts/root/footer.ex:39
+#: lib/layouts/root/nav.ex:88
+#: lib/pages/home/features.ex:20
+#, elixir-autogen, elixir-format
+msgid "Product"
+msgstr "Produit"
+
+#: lib/pages/home/faq.ex:16
+#, elixir-autogen, elixir-format
+msgid "Questions"
+msgstr "Questions"
+
+#: lib/pages/privacy_page.ex:119
+#, elixir-autogen, elixir-format
+msgid "Questions about this demo policy can be sent to"
+msgstr "Les questions sur la politique de cette démo peuvent être envoyées à"
+
+#: lib/pages/home/faq.ex:21
+#, elixir-autogen, elixir-format
+msgid "Questions, answered."
+msgstr "Vos questions, nos réponses."
+
+#: lib/pages/home/journal.ex:80
+#, elixir-autogen, elixir-format
+msgid "Read post"
+msgstr "Lire l'article"
+
+#: lib/pages/home/showcase.ex:26
+#, elixir-autogen, elixir-format
+msgid "Real components, not screenshots."
+msgstr "De vrais composants, pas des captures d'écran."
+
+#: lib/soonex_i18n/accessibility.ex:195
+#, elixir-autogen, elixir-format
+msgid "Reduced"
+msgstr "Réduites"
+
+#: lib/soonex_i18n/accessibility.ex:174
+#, elixir-autogen, elixir-format
+msgid "Reset"
+msgstr "Réinitialiser"
+
+#: lib/pages/privacy_page.ex:97
+#, elixir-autogen, elixir-format
+msgid "Retention"
+msgstr "Conservation"
+
+#: lib/pages/home/how_it_works.ex:113
+#, elixir-autogen, elixir-format
+msgid "Run MIX_ENV=prod mix build to produce _site/ with prefixed asset paths."
+msgstr "Lancez MIX_ENV=prod mix build pour produire _site/ avec des chemins d'assets préfixés."
+
+#: lib/pages/home/how_it_works.ex:96
+#, elixir-autogen, elixir-format
+msgid "Run mix corex.design.build to regenerate tokens and component CSS."
+msgstr "Lancez mix corex.design.build pour régénérer les tokens et le CSS des composants."
+
+#: lib/pages/home/how_it_works.ex:79
+#, elixir-autogen, elixir-format
+msgid "Run mix setup from the repo root. It fetches deps and builds Corex design CSS."
+msgstr "Lancez mix setup à la racine du dépôt. La commande récupère les dépendances et génère le CSS Corex."
+
+#: lib/soonex_i18n/cookie_consent.ex:170
+#, elixir-autogen, elixir-format
+msgid "Save preferences"
+msgstr "Enregistrer les préférences"
+
+#: lib/pages/home/hero.ex:38
+#, elixir-autogen, elixir-format
+msgid "See it in action"
+msgstr "Voir en action"
+
+#: lib/pages/home/faq.ex:47
+#, elixir-autogen, elixir-format
+msgid "See the workflow"
+msgstr "Voir la méthode"
+
+#: lib/pages/home/showcase.ex:40
+#, elixir-autogen, elixir-format
+msgid "Seeds, radius, and type scale live in a single block. Rebuild and every button, field, and panel picks up the change."
+msgstr "Graines, arrondis et échelle typographique tiennent dans un seul bloc. Régénérez, et chaque bouton, champ et panneau suit le changement."
+
+#: lib/pages/home/showcase.ex:110
+#, elixir-autogen, elixir-format
+msgid "Send launch notes"
+msgstr "Recevoir les notes de lancement"
+
+#: lib/pages/home/how_it_works.ex:112
+#, elixir-autogen, elixir-format
+msgid "Set SOONEX_PUBLIC_URL to your production origin."
+msgstr "Définissez SOONEX_PUBLIC_URL sur votre origine de production."
+
+#: lib/pages/home/how_it_works.ex:95
+#, elixir-autogen, elixir-format
+msgid "Set seeds, radius, fonts, and type scale under config :corex_design."
+msgstr "Réglez graines, arrondis, polices et échelle typographique dans config :corex_design."
+
+#: lib/pages/home/how_it_works.ex:72
+#: lib/pages/home/how_it_works.ex:73
+#, elixir-autogen, elixir-format
+msgid "Setup"
+msgstr "Installation"
+
+#: lib/pages/home/how_it_works.ex:105
+#: lib/pages/home/how_it_works.ex:106
+#, elixir-autogen, elixir-format
+msgid "Ship"
+msgstr "Mise en ligne"
+
+#: lib/pages/blog_index_page.ex:27
+#, elixir-autogen, elixir-format
+msgid "Shipping notes for Corex, the waitlist, and launch prep."
+msgstr "Notes de route sur Corex, la liste d'attente et la préparation du lancement."
+
+#: lib/layouts/root_layout.ex:251
+#, elixir-autogen, elixir-format
+msgid "Shipping notes from %{name}."
+msgstr "Notes de route de %{name}."
+
+#: lib/pages/home/journal.ex:37
+#, elixir-autogen, elixir-format
+msgid "Short dispatches on design tokens, accessibility, and shipping static sites with Phoenix tooling."
+msgstr "De courts billets sur les tokens de design, l'accessibilité et la publication de sites statiques avec l'outillage Phoenix."
+
+#: lib/pages/home/proof.ex:24
+#, elixir-autogen, elixir-format
+msgid "Small surface. Serious polish."
+msgstr "Petite surface. Finition sérieuse."
+
+#: lib/pages/privacy_page.ex:38
+#, elixir-autogen, elixir-format
+msgid "Soonex is a static launch-page template published by Corex for demonstration and forking. When you browse the hosted demo or run it locally, the site behaves as described below. If you fork the template and deploy it under your own domain, you are responsible for updating this page and your consent banner to match your product and jurisdiction."
+msgstr "Soonex est un modèle de page de lancement statique publié par Corex à des fins de démonstration et de fork. Lorsque vous consultez la démo hébergée ou la lancez en local, le site se comporte comme décrit ci-dessous. Si vous forkez le modèle et le déployez sous votre propre domaine, il vous revient de mettre à jour cette page et votre bandeau de consentement selon votre produit et votre juridiction."
+
+#: lib/layouts/root_layout.ex:249
+#, elixir-autogen, elixir-format
+msgid "Soonex is the launch page kit for Phoenix teams: static HTML, accessible Corex components, four themes, a waitlist, and a journal."
+msgstr "Soonex est le kit de page de lancement pour les équipes Phoenix : HTML statique, composants Corex accessibles, quatre thèmes, une liste d'attente et un journal."
+
+#: lib/pages/home/hero.ex:31
+#, elixir-autogen, elixir-format
+msgid "Soonex turns a Phoenix team's coming-soon page into static HTML with accessible Corex components, four tuned themes, and a waitlist that works from day one."
+msgstr "Soonex transforme la page « bientôt disponible » d'une équipe Phoenix en HTML statique, avec des composants Corex accessibles, quatre thèmes soignés et une liste d'attente qui fonctionne dès le premier jour."
+
+#: lib/layouts/root_layout.ex:244
+#, elixir-autogen, elixir-format
+msgid "Soonex: the launch page kit for Phoenix teams, built with Tableau and Corex."
+msgstr "Soonex : le kit de page de lancement pour les équipes Phoenix, construit avec Tableau et Corex."
+
+#: lib/soonex_i18n/accessibility.ex:192
+#, elixir-autogen, elixir-format
+msgid "Standard"
+msgstr "Standard"
+
+#: lib/pages/home/how_it_works.ex:80
+#, elixir-autogen, elixir-format
+msgid "Start the dev server with mix server and open localhost:4999."
+msgstr "Démarrez le serveur de dev avec mix server et ouvrez localhost:4999."
+
+#: lib/pages/home/proof.ex:53
+#, elixir-autogen, elixir-format
+msgid "Static HTML, hostable anywhere"
+msgstr "HTML statique, hébergeable partout"
+
+#: lib/pages/home/features.ex:68
+#, elixir-autogen, elixir-format
+msgid "Static and fast"
+msgstr "Statique et rapide"
+
+#: lib/pages/home/showcase.ex:147
+#, elixir-autogen, elixir-format
+msgid "Static pages still get real widgets, with no Phoenix server running behind them."
+msgstr "Les pages statiques ont quand même de vrais widgets, sans serveur Phoenix derrière."
+
+#: lib/soonex_i18n/accessibility.ex:199
+#, elixir-autogen, elixir-format
+msgid "Strong"
+msgstr "Renforcé"
+
+#: lib/pages/home/features.ex:69
+#, elixir-autogen, elixir-format
+msgid "Tableau renders plain HTML you can host anywhere, from GitHub Pages to a CDN."
+msgstr "Tableau génère du HTML simple à héberger partout, de GitHub Pages à un CDN."
+
+#: lib/pages/home/showcase.ex:149
+#, elixir-autogen, elixir-format
+msgid "Tabs, accordion, select, timer, and marquee hydrate on the client."
+msgstr "Onglets, accordéon, liste déroulante, minuteur et défilement s'hydratent côté client."
+
+#: lib/pages/home/features.ex:75
+#, elixir-autogen, elixir-format
+msgid "Tabs, accordions, selects, and timers hydrate in the browser with full keyboard support."
+msgstr "Onglets, accordéons, listes déroulantes et minuteurs s'hydratent dans le navigateur, entièrement utilisables au clavier."
+
+#: lib/layouts/root/footer.ex:77
+#: lib/pages/blog_index_page.ex:35
+#: lib/pages/tags_index_page.ex:29
+#: lib/pages/tags_index_page.ex:42
+#, elixir-autogen, elixir-format
+msgid "Tags"
+msgstr "Tags"
+
+#: lib/layouts/root_layout.ex:238
+#, elixir-autogen, elixir-format
+msgid "Tags · %{name}"
+msgstr "Tags · %{name}"
+
+#: lib/pages/home/showcase.ex:162
+#, elixir-autogen, elixir-format
+msgid "Text size, contrast, motion, focus ring, and link underline controls."
+msgstr "Réglages de taille du texte, contraste, animations, anneau de focus et soulignement des liens."
+
+#: lib/pages/home/waitlist.ex:51
+#, elixir-autogen, elixir-format
+msgid "Thanks for signing up. Connect your email provider to start collecting real addresses."
+msgstr "Merci pour votre inscription. Branchez votre fournisseur d'e-mails pour collecter de vraies adresses."
+
+#: lib/pages/not_found_page.ex:35
+#, elixir-autogen, elixir-format
+msgid "That URL is not on this site. Head home or read the journal."
+msgstr "Cette URL n'existe pas sur ce site. Retournez à l'accueil ou lisez le journal."
+
+#: lib/layouts/root_layout.ex:252
+#, elixir-autogen, elixir-format
+msgid "That page is not on %{name}."
+msgstr "Cette page n'existe pas sur %{name}."
+
+#: lib/pages/privacy_page.ex:109
+#, elixir-autogen, elixir-format
+msgid "The Soonex demo is a developer-facing marketing template. It is not directed at children and does not knowingly collect information from anyone under 16."
+msgstr "La démo Soonex est un modèle marketing destiné aux développeurs. Elle ne s'adresse pas aux enfants et ne collecte pas sciemment d'informations sur des personnes de moins de 16 ans."
+
+#: lib/pages/privacy_page.ex:74
+#, elixir-autogen, elixir-format
+msgid "The consent banner groups cookies into three categories. Only necessary storage is active by default."
+msgstr "Le bandeau de consentement regroupe les cookies en trois catégories. Seul le stockage nécessaire est actif par défaut."
+
+#: lib/pages/home/proof.ex:31
+#, elixir-autogen, elixir-format
+msgid "The idea behind Soonex"
+msgstr "L'idée derrière Soonex"
+
+#: lib/layouts/root/footer.ex:34
+#, elixir-autogen, elixir-format
+msgid "The launch page kit for Phoenix teams. Static HTML, accessible Corex components, and a waitlist that is ready on day one."
+msgstr "Le kit de page de lancement pour les équipes Phoenix. HTML statique, composants Corex accessibles et une liste d'attente prête dès le premier jour."
+
+#: lib/pages/home/faq.ex:111
+#, elixir-autogen, elixir-format
+msgid "The person icon opens Corex accessibility settings: text size, contrast, motion, cursor, focus, and link underline. Choices persist in localStorage on this device."
+msgstr "L'icône de personne ouvre les réglages d'accessibilité Corex : taille du texte, contraste, animations, curseur, focus et soulignement des liens. Les choix sont conservés dans le localStorage de cet appareil."
+
+#: lib/pages/home/faq.ex:24
+#, elixir-autogen, elixir-format
+msgid "The short version: one config block for the look, plain HEEx modules for the words, and static HTML at the end."
+msgstr "En bref : un bloc de config pour l'apparence, de simples modules HEEx pour les textes, et du HTML statique à l'arrivée."
+
+#: lib/pages/privacy_page.ex:93
+#, elixir-autogen, elixir-format
+msgid "The static build may reference self-hosted fonts and images. It does not embed third-party trackers, social widgets, or hosted video players. If you add those integrations when forking the template, disclose them here and wire them through the consent module:"
+msgstr "Le build statique peut référencer des polices et images auto-hébergées. Il n'intègre aucun traceur tiers, widget social ou lecteur vidéo hébergé. Si vous ajoutez ces intégrations en forkant le modèle, mentionnez-les ici et reliez-les au module de consentement :"
+
+#: lib/pages/home/showcase.ex:164
+#, elixir-autogen, elixir-format
+msgid "The test suite runs axe against the home page in headless Chrome."
+msgstr "La suite de tests lance axe sur la page d'accueil dans Chrome headless."
+
+#: lib/pages/privacy_page.ex:43
+#, elixir-autogen, elixir-format
+msgid "The waitlist forms on the home page are wired for UX only. Submitting an email shows a success toast but does not send your address to a server, database, or third-party list provider. There is no account system, no payment flow, and no server-side session in this template."
+msgstr "Les formulaires de liste d'attente de la page d'accueil sont branchés pour l'expérience uniquement. Envoyer un e-mail affiche une notification de succès mais n'envoie votre adresse à aucun serveur, base de données ou fournisseur tiers. Ce modèle n'a ni système de comptes, ni paiement, ni session côté serveur."
+
+#: lib/pages/privacy_page.ex:52
+#, elixir-autogen, elixir-format
+msgid "Theme and color mode"
+msgstr "Thème et mode de couleur"
+
+#: lib/soonex_i18n/cookie_consent.ex:125
+#, elixir-autogen, elixir-format
+msgid "Theme, mode, and accessibility settings required for the site to work."
+msgstr "Thème, mode et réglages d'accessibilité nécessaires au fonctionnement du site."
+
+#: lib/pages/home/proof.ex:50
+#, elixir-autogen, elixir-format
+msgid "Themes, each with light and dark modes"
+msgstr "Thèmes, chacun avec modes clair et sombre"
+
+#: lib/pages/privacy_page.ex:91
+#, elixir-autogen, elixir-format
+msgid "Third parties"
+msgstr "Tiers"
+
+#: lib/pages/home/waitlist.ex:105
+#, elixir-autogen, elixir-format
+msgid "This form is not connected to a provider yet, so nothing you enter is stored."
+msgstr "Ce formulaire n'est relié à aucun fournisseur pour l'instant : rien de ce que vous saisissez n'est stocké."
+
+#: lib/pages/privacy_page.ex:22
+#, elixir-autogen, elixir-format
+msgid "This page describes how the Soonex demo handles information on your device. It is not legal advice."
+msgstr "Cette page décrit comment la démo Soonex traite les informations sur votre appareil. Elle ne constitue pas un avis juridique."
+
+#: lib/pages/home/how_it_works.ex:25
+#, elixir-autogen, elixir-format
+msgid "Three steps, all in Mix. No Node toolchain, no parallel design system, and nothing to maintain beyond your config and your copy."
+msgstr "Trois étapes, toutes dans Mix. Pas de chaîne d'outils Node, pas de design system parallèle, rien à maintenir à part votre config et vos textes."
+
+#: lib/pages/privacy_page.ex:48
+#, elixir-autogen, elixir-format
+msgid "To make the demo usable across visits, Soonex stores a small set of preferences in your browser using localStorage. These values stay on your device and are not transmitted to us."
+msgstr "Pour que la démo reste agréable d'une visite à l'autre, Soonex stocke quelques préférences dans votre navigateur via localStorage. Ces valeurs restent sur votre appareil et ne nous sont pas transmises."
+
+#: lib/pages/home/showcase.ex:129
+#: lib/pages/home/showcase.ex:130
+#, elixir-autogen, elixir-format
+msgid "Tokens"
+msgstr "Tokens"
+
+#: lib/pages/home/how_it_works.ex:81
+#, elixir-autogen, elixir-format
+msgid "Try neo, uno, duo, or leo and light or dark mode from Template Options."
+msgstr "Essayez neo, uno, duo ou leo, en mode clair ou sombre, depuis Options du modèle."
+
+#: lib/soonex_i18n/accessibility.ex:201
+#, elixir-autogen, elixir-format
+msgid "Underline"
+msgstr "Souligné"
+
+#: lib/pages/home/showcase.ex:160
+#, elixir-autogen, elixir-format
+msgid "Visitors can tune the page to how they read, and it remembers their choice."
+msgstr "Les visiteurs adaptent la page à leur façon de lire, et elle se souvient de leur choix."
+
+#: lib/pages/home/showcase.ex:67
+#, elixir-autogen, elixir-format
+msgid "WCAG AA"
+msgstr "WCAG AA"
+
+#: lib/pages/home/features.ex:79
+#, elixir-autogen, elixir-format
+msgid "Waitlist built in"
+msgstr "Liste d'attente intégrée"
+
+#: lib/pages/privacy_page.ex:114
+#, elixir-autogen, elixir-format
+msgid "We may update this page when the template changes, for example if a fork adds real list collection or analytics. The last updated date at the top will change when we do."
+msgstr "Nous pouvons mettre à jour cette page lorsque le modèle évolue, par exemple si un fork ajoute une vraie collecte d'adresses ou de la mesure d'audience. La date de mise à jour en haut de page changera alors."
+
+#: lib/pages/home/faq.ex:109
+#, elixir-autogen, elixir-format
+msgid "What do the accessibility controls do?"
+msgstr "À quoi servent les réglages d'accessibilité ?"
+
+#: lib/pages/home/faq.ex:85
+#, elixir-autogen, elixir-format
+msgid "What is Corex, and why does Soonex use it?"
+msgstr "Qu'est-ce que Corex, et pourquoi Soonex l'utilise-t-il ?"
+
+#: lib/pages/privacy_page.ex:41
+#, elixir-autogen, elixir-format
+msgid "What we do not collect"
+msgstr "Ce que nous ne collectons pas"
+
+#: lib/pages/home/faq.ex:97
+#, elixir-autogen, elixir-format
+msgid "Where do waitlist signups go?"
+msgstr "Où vont les inscriptions à la liste d'attente ?"
+
+#: lib/pages/privacy_page.ex:36
+#, elixir-autogen, elixir-format
+msgid "Who this applies to"
+msgstr "À qui cela s'applique"
+
+#: lib/layouts/root/footer.ex:62
+#: lib/layouts/root/nav.ex:90
+#: lib/pages/home/proof.ex:22
+#, elixir-autogen, elixir-format
+msgid "Why Soonex"
+msgstr "Pourquoi Soonex"
+
+#: lib/pages/home/showcase.ex:101
+#: lib/pages/home/waitlist.ex:63
+#, elixir-autogen, elixir-format
+msgid "Work email"
+msgstr "E-mail professionnel"
+
+#: lib/layouts/root/footer.ex:54
+#: lib/layouts/root/nav.ex:89
+#: lib/pages/home/how_it_works.ex:16
+#, elixir-autogen, elixir-format
+msgid "Workflow"
+msgstr "Méthode"
+
+#: lib/pages/privacy_page.ex:69
+#, elixir-autogen, elixir-format
+msgid "You can clear these at any time through your browser settings or by removing site data for this origin. The cookie banner can be reopened from the footer to change your choices."
+msgstr "Vous pouvez les effacer à tout moment depuis les réglages de votre navigateur ou en supprimant les données de ce site. Le bandeau de cookies peut être rouvert depuis le pied de page pour modifier vos choix."
+
+#: lib/pages/home/waitlist.ex:49
+#, elixir-autogen, elixir-format
+msgid "You're on the list"
+msgstr "Vous êtes sur la liste"
+
+#: lib/pages/privacy_page.ex:102
+#, elixir-autogen, elixir-format
+msgid "Your rights"
+msgstr "Vos droits"
+
+#: lib/soonex_i18n/accessibility.ex:182
+#, elixir-autogen, elixir-format
+msgid "Zoom"
+msgstr "Zoom"
+
+#: lib/pages/privacy_page.ex:57
+#, elixir-autogen, elixir-format
+msgid "contrast, motion, and related choices from the accessibility panel."
+msgstr "contraste, animations et autres choix du panneau d'accessibilité."
+
+#: lib/pages/home/hero.ex:65
+#, elixir-autogen, elixir-format
+msgid "days"
+msgstr "jours"
+
+#: lib/pages/home/hero.ex:66
+#, elixir-autogen, elixir-format
+msgid "hours"
+msgstr "heures"
+
+#: lib/pages/home/hero.ex:67
+#, elixir-autogen, elixir-format
+msgid "min"
+msgstr "min"
+
+#: lib/pages/home/proof.ex:51
+#, elixir-autogen, elixir-format
+msgid "npm packages to install or audit"
+msgstr "paquet npm à installer ou auditer"
+
+#: lib/pages/home/how_it_works.ex:117
+#, elixir-autogen, elixir-format
+msgid "prod build"
+msgstr "build de prod"
+
+#: lib/pages/privacy_page.ex:79
+#, elixir-autogen, elixir-format
+msgid "required for theme, accessibility, language, and remembering your consent decision. These cannot be disabled without breaking the demo experience."
+msgstr "requis pour le thème, l'accessibilité, la langue et la mémorisation de votre choix de consentement. Ils ne peuvent pas être désactivés sans casser la démo."
+
+#: lib/pages/home/hero.ex:68
+#, elixir-autogen, elixir-format
+msgid "sec"
+msgstr "s"
+
+#: lib/pages/privacy_page.ex:61
+#, elixir-autogen, elixir-format
+msgid "the language you picked last, so the site can open in it next time."
+msgstr "la dernière langue choisie, pour que le site s'ouvre dans cette langue la prochaine fois."
+
+#: lib/pages/privacy_page.ex:65
+#, elixir-autogen, elixir-format
+msgid "whether you accepted, rejected, or customised analytics and marketing categories."
+msgstr "si vous avez accepté, refusé ou personnalisé les catégories mesure d'audience et marketing."
+
+#: lib/pages/privacy_page.ex:53
+#, elixir-autogen, elixir-format
+msgid "which Corex theme (neo, uno, duo, leo) and light or dark mode you selected."
+msgstr "le thème Corex (neo, uno, duo, leo) et le mode clair ou sombre choisis."
+
+#: lib/pages/privacy_page.ex:83
+#, elixir-autogen, elixir-format
+msgid "would cover measurement tags such as privacy-friendly analytics. This template does not load analytics scripts even if you allow the category."
+msgstr "couvrirait des balises de mesure, par exemple une solution respectueuse de la vie privée. Ce modèle ne charge aucun script de mesure, même si vous autorisez la catégorie."
+
+#: lib/pages/privacy_page.ex:87
+#, elixir-autogen, elixir-format
+msgid "would cover remarketing or social pixels. This template does not load marketing tags even if you allow the category."
+msgstr "couvrirait le reciblage ou les pixels sociaux. Ce modèle ne charge aucune balise marketing, même si vous autorisez la catégorie."
+
+#: lib/soonex_i18n/corex_strings.ex:22
+#, elixir-autogen, elixir-format
+msgid "Close window"
+msgstr "Fermer la fenêtre"
+
+#: lib/soonex_i18n/corex_strings.ex:17
+#, elixir-autogen, elixir-format
+msgid "Dialog"
+msgstr "Boîte de dialogue"
+
+#: lib/soonex_i18n/corex_strings.ex:24
+#, elixir-autogen, elixir-format
+msgid "Error"
+msgstr "Erreur"
+
+#: lib/soonex_i18n/corex_strings.ex:23
+#, elixir-autogen, elixir-format
+msgid "Info"
+msgstr "Info"
+
+#: lib/soonex_i18n/corex_strings.ex:20
+#, elixir-autogen, elixir-format
+msgid "Maximize window"
+msgstr "Agrandir la fenêtre"
+
+#: lib/soonex_i18n/corex_strings.ex:19
+#, elixir-autogen, elixir-format
+msgid "Minimize window"
+msgstr "Réduire la fenêtre"
+
+#: lib/soonex_i18n/corex_strings.ex:13
+#, elixir-autogen, elixir-format
+msgid "Next page"
+msgstr "Page suivante"
+
+#: lib/soonex_i18n/corex_strings.ex:14
+#, elixir-autogen, elixir-format
+msgid "Page %{page} of %{total_pages}"
+msgstr "Page %{page} sur %{total_pages}"
+
+#: lib/soonex_i18n/corex_strings.ex:11
+#, elixir-autogen, elixir-format
+msgid "Pagination"
+msgstr "Pagination"
+
+#: lib/soonex_i18n/corex_strings.ex:12
+#, elixir-autogen, elixir-format
+msgid "Previous page"
+msgstr "Page précédente"
+
+#: lib/soonex_i18n/corex_strings.ex:21
+#, elixir-autogen, elixir-format
+msgid "Restore window"
+msgstr "Restaurer la fenêtre"
+
+#: lib/soonex_i18n/corex_strings.ex:18
+#, elixir-autogen, elixir-format
+msgid "Select"
+msgstr "Sélectionner"
+
+#: lib/soonex_i18n/corex_strings.ex:15
+#, elixir-autogen, elixir-format
+msgid "Timer"
+msgstr "Minuteur"
+
+#: lib/pages/home/faq.ex:57
+#: lib/pages/home/how_it_works.ex:47
+#: lib/pages/home/showcase.ex:47
+#, elixir-autogen, elixir-format
+msgid "Text to copy"
+msgstr "Texte à copier"

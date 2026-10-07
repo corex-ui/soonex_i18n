@@ -5,6 +5,10 @@ defmodule SoonexI18n.Layouts.Root.Demo do
   use Corex
   use SoonexI18n.GettextSigil
 
+  import SoonexI18n.Accessibility, only: [accessibility_panel: 1]
+
+  alias SoonexI18n.Locale
+
   attr(:page, :map, required: true)
   attr(:locale, :any, required: true)
   attr(:mode, :any, required: true)
@@ -16,23 +20,23 @@ defmodule SoonexI18n.Layouts.Root.Demo do
       aria-label={~t"Demo site controls"}
       class="fixed bottom-space end-space z-50 flex flex-col items-end gap-space"
     >
+      <.accessibility_panel />
       <.floating_panel
         id="site-controls"
         class="floating-panel"
-        dir={SoonexI18n.Locale.dir(@locale)}
-        size={%{width: 250, height: 230}}
+        dir={Locale.dir(@locale)}
+        size={%{width: 250, height: 200}}
         positioning={
           %Corex.Positioning{
             placement: "bottom-end",
-            offset: %Corex.Offset{main_axis: 100, cross_axis: -10}
+            offset: %Corex.Offset{main_axis: 120, cross_axis: -10}
           }
         }
         resizable={false}
         translation={%Corex.FloatingPanel.Translation{close: ~t"Close"}}
       >
         <:trigger class="button ui-size-sm">
-          <.heroicon name="hero-cog-6-tooth" />
-          {~t"Template Options"}
+          <.heroicon name="hero-cog-6-tooth" /> {~t"Template Options"}
         </:trigger>
         <:title>{~t"Template Options"}</:title>
         <:close_trigger>
@@ -43,18 +47,22 @@ defmodule SoonexI18n.Layouts.Root.Demo do
             <.select
               id="corex-language-switch"
               class="select ui-size-sm w-full min-w-0"
-              dir={SoonexI18n.Locale.dir(@locale)}
-              items={SoonexI18n.Locale.language_select_items(SoonexI18n.Locale.current_path(@page))}
-              value={
-                SoonexI18n.Locale.language_select_value(
-                  SoonexI18n.Locale.current_path(@page),
-                  @locale
-                )
-              }
+              dir={Locale.dir(@locale)}
+              items={Locale.language_select_items(Locale.current_path(@page))}
+              value={Locale.language_select_value(Locale.current_path(@page), @locale)}
               redirect
               on_value_change_client="corex:set-locale"
+              positioning={
+                %Corex.Positioning{
+                  strategy: "fixed",
+                  placement: "bottom-start",
+                  same_width: true,
+                  gutter: 8,
+                  slide: false,
+                  fit_viewport: false
+                }
+              }
               translation={%Corex.Select.Translation{placeholder: ~t"Language"}}
-              positioning={%Corex.Positioning{same_width: true}}
             >
               <:label>{~t"Language"}</:label>
               <:trigger>
@@ -68,12 +76,22 @@ defmodule SoonexI18n.Layouts.Root.Demo do
               <.select
                 id="theme-switcher"
                 class="select ui-size-sm w-full min-w-0"
-                dir={SoonexI18n.Locale.dir(@locale)}
+                dir={Locale.dir(@locale)}
                 items={SoonexI18n.Theme.select_items()}
                 value={[]}
                 close_on_select={false}
                 update_trigger={false}
                 on_value_change_client="corex:set-theme"
+                positioning={
+                  %Corex.Positioning{
+                    strategy: "fixed",
+                    placement: "bottom-start",
+                    same_width: true,
+                    gutter: 8,
+                    slide: false,
+                    fit_viewport: false
+                  }
+                }
                 translation={%Corex.Select.Translation{placeholder: ~t"Theme"}}
               >
                 <:label>{~t"Theme"}</:label>
@@ -90,7 +108,7 @@ defmodule SoonexI18n.Layouts.Root.Demo do
                 class="toggle ui-size-sm"
                 data-toggle-dual-label
                 pressed={@mode == "dark"}
-                dir={SoonexI18n.Locale.dir(@locale)}
+                dir={Locale.dir(@locale)}
                 on_pressed_change_client="corex:set-mode"
               >
                 <span class="sr-only">{~t"Color mode"}</span>
@@ -106,12 +124,11 @@ defmodule SoonexI18n.Layouts.Root.Demo do
         </:content>
       </.floating_panel>
       <.navigate
-        to="https://corex.gigalixirapp.com/templates"
+        to="https://hexdocs.pm/corex"
         class="button ui-accent ui-solid ui-size-sm"
         external
       >
-        {~t"Made with Corex"}
-        <.heroicon name="hero-arrow-down-tray" />
+        {~t"Corex docs"} <.heroicon name="hero-arrow-up-right" />
       </.navigate>
     </div>
     """

@@ -4,10 +4,9 @@ defmodule SoonexI18n.MixProject do
   def project do
     [
       app: :soonex_i18n,
-      version: "0.2.0",
+      version: "0.3.0",
       elixir: "~> 1.17",
       start_permanent: Mix.env() == :prod,
-      compilers: Mix.compilers() ++ [:corex_design],
       elixirc_paths: elixirc_paths(Mix.env()),
       aliases: aliases(),
       deps: deps(),
@@ -45,9 +44,9 @@ defmodule SoonexI18n.MixProject do
        app: false,
        compile: false,
        depth: 1},
-      {:corex, "~> 0.2.0"},
-      {:corex_design, "~> 0.2.0", runtime: false},
-      {:corex_mcp, "~> 0.2.0", only: [:dev, :test]},
+      {:corex, "~> 0.2"},
+      {:corex_design, "~> 0.2", runtime: false},
+      {:corex_mcp, "~> 0.2", only: [:dev, :test]},
       {:gettext, "~> 1.0"},
       {:gettext_sigils, "~> 0.5.1"},
       {:localize_web, "~> 0.5.1"},
@@ -62,7 +61,7 @@ defmodule SoonexI18n.MixProject do
       {:rustler_precompiled, "~> 0.9", override: true},
       {:makeup_syntect, "~> 0.1.4"},
       {:wallaby, "~> 0.30", only: :test, runtime: false},
-      {:a11y_audit, "~> 0.3.1", only: :test, runtime: false},
+      {:a11y_audit, "~> 0.5.0", only: :test, runtime: false},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:ex_slop, "~> 0.1", only: [:dev, :test], runtime: false},
       {:usage_rules, "~> 1.1", only: :dev}
@@ -97,6 +96,7 @@ defmodule SoonexI18n.MixProject do
         "tableau.build"
       ],
       test: ["pre.test", "test"],
+      server: ["soonex_i18n.port_check", "tableau.server"],
       "assets.build": [
         "corex.design.build",
         "tailwind default",

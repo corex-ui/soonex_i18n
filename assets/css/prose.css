@@ -88,9 +88,9 @@
   .markdown.corex-callout {
     margin-block: var(--spacing-space-lg);
     padding: var(--spacing-space);
-    border-radius: var(--radius-md);
     border: 1px solid var(--color-border);
     background: var(--color-surface);
+    box-shadow: 4px 4px 0 0 var(--color-ink);
     max-width: 100%;
     box-sizing: border-box;
   }
@@ -143,6 +143,7 @@
   .typo.prose.markdown img {
     max-width: min(100%, 40rem);
     height: auto;
+    border-radius: var(--radius-xl);
   }
 
   .typo.prose.markdown img[src*="/images/tech/"] {
@@ -152,4 +153,14 @@
     border: none;
     border-radius: 0;
   }
+}
+
+.markdown pre,
+.markdown code {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.markdown pre {
+  text-align: left;
 }

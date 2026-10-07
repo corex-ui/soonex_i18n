@@ -1,0 +1,85 @@
+/* Host polish after Corex. Tokens only. Prefer ui-* modifiers in HEEx. */
+
+[data-theme] {
+  --soonex-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.button,
+.link.ui-nav {
+  transition-timing-function: var(--soonex-ease);
+}
+
+.native-input.ui-width-full,
+.clipboard.ui-width-full,
+.radio-group.ui-width-full,
+.tags-input.ui-width-full,
+.number-input.ui-width-full,
+.date-picker.ui-width-full,
+.data-table.ui-width-full,
+.select.ui-width-full,
+.marquee.ui-width-full,
+.collapsible.ui-width-full,
+.accordion.ui-width-full,
+.switch.ui-width-full {
+  max-width: none;
+  width: 100%;
+}
+
+.clipboard.ui-width-fit,
+.clipboard.ui-width-fit [data-scope="clipboard"][data-part="root"] {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.collapsible.ui-width-full [data-scope="collapsible"][data-part="trigger"] {
+  max-width: none;
+  width: 100%;
+  place-self: stretch;
+}
+
+.accordion.ui-width-full [data-scope="accordion"][data-part="item-trigger"] {
+  max-width: none;
+  width: 100%;
+}
+
+#soonex-waitlist-role [data-scope="select"][data-part="positioner"] {
+  position: absolute;
+}
+
+#theme-switcher [data-scope="select"][data-part="positioner"],
+#theme-switcher [data-scope="select"][data-part="content"],
+[id="select:theme-switcher:positioner"],
+[id="select:theme-switcher:content"] {
+  z-index: 80;
+}
+
+#site-controls [data-scope="floating-panel"][data-part="body"],
+#site-controls [data-scope="floating-panel"][data-part="content"] {
+  overflow: visible;
+}
+
+.data-table.ui-width-fit {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.native-input [data-scope="native-input"][data-part="label"]:has(.sr-only),
+.radio-group [data-scope="radio-group"][data-part="label"]:has(.sr-only) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.accordion [data-scope="accordion"][data-part="item-trigger"] {
+  padding-block: var(--spacing-space);
+}
+
+pre.code.code--wide {
+  max-width: none;
+}
