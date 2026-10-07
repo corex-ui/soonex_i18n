@@ -20,8 +20,16 @@ port =
     if scheme == "https", do: 443, else: 80
   end
 
+asset_version =
+  case System.get_env("GITHUB_SHA") do
+    sha when is_binary(sha) and sha != "" -> String.slice(sha, 0, 12)
+    _ -> Integer.to_string(System.os_time(:second))
+  end
+
 config :soonex_i18n, SoonexI18nWeb.Endpoint,
   url: [scheme: scheme, host: host, port: port, path: path]
+
+config :soonex_i18n, :asset_version, asset_version
 
 config :tableau, :config, url: site_url
 config :tableau, Tableau.PostExtension, future: false, dir: ["_posts"]

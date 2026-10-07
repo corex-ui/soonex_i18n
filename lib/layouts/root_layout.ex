@@ -182,8 +182,8 @@ defmodule SoonexI18n.RootLayout do
           type="font/woff2"
           crossorigin
         />
-        <link rel="stylesheet" href={SoonexI18n.Public.path("/css/site.css")} />
-        <script type="module" src={SoonexI18n.Public.path("/js/site.js")} />
+        <link rel="stylesheet" href={SoonexI18n.Public.asset("/css/site.css")} />
+        <script type="module" src={SoonexI18n.Public.asset("/js/site.js")} />
       </head>
 
       <body class="layout typo flex min-h-dvh min-w-0 flex-col overflow-x-clip bg-root text-ink antialiased">

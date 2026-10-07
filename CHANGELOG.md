@@ -13,6 +13,7 @@
 - Drop `:corex_design` from Mix `compilers`; pin `corex`, `corex_design`, and `corex_mcp` to `~> 0.2` (0.2.2); upgrade `a11y_audit` to 0.5.0, `phoenix_live_view` to 1.2.12, and `usage_rules` to 1.2.8.
 - Add `mix server` (port check, then `tableau.server`) and `mix soonex_i18n.gen.post`, which creates a post in every locale.
 - Run the Wallaby axe check on `/`, `/en/`, `/fr/`, and `/ar/`, and assert the Arabic page is right-to-left; `SOONEX_TEST_PORT` overrides the test port.
+- Version `site.css` and `site.js` URLs in production builds (`?v=` plus the commit SHA, or the build time outside GitHub Actions) so visitors get new styles after a deploy without a hard refresh.
 - Rewrite the README and add AGENTS.md.
 
 ## 0.2.0
