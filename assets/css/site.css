@@ -1,23 +1,13 @@
 @import "tailwindcss";
 @plugin "../vendor/heroicons";
-@import "../node_modules/lenis/dist/lenis.css";
 
+@import "./fonts.css";
 @import "../corex/corex.css";
+@import "./hosts.css";
 @source "../corex";
 @source "../../lib";
 
-@import "./blog.css";
+@import "./chrome.css";
 @import "./prose.css";
-@import "./home.css";
-@import "./home-numbers.css";
 
 @custom-variant dark (&:where([data-mode=dark], [data-mode=dark] *));
-
-html.lenis,
-html.lenis body {
-  height: auto;
-}
-
-.lenis:not(.lenis-autoToggle).lenis-stopped {
-  overflow: clip;
-}

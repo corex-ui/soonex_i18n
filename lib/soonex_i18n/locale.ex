@@ -3,6 +3,7 @@ defmodule SoonexI18n.Locale do
 
   alias Corex.List, as: CorexList
   alias Corex.List.Item
+  alias Localize.LanguageTag
 
   def locales, do: SoonexI18n.Gettext.locales()
 
@@ -31,15 +32,26 @@ defmodule SoonexI18n.Locale do
   defp permalink_for_current(%{"permalink" => perm}) when is_binary(perm), do: perm
   defp permalink_for_current(_), do: "/"
 
+  def format_date(date, format \\ :long)
+
+  def format_date(%DateTime{} = date, format), do: format_date(DateTime.to_date(date), format)
+
+  def format_date(%Date{} = date, format) do
+    case Localize.Date.to_string(date, locale: current(), format: format) do
+      {:ok, label} -> label
+      _ -> Date.to_iso8601(date)
+    end
+  end
+
   def lang(locale) when is_binary(locale), do: locale
   def lang(_), do: default_locale_string()
 
   def dir(locale) do
     loc = lang(locale)
 
-    with {:ok, tag} <- Localize.LanguageTag.new(loc),
-         {:ok, expanded} <- Localize.LanguageTag.add_likely_subtags(tag),
-         id <- Localize.LanguageTag.to_string(expanded),
+    with {:ok, tag} <- LanguageTag.new(loc),
+         {:ok, expanded} <- LanguageTag.add_likely_subtags(tag),
+         id <- LanguageTag.to_string(expanded),
          {:ok, order} <-
            Localize.Locale.get(id, [:layout, :character_order], fallback: true) do
       case order do
@@ -128,6 +140,25 @@ defmodule SoonexI18n.Locale do
   end
 
   def current_path(_), do: "/"
+
+  def local_posts(posts, page) do
+    prefix = "/" <> current(page) <> "/"
+
+    posts
+    |> List.wrap()
+    |> Enum.filter(&String.starts_with?(&1[:permalink] || "", prefix))
+    |> Enum.sort_by(& &1[:date], {:desc, DateTime})
+  end
+
+  def home_anchor(page_path, anchor) when is_binary(anchor) do
+    loc = current()
+
+    if page_path in ["/", "/" <> loc <> "/"] do
+      "#" <> anchor
+    else
+      with_public_prefix("/" <> loc <> "/") <> "#" <> anchor
+    end
+  end
 
   def language_select_items(current_path) do
     items =

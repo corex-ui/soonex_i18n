@@ -42,10 +42,10 @@ defmodule SoonexI18n.Palette.Config do
 
   defp neo_seeds do
     %{
-      "accent" => "#4B4B4B",
-      "alert" => "#A43C3C",
-      "base" => "#F0F0F0",
-      "brand" => "#32479C",
+      "accent" => "#141414",
+      "alert" => "#B42318",
+      "base" => "#FAF9F6",
+      "brand" => "#141414",
       "info" => "#1F77D4",
       "success" => "#059669"
     }

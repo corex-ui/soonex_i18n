@@ -6,6 +6,8 @@ config :soonex_i18n, :mcp_enabled, false
 
 config :tableau, :server, false
 
+config :tableau, :config, url: "http://localhost:#{System.get_env("SOONEX_TEST_PORT", "4999")}"
+
 wallaby_chromedriver_overrides =
   case System.get_env("WALLABY_CHROME_BINARY") do
     nil -> []

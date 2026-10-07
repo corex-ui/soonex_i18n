@@ -22,7 +22,7 @@ with {:ok, _} <- Application.ensure_all_started(:wallaby),
        Bandit.start_link(
          plug: SoonexI18n.WallabyStatic,
          scheme: :http,
-         port: 4999,
+         port: URI.parse(base_url).port,
          ip: :loopback,
          startup_log: false
        ) do

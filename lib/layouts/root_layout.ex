@@ -9,9 +9,10 @@ defmodule SoonexI18n.RootLayout do
   use SoonexI18n.Routes
   use SoonexI18n.GettextSigil
 
+  import SoonexI18n.CookieConsent, only: [cookie_consent: 1]
   import SoonexI18n.Layouts.Root.Demo, only: [demo_site_controls: 1]
   import SoonexI18n.Layouts.Root.Footer, only: [site_footer: 1]
-  import SoonexI18n.Layouts.Root.LandingChrome, only: [landing_chrome: 1]
+  import SoonexI18n.Layouts.Root.Nav, only: [site_nav: 1]
 
   alias Phoenix.HTML
   alias Phoenix.HTML.Safe
@@ -21,14 +22,8 @@ defmodule SoonexI18n.RootLayout do
     locale = Locale.current(assigns.page)
     Gettext.put_locale(SoonexI18n.Gettext, Locale.lang(locale))
 
-    site_name = "SoonexI18n"
-    copyright_holder = "SoonexI18n"
-
-    countdown_start_ms =
-      max(
-        DateTime.diff(~U[2026-09-01 00:00:00Z], DateTime.utc_now(), :millisecond),
-        0
-      )
+    site_name = "Soonex"
+    copyright_holder = "Soonex"
 
     tableau_config =
       case Tableau.Config.get() do
@@ -42,16 +37,14 @@ defmodule SoonexI18n.RootLayout do
       |> String.trim_trailing("/")
 
     page_path = Locale.current_path(assigns.page)
-    default_loc = Locale.default_locale_string()
 
     canonical_url =
-      if assigns.page[:page_kind] == :home and page_path == "/" <> default_loc <> "/" do
+      if assigns.page[:page_kind] == :home and
+           page_path in ["/", "/" <> Locale.default_locale_string() <> "/"] do
         base_url <> "/"
       else
         base_url <> page_path
       end
-
-    og_image_url = base_url <> "/images/og.svg"
 
     public_path_prefix =
       SoonexI18nWeb.Endpoint.path("/")
@@ -61,6 +54,8 @@ defmodule SoonexI18n.RootLayout do
       Locale.locales()
       |> Enum.filter(&(Locale.dir(&1) == "rtl"))
       |> Enum.join(",")
+
+    og_image_url = base_url <> "/images/og.svg"
 
     assigns =
       assigns
@@ -72,19 +67,18 @@ defmodule SoonexI18n.RootLayout do
       |> Map.put(:theme, SoonexI18n.Theme.current(assigns))
       |> Map.put(:mode, SoonexI18n.Mode.current(assigns))
       |> Map.put(:locale, locale)
-      |> Map.put(:countdown_start_ms, countdown_start_ms)
+      |> Map.put(:public_path_prefix, public_path_prefix)
+      |> Map.put(:rtl_locales, rtl_locales)
       |> Map.put(:canonical_url, canonical_url)
       |> Map.put(:base_url, base_url)
       |> Map.put(:page_path, page_path)
       |> Map.put(:og_image_url, og_image_url)
-      |> Map.put(:public_path_prefix, public_path_prefix)
-      |> Map.put(:rtl_locales, rtl_locales)
       |> Map.put(:flash, Map.get(assigns, :flash, %{}))
 
     ~H"""
     <!DOCTYPE html>
     <html
-      class="lenis"
+      class="scroll-smooth motion-reduce:scroll-auto"
       lang={Locale.lang(@locale)}
       dir={Locale.dir(@locale)}
       data-theme={@theme}
@@ -96,45 +90,61 @@ defmodule SoonexI18n.RootLayout do
       data-default-theme={SoonexI18n.Theme.default_theme()}
       data-locale-selected-path={Locale.selected_path(@page, @locale)}
       data-public-path-prefix={@public_path_prefix}
+      {SoonexI18n.Accessibility.data_attrs()}
     >
       <head>
         {SoonexI18n.Theme.head_script()}
         {SoonexI18n.Mode.head_script()}
+        {SoonexI18n.Accessibility.head_script()}
+        {SoonexI18n.CookieConsent.head_script()}
         <meta charset="utf-8" />
-        <base href={"#{@base_url}/"} />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="csrf-token" content={get_csrf_token()} />
 
-        <link rel="icon" href={~p"/images/favicon.ico"} sizes="48x48" />
-        <link rel="icon" type="image/png" sizes="32x32" href={~p"/images/favicon-32x32.png"} />
-        <link rel="icon" type="image/png" sizes="16x16" href={~p"/images/favicon-16x16.png"} />
-        <link rel="apple-touch-icon" sizes="180x180" href={~p"/images/apple-touch-icon.png"} />
+        <link rel="icon" href={SoonexI18n.Public.path("/images/logo.svg")} type="image/svg+xml" />
+        <link rel="icon" href={SoonexI18n.Public.path("/images/favicon.ico")} sizes="48x48" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href={SoonexI18n.Public.path("/images/favicon-32x32.png")}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href={SoonexI18n.Public.path("/images/favicon-16x16.png")}
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href={SoonexI18n.Public.path("/images/apple-touch-icon.png")}
+        />
         <link
           rel="icon"
           type="image/png"
           sizes="192x192"
-          href={~p"/images/android-chrome-192x192.png"}
+          href={SoonexI18n.Public.path("/images/android-chrome-192x192.png")}
         />
         <link
           rel="icon"
           type="image/png"
           sizes="512x512"
-          href={~p"/images/android-chrome-512x512.png"}
+          href={SoonexI18n.Public.path("/images/android-chrome-512x512.png")}
         />
-        <link rel="manifest" href={~p"/site.webmanifest"} />
+        <link rel="manifest" href={SoonexI18n.Public.path("/site.webmanifest")} />
 
         <title>{@doc_title}</title>
         <meta name="description" content={@doc_description} />
 
         <link rel="canonical" href={@canonical_url} />
-        <%= for loc <- Locale.locales() do %>
-          <link
-            rel="alternate"
-            hreflang={loc}
-            href={@base_url <> Locale.swap_path(@page_path, loc)}
-          />
-        <% end %>
+        <link
+          :for={loc <- Locale.locales()}
+          rel="alternate"
+          hreflang={loc}
+          href={@base_url <> Locale.swap_path(@page_path, loc)}
+        />
         <link
           rel="alternate"
           hreflang="x-default"
@@ -142,6 +152,7 @@ defmodule SoonexI18n.RootLayout do
         />
 
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content={Locale.lang(@locale)} />
         <meta property="og:site_name" content={@site_name} />
         <meta property="og:title" content={@doc_title} />
         <meta property="og:description" content={@doc_description} />
@@ -158,28 +169,35 @@ defmodule SoonexI18n.RootLayout do
         <meta name="twitter:image" content={@og_image_url} />
 
         <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+          rel="preload"
+          href={SoonexI18n.Public.path("/fonts/manrope-latin-wght-normal.woff2")}
+          as="font"
+          type="font/woff2"
+          crossorigin
         />
-        <link rel="stylesheet" href={~p"/css/site.css"} />
-        <script type="module" src={~p"/js/site.js"} />
+        <link
+          rel="preload"
+          href={SoonexI18n.Public.path("/fonts/outfit-latin-wght-normal.woff2")}
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
+        <link rel="stylesheet" href={SoonexI18n.Public.path("/css/site.css")} />
+        <script type="module" src={SoonexI18n.Public.path("/js/site.js")} />
       </head>
 
-      <body class="layout typo flex min-h-dvh flex-col bg-root text-ink antialiased">
+      <body class="layout typo flex min-h-dvh min-w-0 flex-col overflow-x-clip bg-root text-ink antialiased">
         <.navigate to="#main-content" class="link link--skip">{~t"Skip to content"}</.navigate>
 
         <.demo_site_controls page={@page} locale={@locale} mode={@mode} />
-        <.landing_chrome countdown_start_ms={@countdown_start_ms} />
+        <.site_nav page_path={@page_path} locale={@locale} />
 
-        <main
-          id="main-content"
-          class="layout__main flex-1"
-          data-landing
-        >
+        <main id="main-content" class="layout__main flex-1">
           {render(@inner_content)}
         </main>
 
-        <.site_footer copyright_holder={@copyright_holder} />
+        <.site_footer copyright_holder={@copyright_holder} page_path={@page_path} />
+        <.cookie_consent privacy_path={~p"/privacy"} />
 
         <.toast_group id="layout-toast" class="toast" phx-update="ignore" flash={@flash}>
           <:loading>
@@ -204,41 +222,46 @@ defmodule SoonexI18n.RootLayout do
   end
 
   defp document_title(page, site_name) do
-    cond do
-      md_page?(page) and present_string?(page[:title]) ->
-        page[:title]
-
-      page[:page_kind] == :home ->
-        ~t"#{name = site_name} · Elixir static site template"
-
-      page[:page_kind] == :blog_index ->
-        ~t"Blog · #{name = site_name}"
-
-      page[:page_kind] == :not_found ->
-        ~t"Page not found · #{name = site_name}"
-
-      true ->
-        ~t"#{name = site_name}"
+    if md_page?(page) and present_string?(page[:title]) do
+      page[:title]
+    else
+      kind_title(page[:page_kind], site_name)
     end
   end
 
+  defp kind_title(:home, site_name),
+    do: ~t"#{name = site_name} · Launch #{date = SoonexI18n.Launch.year_label()}"
+
+  defp kind_title(:blog_index, site_name), do: ~t"Journal · #{name = site_name}"
+  defp kind_title(:not_found, site_name), do: ~t"Page not found · #{name = site_name}"
+  defp kind_title(:privacy, site_name), do: ~t"Privacy · #{name = site_name}"
+  defp kind_title(:tags_index, site_name), do: ~t"Tags · #{name = site_name}"
+  defp kind_title(_kind, site_name), do: site_name
+
   defp meta_description(page, site_name) do
-    cond do
-      page[:page_kind] == :home ->
-        ~t"Tableau + Corex coming-soon template: static HEEx, design tokens, Markdown, locales. Join the #{name = site_name} waitlist."
+    kind_description(page[:page_kind], site_name) ||
+      page_description(page) ||
+      ~t"Soonex: the launch page kit for Phoenix teams, built with Tableau and Corex."
+  end
 
-      page[:page_kind] == :blog_index ->
-        ~t"Markdown journal posts for #{name = site_name}, compiled by Tableau into static pages."
+  defp kind_description(:home, _site_name),
+    do:
+      ~t"Soonex is the launch page kit for Phoenix teams: static HTML, accessible Corex components, four themes, a waitlist, and a journal."
 
-      page[:page_kind] == :not_found ->
-        ~t"This URL is not available on the #{name = site_name} static site."
+  defp kind_description(:blog_index, site_name), do: ~t"Shipping notes from #{name = site_name}."
+  defp kind_description(:not_found, site_name), do: ~t"That page is not on #{name = site_name}."
 
-      present_string?(page[:description]) ->
-        page[:description]
+  defp kind_description(:privacy, _site_name),
+    do:
+      ~t"Necessary preferences stay on this device. Analytics and marketing stay off unless you allow them."
 
-      true ->
-        ~t"A coming-soon static site. Learn more about #{name = site_name}."
-    end
+  defp kind_description(:tags_index, site_name),
+    do: ~t"Browse journal tags on #{name = site_name}."
+
+  defp kind_description(_kind, _site_name), do: nil
+
+  defp page_description(page) do
+    if present_string?(page[:description]), do: page[:description]
   end
 
   defp md_page?(page), do: page[:__tableau_page_extension__] == true

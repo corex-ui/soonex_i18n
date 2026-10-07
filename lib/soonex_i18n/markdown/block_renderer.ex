@@ -5,36 +5,20 @@ defmodule SoonexI18n.Markdown.BlockRenderer do
   use Corex
   use SoonexI18n.GettextSigil
 
-  alias Phoenix.HTML
+  attr(:code, :string, required: true)
+  attr(:language, :atom, required: true)
+  attr(:clipboard_id, :string, required: true)
 
-  def render_fence_html(code, language, clipboard_id) do
-    ensure_makeup_apps()
-    highlighted = highlight_to_string(code, language)
-
-    assigns =
-      %{__changed__: %{}}
-      |> assign(:clipboard_id, clipboard_id)
-      |> assign(:raw_code, code)
-      |> assign(:highlighted, HTML.raw(highlighted))
-      |> assign(:aria_label, ~t"Copy code")
-
-    fence_block(assigns)
-    |> HTML.html_escape()
-    |> HTML.safe_to_string()
-  end
-
-  defp fence_block(assigns) do
+  def fence(assigns) do
     ~H"""
     <div class="relative">
-      <pre class="code max-w-none" data-scope="code" data-part="root" tabindex="0">
-        <code data-scope="code" data-part="content">{@highlighted}</code>
-      </pre>
+      <.code class="code max-w-none" language={@language} code={@code} />
       <.clipboard
         id={@clipboard_id}
-        value={@raw_code}
-        class={["clipboard", "ui-size-sm", "absolute", "top-2", "right-2", "z-10"]}
+        class="clipboard ui-size-sm absolute top-2 end-2 z-10"
+        value={@code}
         input={false}
-        trigger_aria_label={@aria_label}
+        trigger_aria_label={~t"Copy code"}
       >
         <:copy>
           <.heroicon name="hero-clipboard" />
@@ -47,27 +31,31 @@ defmodule SoonexI18n.Markdown.BlockRenderer do
     """
   end
 
-  def render_inline_html(code, language) do
-    ensure_makeup_apps()
-    highlighted = highlight_to_string(code, language)
+  attr(:code, :string, required: true)
+  attr(:language, :atom, required: true)
 
-    ~s"""
-    <code class="code" data-scope="code" data-part="root"><span data-scope="code" data-part="content">#{highlighted}</span></code>
+  def inline(assigns) do
+    ~H"""
+    <.code class="code" inline language={@language} code={@code} />
     """
   end
 
-  defp highlight_to_string(code, language) do
-    name = to_string(language)
-    registry = Module.concat(["Elixir", "Makeup", "Registry"])
-    makeup = Module.concat(["Elixir", "Makeup"])
+  def render_fence_html(code, language, clipboard_id) do
+    ensure_makeup_apps()
 
-    case registry.fetch_lexer_by_name(name) do
-      {:ok, _} ->
-        makeup.highlight_inner_html(code, lexer: name)
+    %{__changed__: %{}, code: code, language: language, clipboard_id: clipboard_id}
+    |> fence()
+    |> Phoenix.HTML.html_escape()
+    |> Phoenix.HTML.safe_to_string()
+  end
 
-      :error ->
-        code |> HTML.html_escape() |> HTML.safe_to_string()
-    end
+  def render_inline_html(code, language) do
+    ensure_makeup_apps()
+
+    %{__changed__: %{}, code: code, language: language}
+    |> inline()
+    |> Phoenix.HTML.html_escape()
+    |> Phoenix.HTML.safe_to_string()
   end
 
   defp ensure_makeup_apps do

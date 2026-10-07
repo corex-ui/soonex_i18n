@@ -5,31 +5,44 @@ defmodule SoonexI18n.NotFoundPage do
     layout: SoonexI18n.RootLayout,
     permalink: "/404.html",
     title: "Page not found",
-    description: "The page you requested is not part of this static site.",
-    page_kind: :not_found
+    description: "That page is not on Soonex.",
+    page_kind: :not_found,
+    sitemap: %{priority: 0.2, changefreq: "yearly"}
 
   use Phoenix.Component
   use Corex
   use SoonexI18n.GettextSigil
   use SoonexI18n.Routes
 
+  import SoonexI18n.Layouts.Brand, only: [lockup: 1]
+
+  alias SoonexI18n.Layouts.Shell
+
   def template(assigns) do
     ~H"""
     <section
-      class="flex min-h-dvh flex-col items-center justify-center gap-space-lg px-space py-size-xl text-center"
-      aria-labelledby="soonex_i18n-not-found-heading"
+      class={"#{Shell.section()} flex min-h-dvh flex-col items-center justify-center bg-root text-center"}
+      aria-labelledby="soonex-not-found-heading"
     >
-      <div class="flex max-w-md flex-col gap-space-lg">
-        <p class="ui-label m-0 text-ink-muted">404</p>
-        <h1 id="soonex_i18n-not-found-heading" class="m-0 text-4xl font-bold tracking-tight">
-          {~t"Page not found"}
-        </h1>
-        <p class="m-0 leading-relaxed text-ink-muted">
-          {~t"The URL may be mistyped, or the page may have moved. Try the home page."}
-        </p>
-        <.navigate to={~p"/"} class="button ui-accent ui-solid w-fit self-center">
-          {~t"Back to home"}
-        </.navigate>
+      <div class={Shell.stage()}>
+        <div class={"#{Shell.panel()} mx-auto flex max-w-lg flex-col items-center gap-6 px-8 py-16"}>
+          <.lockup />
+          <p class={Shell.eyebrow()}>404</p>
+          <h1 id="soonex-not-found-heading" class="display m-0 text-4xl font-semibold tracking-tight">
+            {~t"Page not found"}
+          </h1>
+          <p class="m-0 max-w-sm text-base/7 text-ink-muted">
+            {~t"That URL is not on this site. Head home or read the journal."}
+          </p>
+          <div class="mt-4 flex flex-wrap items-center justify-center gap-4">
+            <.navigate to={~p"/"} class="button ui-brand ui-solid ui-size-md">
+              {~t"Home"}
+            </.navigate>
+            <.navigate to={~p"/blog"} class="button ui-ghost ui-size-md">
+              {~t"Journal"}
+            </.navigate>
+          </div>
+        </div>
       </div>
     </section>
     """

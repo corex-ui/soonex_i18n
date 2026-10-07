@@ -1,0 +1,63 @@
+/* Minimal host helpers. Prefer Corex ui-* modifiers and design tokens in HEEx. */
+
+html {
+  scroll-behavior: smooth;
+}
+
+html[data-motion="reduce"] {
+  scroll-behavior: auto;
+}
+
+.soonex-band-inverse .soonex-on-inverse {
+  color: var(--color-accent-contrast);
+}
+
+.soonex-band-inverse .soonex-muted-on-inverse {
+  color: color-mix(in oklab, var(--color-accent-contrast) 72%, var(--color-accent));
+}
+
+.soonex-band-inverse .soonex-column-title {
+  color: var(--color-accent-contrast);
+}
+
+.soonex-band-inverse .soonex-column-body {
+  color: color-mix(in oklab, var(--color-accent-contrast) 72%, var(--color-accent));
+}
+
+.soonex-columns > * + * {
+  border-block-start: 1px solid var(--color-border);
+  padding-block-start: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .soonex-columns > * + * {
+    border-block-start: none;
+    border-inline-start: 1px solid var(--color-border);
+    padding-block-start: 0;
+    padding-inline-start: 3rem;
+  }
+}
+
+.soonex-card-motion img {
+  transition: transform 600ms var(--soonex-ease);
+}
+
+.soonex-card-motion:hover img {
+  transform: scale(1.03);
+}
+
+html[data-motion="reduce"] .soonex-card-motion img {
+  transition: none;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .soonex-card-motion img {
+    transition: none;
+    transform: none;
+  }
+}
+
+.tabs.tabs--wide {
+  max-width: none;
+}

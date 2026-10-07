@@ -4,100 +4,74 @@ defmodule SoonexI18n.HomePage.Hero do
   use Phoenix.Component
   use Corex
   use SoonexI18n.GettextSigil
-  use SoonexI18n.Routes
 
   alias SoonexI18n.Layouts.Shell
-
-  attr(:countdown_ms, :integer, required: true)
+  alias SoonexI18n.Locale
 
   def hero(assigns) do
     ~H"""
     <header
-      class={"#{Shell.section()} overflow-x-hidden"}
-      aria-labelledby="soonex_i18n-headline"
-      data-hero-boundary
+      class={"#{Shell.section_hero()} bg-root"}
+      aria-labelledby="soonex-headline"
+      data-section="hero"
     >
-      <div class={"#{Shell.stage()} grid grid-cols-1 items-center justify-items-center gap-size-lg lg:grid-cols-2 lg:justify-items-stretch lg:gap-size-xl xl:grid-cols-[minmax(0,1fr)_minmax(22rem,1.15fr)]"}>
-        <div
-          class="mx-auto flex w-full max-w-xl flex-col items-center gap-size-md text-center lg:mx-0 lg:max-w-none lg:items-start lg:text-start"
-          data-hero
-        >
-          <p class="m-0 text-sm font-semibold uppercase tracking-[0.2em] text-brand-text">
-            {~t"SoonexI18n"}
-          </p>
+      <div class={Shell.stage_wide()}>
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end lg:gap-16">
+          <div class="lg:col-span-8">
+            <p class="badge ui-size-sm m-0 w-fit">
+              <span>{~t"Doors open #{date = SoonexI18n.Launch.year_label()}"}</span>
+            </p>
+            <h1 id="soonex-headline" class={"#{Shell.display_heading()} mt-8"}>
+              {~t"Launch pages that feel finished before you ship."}
+            </h1>
+          </div>
 
-          <h1
-            id="soonex_i18n-headline"
-            class="display m-0 text-balance text-4xl tracking-tighter text-ink sm:text-5xl lg:text-6xl xl:text-7xl"
-          >
-            {~t"Lorem ipsum dolor"} <span class="text-brand-text">{~t"sit amet"}</span>.
-          </h1>
-
-          <p class={Shell.lede()}>
-            {~t"Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."}
-          </p>
-
-          <ul
-            class="m-0 grid w-full max-w-xl list-none grid-cols-1 gap-x-space-xl gap-y-space-lg p-0 sm:grid-cols-2"
-            aria-label={~t"Highlights"}
-          >
-            <%= for line <- [
-                  ~t"Lorem ipsum dolor sit amet, consectetur.",
-                  ~t"Sed do eiusmod tempor incididunt ut.",
-                  ~t"Ut labore et dolore magna aliqua enim.",
-                  ~t"Quis nostrud exercitation ullamco laboris."
-                ] do %>
-              <li class="relative flex items-start gap-x-space text-pretty text-start text-sm text-ink-muted">
-                <span class="mt-space-xs shrink-0 text-success-text">
-                  <.heroicon name="hero-check" />
-                </span>
-                <span>{line}</span>
-              </li>
-            <% end %>
-          </ul>
-
-          <div class="flex w-full flex-wrap items-center justify-center gap-space-lg lg:justify-start">
-            <.navigate to="#waitlist" class="button ui-brand ui-solid ui-size-lg">
-              {~t"Join the waitlist"}
-            </.navigate>
-            <.navigate to={~p"/blog"} class="button ui-ghost ui-size-lg">
-              {~t"Read the journal"} <.heroicon name="hero-arrow-up-right" />
-            </.navigate>
+          <div class="lg:col-span-4 lg:pb-3">
+            <p class="m-0 max-w-md text-pretty text-base/7 text-ink-muted sm:text-lg/8">
+              {~t"Soonex turns a Phoenix team's coming-soon page into static HTML with accessible Corex components, four tuned themes, and a waitlist that works from day one."}
+            </p>
+            <div class="mt-8 flex flex-wrap items-center gap-3">
+              <.navigate to="#waitlist" class={Shell.primary_button_md()}>
+                {~t"Join the waitlist"}
+              </.navigate>
+              <.navigate to="#preview" class={Shell.secondary_button_md()}>
+                {~t"See it in action"} <.heroicon name="hero-arrow-down" />
+              </.navigate>
+            </div>
           </div>
         </div>
 
-        <div
-          class="hero-countdown mx-auto w-full max-w-lg lg:mx-0 lg:max-w-none"
-          aria-labelledby="hero-countdown-title"
-        >
-          <div class="hero-countdown__head">
-            <p class="hero-countdown__eyebrow">{~t"Launching in"}</p>
-            <p id="hero-countdown-title" class="hero-countdown__title">
-              {~t"Lorem ipsum countdown"}
-            </p>
+        <div class={"#{Shell.photo_frame()} mt-14 aspect-[4/5] sm:mt-20 sm:aspect-[16/9] lg:aspect-[21/9]"}>
+          <img
+            src={SoonexI18n.Public.path("/images/photos/hero.jpg")}
+            alt=""
+            width="2400"
+            height="1500"
+            fetchpriority="high"
+            decoding="async"
+            class={Shell.photo_fill()}
+          />
+          <div class="absolute inset-x-4 bottom-4 sm:inset-x-auto sm:bottom-8 sm:start-8">
+            <div class={"#{Shell.panel()} w-full shadow-2xl sm:w-auto"}>
+              <p class={Shell.eyebrow()}>{~t"Countdown to launch"}</p>
+              <.timer
+                id="soonex-hero-timer"
+                countdown
+                start_ms={SoonexI18n.Launch.countdown_ms()}
+                target_ms={0}
+                dir={Locale.dir(Locale.current())}
+                class="timer ui-accent ui-size-sm mt-3"
+              >
+                <:day_label>{~t"days"}</:day_label>
+                <:hour_label>{~t"hours"}</:hour_label>
+                <:minute_label>{~t"min"}</:minute_label>
+                <:second_label>{~t"sec"}</:second_label>
+              </.timer>
+            </div>
           </div>
-
-          <.timer
-            id="soonex_i18n-hero-countdown"
-            countdown
-            start_ms={@countdown_ms}
-            target_ms={0}
-            class="timer hero-countdown__timer ui-success ui-size-xl w-full"
-          >
-            <:day_label>{~t"Days"}</:day_label>
-            <:hour_label>{~t"Hours"}</:hour_label>
-            <:minute_label>{~t"Min"}</:minute_label>
-            <:second_label>{~t"Sec"}</:second_label>
-          </.timer>
-
-          <p class="hero-countdown__note">
-            {~t"Consectetur adipiscing elit · launch window Q3 2026"}
-          </p>
         </div>
       </div>
     </header>
-
-    <div data-hero-sentinel aria-hidden="true" class="pointer-events-none h-px w-full shrink-0"></div>
     """
   end
 end

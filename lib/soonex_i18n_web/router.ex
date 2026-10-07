@@ -12,7 +12,8 @@ defmodule SoonexI18nWeb.Router do
 
     get("/", PageController, :page)
     get("/blog", PageController, :page)
-    get("/docs", PageController, :page)
+    get("/tags", PageController, :page)
+    get("/privacy", PageController, :page)
   end
 
   scope "/:locale", SoonexI18nWeb do
@@ -20,6 +21,7 @@ defmodule SoonexI18nWeb.Router do
 
     get("/", PageController, :page)
     get("/blog", PageController, :page)
-    get("/docs", PageController, :page)
+    get("/tags", PageController, :page)
+    get("/privacy", PageController, :page)
   end
 end

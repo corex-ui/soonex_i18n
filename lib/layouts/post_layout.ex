@@ -7,17 +7,19 @@ defmodule SoonexI18n.PostLayout do
   use SoonexI18n.GettextSigil
   use SoonexI18n.Routes
 
+  import SoonexI18n.Layouts.Media, only: [photo: 1]
+
   alias SoonexI18n.Layouts.Shell
 
   def template(assigns) do
     page = assigns.page
-    title = page[:title] || Gettext.gettext(SoonexI18n.Gettext, "Post")
+    title = page[:title] || ~t"Post"
     description = page[:description]
     date = page[:date]
 
     date_label =
       case date do
-        %DateTime{} -> Calendar.strftime(date, "%Y-%m-%d")
+        %DateTime{} -> SoonexI18n.Locale.format_date(date)
         _ -> nil
       end
 
@@ -33,37 +35,55 @@ defmodule SoonexI18n.PostLayout do
       |> Map.put(:post_description, description)
       |> Map.put(:post_date_label, date_label)
       |> Map.put(:post_tags, tags)
+      |> Map.put(:post_cover, cover(page))
 
     ~H"""
-    <article class={"#{Shell.stage()} flex min-h-dvh flex-col gap-space-xl pt-size-xl pb-size-xl"}>
-      <nav class="blog__nav" aria-label={~t"Post"}>
-        <.navigate to={~p"/blog"} class="link ui-nav w-fit">
-          <.heroicon name="hero-arrow-left" /> {~t"Back to blog"}
-        </.navigate>
-      </nav>
+    <article class={"#{Shell.section()} bg-root"}>
+      <div class={Shell.stage()}>
+        <.layout_heading class="layout-heading" subtitle_tag="p">
+          <:title>{@post_title}</:title>
+          <:subtitle>
+            <span :if={@post_date_label}>{@post_date_label}</span>
+            <span :if={@post_date_label && @post_description}> · </span>
+            <span :if={@post_description}>{@post_description}</span>
+          </:subtitle>
+          <:actions>
+            <.navigate to={~p"/blog"} class="button ui-ghost ui-size-sm">
+              <.heroicon name="hero-arrow-left" /> {~t"Journal"}
+            </.navigate>
+          </:actions>
+        </.layout_heading>
 
-      <header class="blog__hero blog__hero--post" aria-labelledby="post-heading">
-        <div class="blog__head">
-          <p :if={@post_date_label} class="blog__eyebrow">{@post_date_label}</p>
-          <h1 id="post-heading" class="blog__display">{@post_title}</h1>
-          <p :if={@post_description} class="blog__lede">{@post_description}</p>
-          <div class="blog__meta">
-            <ul
-              :if={@post_tags != []}
-              class="m-0 flex list-none flex-wrap gap-space-sm p-0"
-            >
-              <li :for={tag <- @post_tags}>
-                <span class="badge ui-size-sm">{tag}</span>
-              </li>
-            </ul>
+        <div :if={@post_tags != []} class="mt-8 flex flex-wrap items-center gap-3">
+          <ul class="m-0 flex list-none flex-wrap gap-2 p-0">
+            <li :for={tag <- @post_tags}>
+              <span class="badge ui-size-sm">{tag}</span>
+            </li>
+          </ul>
+          <.navigate to={~p"/tags"} class="link ui-brand ui-size-sm">
+            {~t"All tags"}
+          </.navigate>
+        </div>
+
+        <div :if={@post_cover} class={"#{Shell.frame()} mt-12 overflow-hidden"}>
+          <div class="relative aspect-[2/1]">
+            <.photo src={@post_cover.src} alt={@post_cover.alt} width={1400} height={700} />
           </div>
         </div>
-      </header>
 
-      <div class="typo markdown prose max-w-none">
-        {{:safe, render(@inner_content)}}
+        <div class="typo markdown prose mt-12 min-w-0 max-w-3xl">
+          {{:safe, render(@inner_content)}}
+        </div>
       </div>
     </article>
     """
+  end
+
+  defp cover(page) do
+    src = page[:image]
+
+    if is_binary(src) and src != "" do
+      %{src: src, alt: page[:image_alt] || page[:title] || ~t"Post cover"}
+    end
   end
 end

@@ -156,7 +156,7 @@ defmodule SoonexI18n.Markdown.CodeBlocks do
 
   defp fence_id(lang_str, raw) do
     h = :crypto.hash(:sha256, lang_str <> <<0>> <> raw)
-    "soonex_i18n-md-" <> (h |> Base.encode16(case: :lower) |> String.slice(0, 24))
+    "soonex-md-" <> (h |> Base.encode16(case: :lower) |> String.slice(0, 24))
   end
 
   defp lang_atom("elixir"), do: :elixir
